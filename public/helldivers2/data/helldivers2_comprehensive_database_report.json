@@ -1,0 +1,22 @@
+{
+  "generation_time": "2025-09-05T09:34:11.653Z",
+  "summary": {
+    "total_weapons": 15,
+    "total_attachments": 10,
+    "weapon_categories": {
+      "assault_rifles": 4,
+      "smgs": 2,
+      "shotguns": 2,
+      "marksman_rifles": 2,
+      "pistols": 2,
+      "support_weapons": 3
+    },
+    "attachment_categories": {
+      "optics": 2,
+      "magazines": 2,
+      "grips": 1,
+      "muzzle": 2,
+      "other": 3
+    }
+  }
+}

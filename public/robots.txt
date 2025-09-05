@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bwconverter.com/sitemap.xml 

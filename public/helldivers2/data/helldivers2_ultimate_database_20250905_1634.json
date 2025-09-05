@@ -1,0 +1,3911 @@
+{
+  "meta": {
+    "last_updated": "2025-09-05T16:34:51.674347",
+    "version": "5.0_ultimate",
+    "description": "Helldivers 2 完整数据库 - 终极版本",
+    "data_sources": [
+      "helldivers2.dev API (实时数据)",
+      "GitHub helldivers-2/json (官方数据结构)",
+      "GitHub SVG图标库 (高质量图标)",
+      "原有视觉数据库 (详细描述)",
+      "资源整合处理"
+    ]
+  },
+  "game_info": {
+    "name": "Helldivers 2",
+    "developer": "Arrowhead Game Studios",
+    "publisher": "Sony Interactive Entertainment",
+    "release_date": "2024-02-08",
+    "platforms": [
+      "PC",
+      "PlayStation 5"
+    ],
+    "genre": "Third-person Shooter, Cooperative"
+  },
+  "weapons": {
+    "primary": [
+      {
+        "id": "ar_23_liberator",
+        "name": "AR-23 Liberator",
+        "category": "Assault Rifle",
+        "stats": {
+          "damage": 70,
+          "capacity": 45,
+          "fire_rate": 640,
+          "reload_time": 2.0,
+          "armor_penetration": "Light",
+          "recoil": 14
+        },
+        "customization": {
+          "available_attachments": [
+            "Extended Magazine",
+            "Tactical Grip",
+            "Red Dot Sight"
+          ],
+          "upgrade_levels": 10,
+          "unlock_condition": "Default"
+        },
+        "unlock_condition": "Default",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_ar23_liberator.png",
+          "icon_image": "icon_ar23_liberator.png",
+          "ui_preview": "ui_ar23_liberator.png",
+          "description": "Standard issue assault rifle of the Helldivers",
+          "color_scheme": "Military green with chrome accents",
+          "distinctive_features": [
+            "Classic rifle design",
+            "Scope rail system",
+            "Tactical grip ready"
+          ]
+        },
+        "json_data": {
+          "internal_id": "2852344585",
+          "accurate_damage": 70,
+          "accurate_capacity": 45,
+          "recoil": 14,
+          "fire_modes": [
+            0,
+            1,
+            2
+          ],
+          "traits": [
+            1
+          ],
+          "description": "The SEAF standard assault rifle, balancing power, fire rate, and weight for a reliable weapon against smaller targets."
+        }
+      },
+      {
+        "id": "ar_23c_liberator_concussive",
+        "name": "AR-23C Liberator Concussive",
+        "category": "Assault Rifle",
+        "stats": {
+          "damage": 65,
+          "capacity": 30,
+          "fire_rate": 640,
+          "reload_time": 2.0,
+          "armor_penetration": "Light",
+          "recoil": 28
+        },
+        "unlock_condition": "Level 3",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_ar23c_liberator_concussive.png",
+          "icon_image": "icon_ar23c_liberator_concussive.png",
+          "description": "Modified Liberator with concussive ammunition",
+          "color_scheme": "Military green with yellow warning stripes",
+          "distinctive_features": [
+            "Special ammunition chamber",
+            "Warning markings for concussive rounds",
+            "Modified barrel design"
+          ]
+        },
+        "json_data": {
+          "internal_id": "376039023",
+          "accurate_damage": 65,
+          "accurate_capacity": 30,
+          "recoil": 28,
+          "fire_modes": [
+            0,
+            2
+          ],
+          "traits": [
+            1
+          ],
+          "description": "A modified Liberator featuring explosive rounds and a red-dot sight. Trades increased damage for increased recoil."
+        }
+      },
+      {
+        "id": "smg_37_defender",
+        "name": "SMG-37 Defender",
+        "category": "SMG",
+        "stats": {
+          "damage": 75,
+          "capacity": 45,
+          "fire_rate": 800,
+          "reload_time": 1.5,
+          "armor_penetration": "Light",
+          "recoil": 10
+        },
+        "unlock_condition": "Level 7",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_smg37_defender.png",
+          "icon_image": "icon_smg37_defender.png",
+          "description": "Compact submachine gun for close quarters",
+          "color_scheme": "Dark metallic with blue accents",
+          "distinctive_features": [
+            "Compact bullpup design",
+            "Collapsible stock",
+            "High mobility profile"
+          ]
+        },
+        "json_data": {
+          "internal_id": "2821209932",
+          "accurate_damage": 75,
+          "accurate_capacity": 45,
+          "recoil": 10,
+          "fire_modes": [
+            0,
+            1,
+            2
+          ],
+          "traits": [
+            1,
+            4
+          ],
+          "description": "A high-caliber submachine gun which can be fired with one hand. Has a relatively low rate of fire."
+        }
+      },
+      {
+        "id": "sg_8_punisher",
+        "name": "SG-8 Punisher",
+        "category": "Shotgun",
+        "stats": {
+          "damage": 405,
+          "capacity": 16,
+          "fire_rate": 300,
+          "reload_time": 2.5,
+          "armor_penetration": "Medium",
+          "recoil": 120
+        },
+        "unlock_condition": "Level 5",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_sg8_punisher.png",
+          "icon_image": "icon_sg8_punisher.png",
+          "description": "Heavy-duty combat shotgun",
+          "color_scheme": "Black metal with red danger markings",
+          "distinctive_features": [
+            "Large bore barrel",
+            "Tactical pump action",
+            "Heavy-duty construction"
+          ]
+        },
+        "json_data": {
+          "internal_id": "2088854385",
+          "accurate_damage": 405,
+          "accurate_capacity": 16,
+          "recoil": 120,
+          "fire_modes": [
+            3
+          ],
+          "traits": [
+            1,
+            5
+          ],
+          "description": "A powerful dual magazine pump-action shotgun, with limited armor penetration. Ideal for small and fast targets."
+        }
+      },
+      {
+        "id": "sg_225_breaker",
+        "name": "SG-225 Breaker",
+        "category": "Shotgun",
+        "stats": {
+          "damage": 330,
+          "capacity": 16,
+          "fire_rate": 300,
+          "reload_time": 2.2,
+          "armor_penetration": "Medium",
+          "recoil": 55
+        },
+        "unlock_condition": "Steeled Veterans Warbond",
+        "warbond": "Steeled Veterans",
+        "visual_data": {
+          "weapon_image": "placeholder_sg225_breaker.png",
+          "icon_image": "icon_sg225_breaker.png",
+          "description": "Semi-automatic combat shotgun",
+          "color_scheme": "Matte black with silver accents",
+          "distinctive_features": [
+            "Semi-automatic action",
+            "Extended barrel",
+            "Modern tactical design"
+          ]
+        },
+        "json_data": {
+          "internal_id": "1182300424",
+          "accurate_damage": 330,
+          "accurate_capacity": 16,
+          "recoil": 55,
+          "fire_modes": [
+            0,
+            2
+          ],
+          "traits": [
+            1
+          ],
+          "description": "A fully-automatic shotgun with a high rate of fire, excellent for controlling crowds. Requires frequent reloading."
+        }
+      },
+      {
+        "id": "las_5_scythe",
+        "name": "LAS-5 Scythe",
+        "category": "Energy Weapon",
+        "stats": {
+          "damage": 350,
+          "capacity": 8,
+          "fire_rate": "Continuous",
+          "reload_time": "Heat cooldown",
+          "armor_penetration": "Light",
+          "recoil": 0
+        },
+        "unlock_condition": "Cutting Edge Warbond",
+        "warbond": "Cutting Edge",
+        "visual_data": {
+          "weapon_image": "placeholder_las5_scythe.png",
+          "icon_image": "icon_las5_scythe.png",
+          "description": "Continuous beam laser weapon",
+          "color_scheme": "White and blue with energy conduits",
+          "distinctive_features": [
+            "Energy weapon design",
+            "Heat vents along barrel",
+            "Blue energy conduits",
+            "Sci-fi aesthetic"
+          ]
+        },
+        "json_data": {
+          "internal_id": "3866352840",
+          "accurate_damage": 350,
+          "accurate_capacity": 8,
+          "recoil": 0,
+          "fire_modes": [
+            2
+          ],
+          "traits": [
+            1,
+            8,
+            9
+          ],
+          "description": "A laser rifle firing a continuous beam. Does not need reloading, but if it overheats a new heat sink must be fitted."
+        }
+      }
+    ],
+    "secondary": [
+      {
+        "id": "p_2_peacemaker",
+        "name": "P-2 Peacemaker",
+        "category": "Pistol",
+        "stats": {
+          "damage": 75,
+          "capacity": 15,
+          "fire_rate": 250,
+          "reload_time": 1.5,
+          "armor_penetration": "Light",
+          "recoil": 23
+        },
+        "unlock_condition": "Default",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_p2_peacemaker.png",
+          "icon_image": "icon_p2_peacemaker.png",
+          "description": "Standard issue sidearm",
+          "color_scheme": "Dark gunmetal with chrome details",
+          "distinctive_features": [
+            "Classic pistol design",
+            "Ergonomic grip",
+            "Reliable construction"
+          ]
+        },
+        "json_data": {
+          "internal_id": "2811723672",
+          "accurate_damage": 75,
+          "accurate_capacity": 15,
+          "recoil": 23,
+          "fire_modes": [
+            0
+          ],
+          "traits": [
+            1,
+            4
+          ],
+          "description": "The SEAF standard pistol - offering a high fire rate, generous capacity, and fast reloading."
+        }
+      },
+      {
+        "id": "p_4_senator",
+        "name": "P-4 Senator",
+        "category": "Revolver",
+        "stats": {
+          "damage": 200,
+          "capacity": 6,
+          "fire_rate": 120,
+          "reload_time": 2.8,
+          "armor_penetration": "Medium",
+          "recoil": 43
+        },
+        "unlock_condition": "Level 10",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_p4_senator.png",
+          "icon_image": "icon_p4_senator.png",
+          "description": "High-powered revolver",
+          "color_scheme": "Silver with wooden grip",
+          "distinctive_features": [
+            "Classic revolver design",
+            "Large caliber cylinder",
+            "Wooden grip panels",
+            "Heavy-duty frame"
+          ]
+        },
+        "json_data": {
+          "internal_id": "1374036584",
+          "accurate_damage": 200,
+          "accurate_capacity": 6,
+          "recoil": 43,
+          "fire_modes": [
+            0
+          ],
+          "traits": [
+            3,
+            4,
+            5
+          ],
+          "description": "A high-damage revolver, which can be reloaded with single rounds. A heavy-hitting and reliable sidearm."
+        }
+      }
+    ],
+    "support": [
+      {
+        "id": "mg_43_machine_gun",
+        "name": "MG-43 Machine Gun",
+        "category": "Machine Gun",
+        "stats": {
+          "damage": 100,
+          "capacity": 100,
+          "fire_rate": 980,
+          "reload_time": 4.0,
+          "armor_penetration": "Medium"
+        },
+        "unlock_condition": "Stratagem",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_mg43_machine_gun.png",
+          "icon_image": "icon_mg43_machine_gun.png",
+          "description": "Heavy machine gun for suppressive fire",
+          "color_scheme": "Military green with heat shields",
+          "distinctive_features": [
+            "Heavy barrel design",
+            "Bipod legs",
+            "Heat dissipation vents",
+            "Large ammunition feed"
+          ]
+        }
+      },
+      {
+        "id": "eat_17_expendable_anti_tank",
+        "name": "EAT-17 Expendable Anti-Tank",
+        "category": "Anti-Tank",
+        "stats": {
+          "damage": 1200,
+          "capacity": 1,
+          "fire_rate": "Single Shot",
+          "reload_time": "N/A",
+          "armor_penetration": "Anti-Tank"
+        },
+        "unlock_condition": "Stratagem",
+        "warbond": "Free",
+        "visual_data": {
+          "weapon_image": "placeholder_eat17_anti_tank.png",
+          "icon_image": "icon_eat17_anti_tank.png",
+          "description": "Single-use anti-tank rocket",
+          "color_scheme": "Olive green with yellow warning stripes",
+          "distinctive_features": [
+            "Tube launcher design",
+            "Single-use construction",
+            "High explosive warhead",
+            "Safety mechanisms"
+          ]
+        }
+      }
+    ]
+  },
+  "stratagems": {
+    "general": [
+      {
+        "id": "orbital_illumination_flare",
+        "name": "Orbital Illumination Flare",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Orbital Illumination Flare.svg",
+        "description": "Orbital Illumination Flare stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Orbital Illumination Flare.svg",
+          "icon_filename": "Orbital Illumination Flare.svg"
+        }
+      },
+      {
+        "id": "hellbomb",
+        "name": "Hellbomb",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Hellbomb.svg",
+        "description": "Hellbomb stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Hellbomb.svg",
+          "icon_filename": "Hellbomb.svg"
+        }
+      },
+      {
+        "id": "tectonic_drill",
+        "name": "Tectonic Drill",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Tectonic Drill.svg",
+        "description": "Tectonic Drill stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Tectonic Drill.svg",
+          "icon_filename": "Tectonic Drill.svg"
+        }
+      },
+      {
+        "id": "seismic_probe",
+        "name": "Seismic Probe",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Seismic Probe.svg",
+        "description": "Seismic Probe stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Seismic Probe.svg",
+          "icon_filename": "Seismic Probe.svg"
+        }
+      },
+      {
+        "id": "hive_breaker_drill",
+        "name": "Hive Breaker Drill",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Hive Breaker Drill.svg",
+        "description": "Hive Breaker Drill stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Hive Breaker Drill.svg",
+          "icon_filename": "Hive Breaker Drill.svg"
+        }
+      },
+      {
+        "id": "seaf_artillery",
+        "name": "SEAF Artillery",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/SEAF Artillery.svg",
+        "description": "SEAF Artillery stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/SEAF Artillery.svg",
+          "icon_filename": "SEAF Artillery.svg"
+        }
+      },
+      {
+        "id": "reinforce",
+        "name": "Reinforce",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Reinforce.svg",
+        "description": "Reinforce stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Reinforce.svg",
+          "icon_filename": "Reinforce.svg"
+        }
+      },
+      {
+        "id": "prospecting_drill",
+        "name": "Prospecting Drill",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Prospecting Drill.svg",
+        "description": "Prospecting Drill stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Prospecting Drill.svg",
+          "icon_filename": "Prospecting Drill.svg"
+        }
+      },
+      {
+        "id": "super_earth_flag",
+        "name": "Super Earth Flag",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Super Earth Flag.svg",
+        "description": "Super Earth Flag stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Super Earth Flag.svg",
+          "icon_filename": "Super Earth Flag.svg"
+        }
+      },
+      {
+        "id": "upload_data",
+        "name": "Upload Data",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Upload Data.svg",
+        "description": "Upload Data stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Upload Data.svg",
+          "icon_filename": "Upload Data.svg"
+        }
+      },
+      {
+        "id": "dark_fluid_vessel",
+        "name": "Dark Fluid Vessel",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Dark Fluid Vessel.svg",
+        "description": "Dark Fluid Vessel stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Dark Fluid Vessel.svg",
+          "icon_filename": "Dark Fluid Vessel.svg"
+        }
+      },
+      {
+        "id": "resupply",
+        "name": "Resupply",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/Resupply.svg",
+        "description": "Resupply stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/Resupply.svg",
+          "icon_filename": "Resupply.svg"
+        }
+      },
+      {
+        "id": "sos_beacon",
+        "name": "SOS Beacon",
+        "category": "general_stratagems",
+        "icon_path": "images/stratagems/general_stratagems/SOS Beacon.svg",
+        "description": "SOS Beacon stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/general_stratagems/SOS Beacon.svg",
+          "icon_filename": "SOS Beacon.svg"
+        }
+      },
+      {
+        "id": "epoch",
+        "name": "Epoch",
+        "category": "control_group",
+        "icon_path": "images/stratagems/control_group/Epoch.svg",
+        "description": "Epoch stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/control_group/Epoch.svg",
+          "icon_filename": "Epoch.svg"
+        }
+      },
+      {
+        "id": "laser_sentry",
+        "name": "Laser Sentry",
+        "category": "control_group",
+        "icon_path": "images/stratagems/control_group/Laser Sentry.svg",
+        "description": "Laser Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/control_group/Laser Sentry.svg",
+          "icon_filename": "Laser Sentry.svg"
+        }
+      },
+      {
+        "id": "warp_pack",
+        "name": "Warp Pack",
+        "category": "control_group",
+        "icon_path": "images/stratagems/control_group/Warp Pack.svg",
+        "description": "Warp Pack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/control_group/Warp Pack.svg",
+          "icon_filename": "Warp Pack.svg"
+        }
+      },
+      {
+        "id": "flame_sentry",
+        "name": "Flame Sentry",
+        "category": "urban_legends",
+        "icon_path": "images/stratagems/urban_legends/Flame Sentry.svg",
+        "description": "Flame Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/urban_legends/Flame Sentry.svg",
+          "icon_filename": "Flame Sentry.svg"
+        }
+      },
+      {
+        "id": "directional_shield",
+        "name": "Directional Shield",
+        "category": "urban_legends",
+        "icon_path": "images/stratagems/urban_legends/Directional Shield.svg",
+        "description": "Directional Shield stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/urban_legends/Directional Shield.svg",
+          "icon_filename": "Directional Shield.svg"
+        }
+      },
+      {
+        "id": "anti_tank_emplacement",
+        "name": "Anti-Tank Emplacement",
+        "category": "urban_legends",
+        "icon_path": "images/stratagems/urban_legends/Anti-Tank Emplacement.svg",
+        "description": "Anti-Tank Emplacement stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/urban_legends/Anti-Tank Emplacement.svg",
+          "icon_filename": "Anti-Tank Emplacement.svg"
+        }
+      },
+      {
+        "id": "one_true_flag",
+        "name": "One True Flag",
+        "category": "masters_of_ceremony",
+        "icon_path": "images/stratagems/masters_of_ceremony/One True Flag.svg",
+        "description": "One True Flag stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/masters_of_ceremony/One True Flag.svg",
+          "icon_filename": "One True Flag.svg"
+        }
+      },
+      {
+        "id": "speargun",
+        "name": "Speargun",
+        "category": "dust_devils",
+        "icon_path": "images/stratagems/dust_devils/Speargun.svg",
+        "description": "Speargun stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/dust_devils/Speargun.svg",
+          "icon_filename": "Speargun.svg"
+        }
+      },
+      {
+        "id": "solo_silo",
+        "name": "Solo Silo",
+        "category": "dust_devils",
+        "icon_path": "images/stratagems/dust_devils/Solo Silo.svg",
+        "description": "Solo Silo stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/dust_devils/Solo Silo.svg",
+          "icon_filename": "Solo Silo.svg"
+        }
+      },
+      {
+        "id": "expendable_napalm",
+        "name": "Expendable Napalm",
+        "category": "dust_devils",
+        "icon_path": "images/stratagems/dust_devils/Expendable Napalm.svg",
+        "description": "Expendable Napalm stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/dust_devils/Expendable Napalm.svg",
+          "icon_filename": "Expendable Napalm.svg"
+        }
+      },
+      {
+        "id": "hellbomb_portable",
+        "name": "Hellbomb Portable",
+        "category": "servants_of_freedom",
+        "icon_path": "images/stratagems/servants_of_freedom/Hellbomb Portable.svg",
+        "description": "Hellbomb Portable stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/servants_of_freedom/Hellbomb Portable.svg",
+          "icon_filename": "Hellbomb Portable.svg"
+        }
+      },
+      {
+        "id": "gl_52_de_escalator",
+        "name": "GL-52 De-Escalator",
+        "category": "force_of_law",
+        "icon_path": "images/stratagems/force_of_law/GL-52 De-Escalator.svg",
+        "description": "GL-52 De-Escalator stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/force_of_law/GL-52 De-Escalator.svg",
+          "icon_filename": "GL-52 De-Escalator.svg"
+        }
+      },
+      {
+        "id": "guard_dog_k_9",
+        "name": "Guard Dog K-9",
+        "category": "force_of_law",
+        "icon_path": "images/stratagems/force_of_law/Guard Dog K-9.svg",
+        "description": "Guard Dog K-9 stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/force_of_law/Guard Dog K-9.svg",
+          "icon_filename": "Guard Dog K-9.svg"
+        }
+      },
+      {
+        "id": "arc_thrower",
+        "name": "Arc Thrower",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Arc Thrower.svg",
+        "description": "Arc Thrower stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Arc Thrower.svg",
+          "icon_filename": "Arc Thrower.svg"
+        }
+      },
+      {
+        "id": "anti_tank_mines",
+        "name": "Anti-Tank Mines",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Anti-Tank Mines.svg",
+        "description": "Anti-Tank Mines stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Anti-Tank Mines.svg",
+          "icon_filename": "Anti-Tank Mines.svg"
+        }
+      },
+      {
+        "id": "grenade_launcher",
+        "name": "Grenade Launcher",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Grenade Launcher.svg",
+        "description": "Grenade Launcher stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Grenade Launcher.svg",
+          "icon_filename": "Grenade Launcher.svg"
+        }
+      },
+      {
+        "id": "incendiary_mines",
+        "name": "Incendiary Mines",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Incendiary Mines.svg",
+        "description": "Incendiary Mines stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Incendiary Mines.svg",
+          "icon_filename": "Incendiary Mines.svg"
+        }
+      },
+      {
+        "id": "ballistic_shield_backpack",
+        "name": "Ballistic Shield Backpack",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Ballistic Shield Backpack.svg",
+        "description": "Ballistic Shield Backpack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Ballistic Shield Backpack.svg",
+          "icon_filename": "Ballistic Shield Backpack.svg"
+        }
+      },
+      {
+        "id": "quasar_cannon",
+        "name": "Quasar Cannon",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Quasar Cannon.svg",
+        "description": "Quasar Cannon stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Quasar Cannon.svg",
+          "icon_filename": "Quasar Cannon.svg"
+        }
+      },
+      {
+        "id": "guard_dog_rover",
+        "name": "Guard Dog Rover",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Guard Dog Rover.svg",
+        "description": "Guard Dog Rover stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Guard Dog Rover.svg",
+          "icon_filename": "Guard Dog Rover.svg"
+        }
+      },
+      {
+        "id": "laser_cannon",
+        "name": "Laser Cannon",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Laser Cannon.svg",
+        "description": "Laser Cannon stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Laser Cannon.svg",
+          "icon_filename": "Laser Cannon.svg"
+        }
+      },
+      {
+        "id": "gas_mine",
+        "name": "Gas Mine",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Gas Mine.svg",
+        "description": "Gas Mine stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Gas Mine.svg",
+          "icon_filename": "Gas Mine.svg"
+        }
+      },
+      {
+        "id": "shield_generator_pack",
+        "name": "Shield Generator Pack",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Shield Generator Pack.svg",
+        "description": "Shield Generator Pack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Shield Generator Pack.svg",
+          "icon_filename": "Shield Generator Pack.svg"
+        }
+      },
+      {
+        "id": "anti_personnel_minefield",
+        "name": "Anti-Personnel Minefield",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Anti-Personnel Minefield.svg",
+        "description": "Anti-Personnel Minefield stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Anti-Personnel Minefield.svg",
+          "icon_filename": "Anti-Personnel Minefield.svg"
+        }
+      },
+      {
+        "id": "supply_pack",
+        "name": "Supply Pack",
+        "category": "engineering_bay",
+        "icon_path": "images/stratagems/engineering_bay/Supply Pack.svg",
+        "description": "Supply Pack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/engineering_bay/Supply Pack.svg",
+          "icon_filename": "Supply Pack.svg"
+        }
+      },
+      {
+        "id": "expendable_anti_tank",
+        "name": "Expendable Anti-Tank",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Expendable Anti-Tank.svg",
+        "description": "Expendable Anti-Tank stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Expendable Anti-Tank.svg",
+          "icon_filename": "Expendable Anti-Tank.svg"
+        }
+      },
+      {
+        "id": "commando",
+        "name": "Commando",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Commando.svg",
+        "description": "Commando stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Commando.svg",
+          "icon_filename": "Commando.svg"
+        }
+      },
+      {
+        "id": "airburst_rocket_launcher",
+        "name": "Airburst Rocket Launcher",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Airburst Rocket Launcher.svg",
+        "description": "Airburst Rocket Launcher stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Airburst Rocket Launcher.svg",
+          "icon_filename": "Airburst Rocket Launcher.svg"
+        }
+      },
+      {
+        "id": "machine_gun",
+        "name": "Machine Gun",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Machine Gun.svg",
+        "description": "Machine Gun stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Machine Gun.svg",
+          "icon_filename": "Machine Gun.svg"
+        }
+      },
+      {
+        "id": "autocannon",
+        "name": "Autocannon",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Autocannon.svg",
+        "description": "Autocannon stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Autocannon.svg",
+          "icon_filename": "Autocannon.svg"
+        }
+      },
+      {
+        "id": "heavy_machine_gun",
+        "name": "Heavy Machine Gun",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Heavy Machine Gun.svg",
+        "description": "Heavy Machine Gun stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Heavy Machine Gun.svg",
+          "icon_filename": "Heavy Machine Gun.svg"
+        }
+      },
+      {
+        "id": "anti_materiel_rifle",
+        "name": "Anti-Materiel Rifle",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Anti-Materiel Rifle.svg",
+        "description": "Anti-Materiel Rifle stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Anti-Materiel Rifle.svg",
+          "icon_filename": "Anti-Materiel Rifle.svg"
+        }
+      },
+      {
+        "id": "spear",
+        "name": "Spear",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Spear.svg",
+        "description": "Spear stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Spear.svg",
+          "icon_filename": "Spear.svg"
+        }
+      },
+      {
+        "id": "flamethrower",
+        "name": "Flamethrower",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Flamethrower.svg",
+        "description": "Flamethrower stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Flamethrower.svg",
+          "icon_filename": "Flamethrower.svg"
+        }
+      },
+      {
+        "id": "stalwart",
+        "name": "Stalwart",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Stalwart.svg",
+        "description": "Stalwart stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Stalwart.svg",
+          "icon_filename": "Stalwart.svg"
+        }
+      },
+      {
+        "id": "recoilless_rifle",
+        "name": "Recoilless Rifle",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Recoilless Rifle.svg",
+        "description": "Recoilless Rifle stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Recoilless Rifle.svg",
+          "icon_filename": "Recoilless Rifle.svg"
+        }
+      },
+      {
+        "id": "railgun",
+        "name": "Railgun",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/Railgun.svg",
+        "description": "Railgun stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/Railgun.svg",
+          "icon_filename": "Railgun.svg"
+        }
+      },
+      {
+        "id": "sta_x3_w.a.s.p._launcher",
+        "name": "StA-X3 W.A.S.P. Launcher",
+        "category": "patriotic_administration_center",
+        "icon_path": "images/stratagems/patriotic_administration_center/StA-X3 W.A.S.P. Launcher.svg",
+        "description": "StA-X3 W.A.S.P. Launcher stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/patriotic_administration_center/StA-X3 W.A.S.P. Launcher.svg",
+          "icon_filename": "StA-X3 W.A.S.P. Launcher.svg"
+        }
+      },
+      {
+        "id": "sterilizer",
+        "name": "Sterilizer",
+        "category": "chemical_agents",
+        "icon_path": "images/stratagems/chemical_agents/Sterilizer.svg",
+        "description": "Sterilizer stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/chemical_agents/Sterilizer.svg",
+          "icon_filename": "Sterilizer.svg"
+        }
+      },
+      {
+        "id": "guard_dog_breath",
+        "name": "Guard Dog Breath",
+        "category": "chemical_agents",
+        "icon_path": "images/stratagems/chemical_agents/Guard Dog Breath.svg",
+        "description": "Guard Dog Breath stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/chemical_agents/Guard Dog Breath.svg",
+          "icon_filename": "Guard Dog Breath.svg"
+        }
+      },
+      {
+        "id": "hover_pack",
+        "name": "Hover Pack",
+        "category": "borderline_justice",
+        "icon_path": "images/stratagems/borderline_justice/Hover Pack.svg",
+        "description": "Hover Pack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/borderline_justice/Hover Pack.svg",
+          "icon_filename": "Hover Pack.svg"
+        }
+      },
+      {
+        "id": "emancipator_exosuit",
+        "name": "Emancipator Exosuit",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Emancipator Exosuit.svg",
+        "description": "Emancipator Exosuit stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Emancipator Exosuit.svg",
+          "icon_filename": "Emancipator Exosuit.svg"
+        }
+      },
+      {
+        "id": "machine_gun_sentry",
+        "name": "Machine Gun Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Machine Gun Sentry.svg",
+        "description": "Machine Gun Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Machine Gun Sentry.svg",
+          "icon_filename": "Machine Gun Sentry.svg"
+        }
+      },
+      {
+        "id": "guard_dog",
+        "name": "Guard Dog",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Guard Dog.svg",
+        "description": "Guard Dog stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Guard Dog.svg",
+          "icon_filename": "Guard Dog.svg"
+        }
+      },
+      {
+        "id": "gatling_sentry",
+        "name": "Gatling Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Gatling Sentry.svg",
+        "description": "Gatling Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Gatling Sentry.svg",
+          "icon_filename": "Gatling Sentry.svg"
+        }
+      },
+      {
+        "id": "rocket_sentry",
+        "name": "Rocket Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Rocket Sentry.svg",
+        "description": "Rocket Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Rocket Sentry.svg",
+          "icon_filename": "Rocket Sentry.svg"
+        }
+      },
+      {
+        "id": "patriot_exosuit",
+        "name": "Patriot Exosuit",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Patriot Exosuit.svg",
+        "description": "Patriot Exosuit stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Patriot Exosuit.svg",
+          "icon_filename": "Patriot Exosuit.svg"
+        }
+      },
+      {
+        "id": "autocannon_sentry",
+        "name": "Autocannon Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Autocannon Sentry.svg",
+        "description": "Autocannon Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Autocannon Sentry.svg",
+          "icon_filename": "Autocannon Sentry.svg"
+        }
+      },
+      {
+        "id": "mortar_sentry",
+        "name": "Mortar Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/Mortar Sentry.svg",
+        "description": "Mortar Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/Mortar Sentry.svg",
+          "icon_filename": "Mortar Sentry.svg"
+        }
+      },
+      {
+        "id": "ems_mortar_sentry",
+        "name": "EMS Mortar Sentry",
+        "category": "robotics_workshop",
+        "icon_path": "images/stratagems/robotics_workshop/EMS Mortar Sentry.svg",
+        "description": "EMS Mortar Sentry stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/robotics_workshop/EMS Mortar Sentry.svg",
+          "icon_filename": "EMS Mortar Sentry.svg"
+        }
+      }
+    ],
+    "orbital": [
+      {
+        "id": "orbital_airburst_strike",
+        "name": "Orbital Airburst Strike",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Airburst Strike.svg",
+        "description": "Orbital Airburst Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Airburst Strike.svg",
+          "icon_filename": "Orbital Airburst Strike.svg"
+        }
+      },
+      {
+        "id": "orbital_railcannon_strike",
+        "name": "Orbital Railcannon Strike",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Railcannon Strike.svg",
+        "description": "Orbital Railcannon Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Railcannon Strike.svg",
+          "icon_filename": "Orbital Railcannon Strike.svg"
+        }
+      },
+      {
+        "id": "orbital_120mm_he_barrage",
+        "name": "Orbital 120MM HE Barrage",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital 120MM HE Barrage.svg",
+        "description": "Orbital 120MM HE Barrage stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital 120MM HE Barrage.svg",
+          "icon_filename": "Orbital 120MM HE Barrage.svg"
+        }
+      },
+      {
+        "id": "orbital_walking_barrage",
+        "name": "Orbital Walking Barrage",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Walking Barrage.svg",
+        "description": "Orbital Walking Barrage stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Walking Barrage.svg",
+          "icon_filename": "Orbital Walking Barrage.svg"
+        }
+      },
+      {
+        "id": "orbital_napalm_barrage",
+        "name": "Orbital Napalm Barrage",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Napalm Barrage.svg",
+        "description": "Orbital Napalm Barrage stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Napalm Barrage.svg",
+          "icon_filename": "Orbital Napalm Barrage.svg"
+        }
+      },
+      {
+        "id": "orbital_gatling_barrage",
+        "name": "Orbital Gatling Barrage",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Gatling Barrage.svg",
+        "description": "Orbital Gatling Barrage stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Gatling Barrage.svg",
+          "icon_filename": "Orbital Gatling Barrage.svg"
+        }
+      },
+      {
+        "id": "orbital_380mm_he_barrage",
+        "name": "Orbital 380MM HE Barrage",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital 380MM HE Barrage.svg",
+        "description": "Orbital 380MM HE Barrage stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital 380MM HE Barrage.svg",
+          "icon_filename": "Orbital 380MM HE Barrage.svg"
+        }
+      },
+      {
+        "id": "orbital_laser",
+        "name": "Orbital Laser",
+        "category": "orbital_cannons",
+        "icon_path": "images/stratagems/orbital_cannons/Orbital Laser.svg",
+        "description": "Orbital Laser stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/orbital_cannons/Orbital Laser.svg",
+          "icon_filename": "Orbital Laser.svg"
+        }
+      }
+    ],
+    "eagle": [
+      {
+        "id": "eagle_500kg_bomb",
+        "name": "Eagle 500KG Bomb",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle 500KG Bomb.svg",
+        "description": "Eagle 500KG Bomb stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle 500KG Bomb.svg",
+          "icon_filename": "Eagle 500KG Bomb.svg"
+        }
+      },
+      {
+        "id": "eagle_cluster_bomb",
+        "name": "Eagle Cluster Bomb",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Cluster Bomb.svg",
+        "description": "Eagle Cluster Bomb stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Cluster Bomb.svg",
+          "icon_filename": "Eagle Cluster Bomb.svg"
+        }
+      },
+      {
+        "id": "jump_pack",
+        "name": "Jump Pack",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Jump Pack.svg",
+        "description": "Jump Pack stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Jump Pack.svg",
+          "icon_filename": "Jump Pack.svg"
+        }
+      },
+      {
+        "id": "eagle_strafing_run",
+        "name": "Eagle Strafing Run",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Strafing Run.svg",
+        "description": "Eagle Strafing Run stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Strafing Run.svg",
+          "icon_filename": "Eagle Strafing Run.svg"
+        }
+      },
+      {
+        "id": "eagle_110mm_rocket_pods",
+        "name": "Eagle 110MM Rocket Pods",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle 110MM Rocket Pods.svg",
+        "description": "Eagle 110MM Rocket Pods stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle 110MM Rocket Pods.svg",
+          "icon_filename": "Eagle 110MM Rocket Pods.svg"
+        }
+      },
+      {
+        "id": "fast_recon_vehicle",
+        "name": "Fast Recon Vehicle",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Fast Recon Vehicle.svg",
+        "description": "Fast Recon Vehicle stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Fast Recon Vehicle.svg",
+          "icon_filename": "Fast Recon Vehicle.svg"
+        }
+      },
+      {
+        "id": "eagle_rearm",
+        "name": "Eagle Rearm",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Rearm.svg",
+        "description": "Eagle Rearm stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Rearm.svg",
+          "icon_filename": "Eagle Rearm.svg"
+        }
+      },
+      {
+        "id": "eagle_airstrike",
+        "name": "Eagle Airstrike",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Airstrike.svg",
+        "description": "Eagle Airstrike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Airstrike.svg",
+          "icon_filename": "Eagle Airstrike.svg"
+        }
+      },
+      {
+        "id": "eagle_smoke_strike",
+        "name": "Eagle Smoke Strike",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Smoke Strike.svg",
+        "description": "Eagle Smoke Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Smoke Strike.svg",
+          "icon_filename": "Eagle Smoke Strike.svg"
+        }
+      },
+      {
+        "id": "eagle_napalm_airstrike",
+        "name": "Eagle Napalm Airstrike",
+        "category": "hangar",
+        "icon_path": "images/stratagems/hangar/Eagle Napalm Airstrike.svg",
+        "description": "Eagle Napalm Airstrike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/hangar/Eagle Napalm Airstrike.svg",
+          "icon_filename": "Eagle Napalm Airstrike.svg"
+        }
+      }
+    ],
+    "bridge": [
+      {
+        "id": "orbital_ems_strike",
+        "name": "Orbital EMS Strike",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Orbital EMS Strike.svg",
+        "description": "Orbital EMS Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Orbital EMS Strike.svg",
+          "icon_filename": "Orbital EMS Strike.svg"
+        }
+      },
+      {
+        "id": "tesla_tower",
+        "name": "Tesla Tower",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Tesla Tower.svg",
+        "description": "Tesla Tower stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Tesla Tower.svg",
+          "icon_filename": "Tesla Tower.svg"
+        }
+      },
+      {
+        "id": "hmg_emplacement",
+        "name": "HMG Emplacement",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/HMG Emplacement.svg",
+        "description": "HMG Emplacement stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/HMG Emplacement.svg",
+          "icon_filename": "HMG Emplacement.svg"
+        }
+      },
+      {
+        "id": "grenadier_battlement",
+        "name": "Grenadier Battlement",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Grenadier Battlement.svg",
+        "description": "Grenadier Battlement stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Grenadier Battlement.svg",
+          "icon_filename": "Grenadier Battlement.svg"
+        }
+      },
+      {
+        "id": "orbital_smoke_strike",
+        "name": "Orbital Smoke Strike",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Orbital Smoke Strike.svg",
+        "description": "Orbital Smoke Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Orbital Smoke Strike.svg",
+          "icon_filename": "Orbital Smoke Strike.svg"
+        }
+      },
+      {
+        "id": "orbital_gas_strike",
+        "name": "Orbital Gas Strike",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Orbital Gas Strike.svg",
+        "description": "Orbital Gas Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Orbital Gas Strike.svg",
+          "icon_filename": "Orbital Gas Strike.svg"
+        }
+      },
+      {
+        "id": "shield_generator_relay",
+        "name": "Shield Generator Relay",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Shield Generator Relay.svg",
+        "description": "Shield Generator Relay stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Shield Generator Relay.svg",
+          "icon_filename": "Shield Generator Relay.svg"
+        }
+      },
+      {
+        "id": "orbital_precision_strike",
+        "name": "Orbital Precision Strike",
+        "category": "bridge",
+        "icon_path": "images/stratagems/bridge/Orbital Precision Strike.svg",
+        "description": "Orbital Precision Strike stratagem",
+        "visual_data": {
+          "icon_svg": "images/stratagems/bridge/Orbital Precision Strike.svg",
+          "icon_filename": "Orbital Precision Strike.svg"
+        }
+      }
+    ]
+  },
+  "attachments": [
+    {
+      "id": "red_dot_sight",
+      "name": "Red Dot Sight",
+      "category": "Optics",
+      "effects": {
+        "accuracy": "+10%",
+        "handling": "+5%"
+      },
+      "compatible_weapons": [
+        "ar_23_liberator",
+        "ar_23c_liberator_concussive"
+      ],
+      "unlock_level": 2,
+      "visual_data": {
+        "attachment_image": "placeholder_red_dot_sight.png",
+        "icon_image": "icon_red_dot_sight.png",
+        "description": "Precision red dot sight for improved accuracy",
+        "color_scheme": "Black with red reticle",
+        "mounting_style": "Picatinny rail"
+      }
+    },
+    {
+      "id": "tactical_grip",
+      "name": "Tactical Grip",
+      "category": "Grip",
+      "effects": {
+        "recoil": "-15%",
+        "stability": "+10%"
+      },
+      "compatible_weapons": [
+        "ar_23_liberator",
+        "ar_23c_liberator_concussive"
+      ],
+      "unlock_level": 4,
+      "visual_data": {
+        "attachment_image": "placeholder_tactical_grip.png",
+        "icon_image": "icon_tactical_grip.png",
+        "description": "Forward grip for recoil control",
+        "color_scheme": "Black polymer",
+        "mounting_style": "Rail mount"
+      }
+    },
+    {
+      "id": "extended_magazine",
+      "name": "Extended Magazine",
+      "category": "Magazine",
+      "effects": {
+        "capacity": "+50%",
+        "reload_time": "+0.3s"
+      },
+      "compatible_weapons": [
+        "ar_23_liberator",
+        "smg_37_defender"
+      ],
+      "unlock_level": 6,
+      "visual_data": {
+        "attachment_image": "placeholder_extended_magazine.png",
+        "icon_image": "icon_extended_magazine.png",
+        "description": "High-capacity ammunition magazine",
+        "color_scheme": "Black metal",
+        "size_difference": "50% larger than standard"
+      }
+    }
+  ],
+  "customization": {
+    "attachments": [
+      {
+        "id": "red_dot_sight",
+        "name": "Red Dot Sight",
+        "category": "Optics",
+        "effects": {
+          "accuracy": "+10%",
+          "handling": "+5%"
+        },
+        "compatible_weapons": [
+          "ar_23_liberator",
+          "ar_23c_liberator_concussive"
+        ],
+        "unlock_level": 2
+      },
+      {
+        "id": "tactical_grip",
+        "name": "Tactical Grip",
+        "category": "Grip",
+        "effects": {
+          "recoil": "-15%",
+          "stability": "+10%"
+        },
+        "compatible_weapons": [
+          "ar_23_liberator",
+          "ar_23c_liberator_concussive"
+        ],
+        "unlock_level": 4
+      },
+      {
+        "id": "extended_magazine",
+        "name": "Extended Magazine",
+        "category": "Magazine",
+        "effects": {
+          "capacity": "+50%",
+          "reload_time": "+0.3s"
+        },
+        "compatible_weapons": [
+          "ar_23_liberator",
+          "smg_37_defender"
+        ],
+        "unlock_level": 6
+      }
+    ],
+    "weapon_experience": {
+      "max_level": 10,
+      "experience_per_level": 1000,
+      "unlock_requirements": {
+        "level_1": "0 XP",
+        "level_5": "5000 XP + 50 Requisition",
+        "level_10": "10000 XP + 100 Requisition"
+      }
+    }
+  },
+  "visual_resources": {
+    "image_collection_status": "Template with placeholders created",
+    "recommended_sources": [
+      "Steam Community Screenshots",
+      "Reddit r/Helldivers community",
+      "Official PlayStation Blog",
+      "YouTube weapon showcase videos",
+      "Twitch streamers gameplay",
+      "Discord community servers"
+    ],
+    "image_requirements": {
+      "format": [
+        "PNG",
+        "WEBP",
+        "JPG"
+      ],
+      "resolution": "Minimum 512x512, Recommended 1024x1024",
+      "background": "Transparent or game UI background",
+      "quality": "High detail, clear weapon model"
+    }
+  },
+  "ui_elements": {
+    "weapon_categories": {
+      "primary": {
+        "icon": "category_primary_weapons.png",
+        "color": "#FF6B35",
+        "description": "Main combat weapons"
+      },
+      "secondary": {
+        "icon": "category_secondary_weapons.png",
+        "color": "#4ECDC4",
+        "description": "Backup sidearms"
+      },
+      "support": {
+        "icon": "category_support_weapons.png",
+        "color": "#45B7D1",
+        "description": "Heavy support weapons"
+      }
+    },
+    "attachment_categories": {
+      "optics": {
+        "icon": "category_optics.png",
+        "color": "#96CEB4"
+      },
+      "grip": {
+        "icon": "category_grips.png",
+        "color": "#FFEAA7"
+      },
+      "magazine": {
+        "icon": "category_magazines.png",
+        "color": "#DDA0DD"
+      }
+    }
+  },
+  "development_guide": {
+    "api_endpoints": {
+      "/api/weapons": "Get all weapons list",
+      "/api/weapons/primary": "Get primary weapons",
+      "/api/weapons/secondary": "Get secondary weapons",
+      "/api/weapons/support": "Get support weapons",
+      "/api/weapons/{id}": "Get specific weapon details",
+      "/api/attachments": "Get all attachments",
+      "/api/attachments/{id}": "Get specific attachment"
+    },
+    "component_structure": {
+      "WeaponCard": "Individual weapon display component",
+      "WeaponGrid": "Weapon listing grid",
+      "WeaponDetail": "Detailed weapon view",
+      "AttachmentSlot": "Attachment selection component",
+      "DamageCalculator": "Damage calculation tool",
+      "LoadoutBuilder": "Complete loadout configuration"
+    },
+    "file_organization": {
+      "public/images/weapons/": "Weapon images",
+      "public/images/attachments/": "Attachment images",
+      "public/images/icons/": "UI icons",
+      "src/data/weapons.json": "Weapon data",
+      "src/data/attachments.json": "Attachment data",
+      "src/components/": "React components",
+      "src/utils/damage.js": "Damage calculations"
+    }
+  },
+  "war_status": {
+    "started": "2024-01-23T20:05:13Z",
+    "ended": "2028-02-08T20:04:55Z",
+    "now": "1971-07-23T17:48:10Z",
+    "clientVersion": "0.3.0",
+    "factions": [
+      "Humans",
+      "Terminids",
+      "Automaton",
+      "Illuminate"
+    ],
+    "impactMultiplier": 0.010712621,
+    "statistics": {
+      "missionsWon": 641217995,
+      "missionsLost": 61126657,
+      "missionTime": 2025836413236,
+      "terminidKills": 148122959235,
+      "automatonKills": 59318575257,
+      "illuminateKills": 43106782935,
+      "bulletsFired": 1112518486354,
+      "bulletsHit": 1254993029965,
+      "timePlayed": 2025836413236,
+      "deaths": 5681898707,
+      "revives": 2,
+      "friendlies": 666072277,
+      "missionSuccessRate": 91,
+      "accuracy": 100,
+      "playerCount": 108714
+    }
+  },
+  "resource_paths": {
+    "images": {},
+    "icons": {},
+    "stratagems": {
+      "general_stratagems": [
+        {
+          "name": "Orbital Illumination Flare",
+          "filename": "Orbital Illumination Flare.svg",
+          "path": "images/stratagems/general_stratagems/Orbital Illumination Flare.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Hellbomb",
+          "filename": "Hellbomb.svg",
+          "path": "images/stratagems/general_stratagems/Hellbomb.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Tectonic Drill",
+          "filename": "Tectonic Drill.svg",
+          "path": "images/stratagems/general_stratagems/Tectonic Drill.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Seismic Probe",
+          "filename": "Seismic Probe.svg",
+          "path": "images/stratagems/general_stratagems/Seismic Probe.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Hive Breaker Drill",
+          "filename": "Hive Breaker Drill.svg",
+          "path": "images/stratagems/general_stratagems/Hive Breaker Drill.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "SEAF Artillery",
+          "filename": "SEAF Artillery.svg",
+          "path": "images/stratagems/general_stratagems/SEAF Artillery.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Reinforce",
+          "filename": "Reinforce.svg",
+          "path": "images/stratagems/general_stratagems/Reinforce.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Prospecting Drill",
+          "filename": "Prospecting Drill.svg",
+          "path": "images/stratagems/general_stratagems/Prospecting Drill.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Super Earth Flag",
+          "filename": "Super Earth Flag.svg",
+          "path": "images/stratagems/general_stratagems/Super Earth Flag.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Upload Data",
+          "filename": "Upload Data.svg",
+          "path": "images/stratagems/general_stratagems/Upload Data.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Dark Fluid Vessel",
+          "filename": "Dark Fluid Vessel.svg",
+          "path": "images/stratagems/general_stratagems/Dark Fluid Vessel.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "Resupply",
+          "filename": "Resupply.svg",
+          "path": "images/stratagems/general_stratagems/Resupply.svg",
+          "category": "general_stratagems"
+        },
+        {
+          "name": "SOS Beacon",
+          "filename": "SOS Beacon.svg",
+          "path": "images/stratagems/general_stratagems/SOS Beacon.svg",
+          "category": "general_stratagems"
+        }
+      ],
+      "control_group": [
+        {
+          "name": "Epoch",
+          "filename": "Epoch.svg",
+          "path": "images/stratagems/control_group/Epoch.svg",
+          "category": "control_group"
+        },
+        {
+          "name": "Laser Sentry",
+          "filename": "Laser Sentry.svg",
+          "path": "images/stratagems/control_group/Laser Sentry.svg",
+          "category": "control_group"
+        },
+        {
+          "name": "Warp Pack",
+          "filename": "Warp Pack.svg",
+          "path": "images/stratagems/control_group/Warp Pack.svg",
+          "category": "control_group"
+        }
+      ],
+      "urban_legends": [
+        {
+          "name": "Flame Sentry",
+          "filename": "Flame Sentry.svg",
+          "path": "images/stratagems/urban_legends/Flame Sentry.svg",
+          "category": "urban_legends"
+        },
+        {
+          "name": "Directional Shield",
+          "filename": "Directional Shield.svg",
+          "path": "images/stratagems/urban_legends/Directional Shield.svg",
+          "category": "urban_legends"
+        },
+        {
+          "name": "Anti-Tank Emplacement",
+          "filename": "Anti-Tank Emplacement.svg",
+          "path": "images/stratagems/urban_legends/Anti-Tank Emplacement.svg",
+          "category": "urban_legends"
+        }
+      ],
+      "masters_of_ceremony": [
+        {
+          "name": "One True Flag",
+          "filename": "One True Flag.svg",
+          "path": "images/stratagems/masters_of_ceremony/One True Flag.svg",
+          "category": "masters_of_ceremony"
+        }
+      ],
+      "bridge": [
+        {
+          "name": "Orbital EMS Strike",
+          "filename": "Orbital EMS Strike.svg",
+          "path": "images/stratagems/bridge/Orbital EMS Strike.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Tesla Tower",
+          "filename": "Tesla Tower.svg",
+          "path": "images/stratagems/bridge/Tesla Tower.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "HMG Emplacement",
+          "filename": "HMG Emplacement.svg",
+          "path": "images/stratagems/bridge/HMG Emplacement.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Grenadier Battlement",
+          "filename": "Grenadier Battlement.svg",
+          "path": "images/stratagems/bridge/Grenadier Battlement.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Orbital Smoke Strike",
+          "filename": "Orbital Smoke Strike.svg",
+          "path": "images/stratagems/bridge/Orbital Smoke Strike.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Orbital Gas Strike",
+          "filename": "Orbital Gas Strike.svg",
+          "path": "images/stratagems/bridge/Orbital Gas Strike.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Shield Generator Relay",
+          "filename": "Shield Generator Relay.svg",
+          "path": "images/stratagems/bridge/Shield Generator Relay.svg",
+          "category": "bridge"
+        },
+        {
+          "name": "Orbital Precision Strike",
+          "filename": "Orbital Precision Strike.svg",
+          "path": "images/stratagems/bridge/Orbital Precision Strike.svg",
+          "category": "bridge"
+        }
+      ],
+      "dust_devils": [
+        {
+          "name": "Speargun",
+          "filename": "Speargun.svg",
+          "path": "images/stratagems/dust_devils/Speargun.svg",
+          "category": "dust_devils"
+        },
+        {
+          "name": "Solo Silo",
+          "filename": "Solo Silo.svg",
+          "path": "images/stratagems/dust_devils/Solo Silo.svg",
+          "category": "dust_devils"
+        },
+        {
+          "name": "Expendable Napalm",
+          "filename": "Expendable Napalm.svg",
+          "path": "images/stratagems/dust_devils/Expendable Napalm.svg",
+          "category": "dust_devils"
+        }
+      ],
+      "hangar": [
+        {
+          "name": "Eagle 500KG Bomb",
+          "filename": "Eagle 500KG Bomb.svg",
+          "path": "images/stratagems/hangar/Eagle 500KG Bomb.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Cluster Bomb",
+          "filename": "Eagle Cluster Bomb.svg",
+          "path": "images/stratagems/hangar/Eagle Cluster Bomb.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Jump Pack",
+          "filename": "Jump Pack.svg",
+          "path": "images/stratagems/hangar/Jump Pack.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Strafing Run",
+          "filename": "Eagle Strafing Run.svg",
+          "path": "images/stratagems/hangar/Eagle Strafing Run.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle 110MM Rocket Pods",
+          "filename": "Eagle 110MM Rocket Pods.svg",
+          "path": "images/stratagems/hangar/Eagle 110MM Rocket Pods.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Fast Recon Vehicle",
+          "filename": "Fast Recon Vehicle.svg",
+          "path": "images/stratagems/hangar/Fast Recon Vehicle.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Rearm",
+          "filename": "Eagle Rearm.svg",
+          "path": "images/stratagems/hangar/Eagle Rearm.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Airstrike",
+          "filename": "Eagle Airstrike.svg",
+          "path": "images/stratagems/hangar/Eagle Airstrike.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Smoke Strike",
+          "filename": "Eagle Smoke Strike.svg",
+          "path": "images/stratagems/hangar/Eagle Smoke Strike.svg",
+          "category": "hangar"
+        },
+        {
+          "name": "Eagle Napalm Airstrike",
+          "filename": "Eagle Napalm Airstrike.svg",
+          "path": "images/stratagems/hangar/Eagle Napalm Airstrike.svg",
+          "category": "hangar"
+        }
+      ],
+      "servants_of_freedom": [
+        {
+          "name": "Hellbomb Portable",
+          "filename": "Hellbomb Portable.svg",
+          "path": "images/stratagems/servants_of_freedom/Hellbomb Portable.svg",
+          "category": "servants_of_freedom"
+        }
+      ],
+      "force_of_law": [
+        {
+          "name": "GL-52 De-Escalator",
+          "filename": "GL-52 De-Escalator.svg",
+          "path": "images/stratagems/force_of_law/GL-52 De-Escalator.svg",
+          "category": "force_of_law"
+        },
+        {
+          "name": "Guard Dog K-9",
+          "filename": "Guard Dog K-9.svg",
+          "path": "images/stratagems/force_of_law/Guard Dog K-9.svg",
+          "category": "force_of_law"
+        }
+      ],
+      "engineering_bay": [
+        {
+          "name": "Arc Thrower",
+          "filename": "Arc Thrower.svg",
+          "path": "images/stratagems/engineering_bay/Arc Thrower.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Anti-Tank Mines",
+          "filename": "Anti-Tank Mines.svg",
+          "path": "images/stratagems/engineering_bay/Anti-Tank Mines.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Grenade Launcher",
+          "filename": "Grenade Launcher.svg",
+          "path": "images/stratagems/engineering_bay/Grenade Launcher.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Incendiary Mines",
+          "filename": "Incendiary Mines.svg",
+          "path": "images/stratagems/engineering_bay/Incendiary Mines.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Ballistic Shield Backpack",
+          "filename": "Ballistic Shield Backpack.svg",
+          "path": "images/stratagems/engineering_bay/Ballistic Shield Backpack.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Quasar Cannon",
+          "filename": "Quasar Cannon.svg",
+          "path": "images/stratagems/engineering_bay/Quasar Cannon.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Guard Dog Rover",
+          "filename": "Guard Dog Rover.svg",
+          "path": "images/stratagems/engineering_bay/Guard Dog Rover.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Laser Cannon",
+          "filename": "Laser Cannon.svg",
+          "path": "images/stratagems/engineering_bay/Laser Cannon.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Gas Mine",
+          "filename": "Gas Mine.svg",
+          "path": "images/stratagems/engineering_bay/Gas Mine.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Shield Generator Pack",
+          "filename": "Shield Generator Pack.svg",
+          "path": "images/stratagems/engineering_bay/Shield Generator Pack.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Anti-Personnel Minefield",
+          "filename": "Anti-Personnel Minefield.svg",
+          "path": "images/stratagems/engineering_bay/Anti-Personnel Minefield.svg",
+          "category": "engineering_bay"
+        },
+        {
+          "name": "Supply Pack",
+          "filename": "Supply Pack.svg",
+          "path": "images/stratagems/engineering_bay/Supply Pack.svg",
+          "category": "engineering_bay"
+        }
+      ],
+      "patriotic_administration_center": [
+        {
+          "name": "Expendable Anti-Tank",
+          "filename": "Expendable Anti-Tank.svg",
+          "path": "images/stratagems/patriotic_administration_center/Expendable Anti-Tank.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Commando",
+          "filename": "Commando.svg",
+          "path": "images/stratagems/patriotic_administration_center/Commando.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Airburst Rocket Launcher",
+          "filename": "Airburst Rocket Launcher.svg",
+          "path": "images/stratagems/patriotic_administration_center/Airburst Rocket Launcher.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Machine Gun",
+          "filename": "Machine Gun.svg",
+          "path": "images/stratagems/patriotic_administration_center/Machine Gun.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Autocannon",
+          "filename": "Autocannon.svg",
+          "path": "images/stratagems/patriotic_administration_center/Autocannon.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Heavy Machine Gun",
+          "filename": "Heavy Machine Gun.svg",
+          "path": "images/stratagems/patriotic_administration_center/Heavy Machine Gun.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Anti-Materiel Rifle",
+          "filename": "Anti-Materiel Rifle.svg",
+          "path": "images/stratagems/patriotic_administration_center/Anti-Materiel Rifle.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Spear",
+          "filename": "Spear.svg",
+          "path": "images/stratagems/patriotic_administration_center/Spear.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Flamethrower",
+          "filename": "Flamethrower.svg",
+          "path": "images/stratagems/patriotic_administration_center/Flamethrower.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Stalwart",
+          "filename": "Stalwart.svg",
+          "path": "images/stratagems/patriotic_administration_center/Stalwart.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Recoilless Rifle",
+          "filename": "Recoilless Rifle.svg",
+          "path": "images/stratagems/patriotic_administration_center/Recoilless Rifle.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "Railgun",
+          "filename": "Railgun.svg",
+          "path": "images/stratagems/patriotic_administration_center/Railgun.svg",
+          "category": "patriotic_administration_center"
+        },
+        {
+          "name": "StA-X3 W.A.S.P. Launcher",
+          "filename": "StA-X3 W.A.S.P. Launcher.svg",
+          "path": "images/stratagems/patriotic_administration_center/StA-X3 W.A.S.P. Launcher.svg",
+          "category": "patriotic_administration_center"
+        }
+      ],
+      "chemical_agents": [
+        {
+          "name": "Sterilizer",
+          "filename": "Sterilizer.svg",
+          "path": "images/stratagems/chemical_agents/Sterilizer.svg",
+          "category": "chemical_agents"
+        },
+        {
+          "name": "Guard Dog Breath",
+          "filename": "Guard Dog Breath.svg",
+          "path": "images/stratagems/chemical_agents/Guard Dog Breath.svg",
+          "category": "chemical_agents"
+        }
+      ],
+      "borderline_justice": [
+        {
+          "name": "Hover Pack",
+          "filename": "Hover Pack.svg",
+          "path": "images/stratagems/borderline_justice/Hover Pack.svg",
+          "category": "borderline_justice"
+        }
+      ],
+      "orbital_cannons": [
+        {
+          "name": "Orbital Airburst Strike",
+          "filename": "Orbital Airburst Strike.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Airburst Strike.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital Railcannon Strike",
+          "filename": "Orbital Railcannon Strike.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Railcannon Strike.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital 120MM HE Barrage",
+          "filename": "Orbital 120MM HE Barrage.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital 120MM HE Barrage.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital Walking Barrage",
+          "filename": "Orbital Walking Barrage.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Walking Barrage.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital Napalm Barrage",
+          "filename": "Orbital Napalm Barrage.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Napalm Barrage.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital Gatling Barrage",
+          "filename": "Orbital Gatling Barrage.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Gatling Barrage.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital 380MM HE Barrage",
+          "filename": "Orbital 380MM HE Barrage.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital 380MM HE Barrage.svg",
+          "category": "orbital_cannons"
+        },
+        {
+          "name": "Orbital Laser",
+          "filename": "Orbital Laser.svg",
+          "path": "images/stratagems/orbital_cannons/Orbital Laser.svg",
+          "category": "orbital_cannons"
+        }
+      ],
+      "robotics_workshop": [
+        {
+          "name": "Emancipator Exosuit",
+          "filename": "Emancipator Exosuit.svg",
+          "path": "images/stratagems/robotics_workshop/Emancipator Exosuit.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Machine Gun Sentry",
+          "filename": "Machine Gun Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/Machine Gun Sentry.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Guard Dog",
+          "filename": "Guard Dog.svg",
+          "path": "images/stratagems/robotics_workshop/Guard Dog.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Gatling Sentry",
+          "filename": "Gatling Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/Gatling Sentry.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Rocket Sentry",
+          "filename": "Rocket Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/Rocket Sentry.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Patriot Exosuit",
+          "filename": "Patriot Exosuit.svg",
+          "path": "images/stratagems/robotics_workshop/Patriot Exosuit.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Autocannon Sentry",
+          "filename": "Autocannon Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/Autocannon Sentry.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "Mortar Sentry",
+          "filename": "Mortar Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/Mortar Sentry.svg",
+          "category": "robotics_workshop"
+        },
+        {
+          "name": "EMS Mortar Sentry",
+          "filename": "EMS Mortar Sentry.svg",
+          "path": "images/stratagems/robotics_workshop/EMS Mortar Sentry.svg",
+          "category": "robotics_workshop"
+        }
+      ]
+    }
+  },
+  "warbonds": {
+    "0": {
+      "name": "Helldivers Mobilize",
+      "id": "helldivers_mobilize",
+      "credits_to_unlock": 0
+    },
+    "1": {
+      "name": "Steeled Veterans",
+      "id": "steeled_veterans",
+      "credits_to_unlock": 1000
+    },
+    "2": {
+      "name": "Cutting Edge",
+      "id": "cutting_edge",
+      "credits_to_unlock": 1000
+    },
+    "3": {
+      "name": "Democratic Detonation",
+      "id": "democratic_detonation",
+      "credits_to_unlock": 1000
+    },
+    "4": {
+      "name": "Polar Patriots",
+      "id": "polar_patriots",
+      "credits_to_unlock": 1000
+    },
+    "5": {
+      "name": "Viper Commandos",
+      "id": "viper_commandos",
+      "credits_to_unlock": 1000
+    },
+    "6": {
+      "name": "Freedom's Flame",
+      "id": "freedoms_flame",
+      "credits_to_unlock": 1000
+    },
+    "7": {
+      "name": "Chemical Agents",
+      "id": "chemical_agents",
+      "credits_to_unlock": 1000
+    },
+    "8": {
+      "name": "Truth Enforcers",
+      "id": "truth_enforcers",
+      "credits_to_unlock": 1000
+    },
+    "9": {
+      "name": "Urban Legends",
+      "id": "urban_legends",
+      "credits_to_unlock": 1000
+    }
+  },
+  "item_mappings": {
+    "2852344585": {
+      "name": "AR-23 Liberator",
+      "mix_id": "2852344585"
+    },
+    "2811723672": {
+      "name": "P-2 Peacemaker",
+      "mix_id": "2811723672"
+    },
+    "3191303848": {
+      "name": "G-12 High Explosive",
+      "mix_id": "3191303848"
+    },
+    "16338515": {
+      "name": "G-13 Incendiary Impact",
+      "mix_id": "16338515"
+    },
+    "34232232": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "34232232"
+    },
+    "41315794": {
+      "name": "Executioner's Canopy",
+      "mix_id": "41315794"
+    },
+    "58483197": {
+      "name": "SA-25 Steel Trooper",
+      "mix_id": "3672418116"
+    },
+    "72872360": {
+      "name": "Martyris Rex",
+      "mix_id": "72872360"
+    },
+    "90720489": {
+      "name": "FS-55 Devastator",
+      "mix_id": "3364088192"
+    },
+    "108697242": {
+      "name": "CW-36 Winter Warrior",
+      "mix_id": "3443335388"
+    },
+    "112836163": {
+      "name": "Drape of Glory",
+      "mix_id": "112836163"
+    },
+    "139999425": {
+      "name": "DP-53 Savior of the Free",
+      "mix_id": "1296068557"
+    },
+    "160503527": {
+      "name": "Purifying Eclipse",
+      "mix_id": "160503527"
+    },
+    "161123434": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "1521442150"
+    },
+    "197210556": {
+      "name": "SA-25 Steel Trooper",
+      "mix_id": "2745690429"
+    },
+    "198334139": {
+      "name": "High-Five",
+      "mix_id": "198334139"
+    },
+    "202045192": {
+      "name": "FS-05 Marksman",
+      "mix_id": "202045192"
+    },
+    "224494684": {
+      "name": "Tyrant Hunter",
+      "mix_id": "224494684"
+    },
+    "255960702": {
+      "name": "FS-05 Marksman",
+      "mix_id": "255960702"
+    },
+    "267424901": {
+      "name": "I-102 Draconaught",
+      "mix_id": "267424901"
+    },
+    "275807529": {
+      "name": "B-01 Tactical",
+      "mix_id": "275807529"
+    },
+    "285943304": {
+      "name": "Beacon of Mercy",
+      "mix_id": "285943304"
+    },
+    "291340630": {
+      "name": "Executioner's Canopy",
+      "mix_id": "291340630"
+    },
+    "308572558": {
+      "name": "Freedom's Tapestry",
+      "mix_id": "308572558"
+    },
+    "309304502": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "309304502"
+    },
+    "325695835": {
+      "name": "B-01 Tactical",
+      "mix_id": "2553569133"
+    },
+    "337681978": {
+      "name": "SC-37 Legionnaire",
+      "mix_id": "261917564"
+    },
+    "339272294": {
+      "name": "R-36 Eruptor",
+      "mix_id": "339272294"
+    },
+    "375014954": {
+      "name": "G-23 Stun",
+      "mix_id": "375014954"
+    },
+    "376039023": {
+      "name": "AR-23C Liberator Concussive",
+      "mix_id": "376039023"
+    },
+    "377236948": {
+      "name": "EX-00 Prototype X",
+      "mix_id": "3517336259"
+    },
+    "470325800": {
+      "name": "TR-40 Gold Eagle",
+      "mix_id": "276679263"
+    },
+    "476841466": {
+      "name": "CM-09 Bonesnapper",
+      "mix_id": "726539469"
+    },
+    "482071040": {
+      "name": "Boxer",
+      "mix_id": "482071040"
+    },
+    "487470129": {
+      "name": "B-01 Tactical",
+      "mix_id": "2053442827"
+    },
+    "488691438": {
+      "name": "B-08 Light Gunner",
+      "mix_id": "3855903191"
+    },
+    "492895376": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "3884524834"
+    },
+    "513033465": {
+      "name": "FS-23 Battle Master",
+      "mix_id": "1452909167"
+    },
+    "530315896": {
+      "name": "FS-37 Ravager",
+      "mix_id": "2671489717"
+    },
+    "541028876": {
+      "name": "CM-14 Physician",
+      "mix_id": "2255718673"
+    },
+    "547904705": {
+      "name": "FS-38 Eradicator",
+      "mix_id": "3425208119"
+    },
+    "556660324": {
+      "name": "EX-16 Prototype 16",
+      "mix_id": "3182289738"
+    },
+    "562097037": {
+      "name": "B-01 Tactical",
+      "mix_id": "529287881"
+    },
+    "605306049": {
+      "name": "Pinions of Everlasting Glory",
+      "mix_id": "605306049"
+    },
+    "618911418": {
+      "name": "EX-03 Prototype 3",
+      "mix_id": "3605514351"
+    },
+    "621795009": {
+      "name": "B-01 Tactical",
+      "mix_id": "3935965925"
+    },
+    "627197346": {
+      "name": "CE-35 Trench Engineer",
+      "mix_id": "4216001108"
+    },
+    "639388242": {
+      "name": "B-01 Tactical",
+      "mix_id": "114989643"
+    },
+    "650064382": {
+      "name": "CE-74 Breaker",
+      "mix_id": "2707635295"
+    },
+    "651522724": {
+      "name": "FS-23 Battle Master",
+      "mix_id": "2037274048"
+    },
+    "663691115": {
+      "name": "Viper Commando",
+      "mix_id": "663691115"
+    },
+    "683079503": {
+      "name": "I-44 Salamander",
+      "mix_id": "683079503"
+    },
+    "684729784": {
+      "name": "Stamina Enhancement",
+      "mix_id": "684729784"
+    },
+    "726539469": {
+      "name": "CM-09 Bonesnapper",
+      "mix_id": "476841466"
+    },
+    "734807139": {
+      "name": "Botslayer",
+      "mix_id": "734807139"
+    },
+    "752209840": {
+      "name": "Independence Bringer",
+      "mix_id": "752209840"
+    },
+    "752968066": {
+      "name": "1000 Super Credits",
+      "mix_id": "752968066"
+    },
+    "773157227": {
+      "name": "FS-61 Dreadnought",
+      "mix_id": "2622359419"
+    },
+    "788445221": {
+      "name": "2100 Super Credits",
+      "mix_id": "788445221"
+    },
+    "793893084": {
+      "name": "TR-117 Alpha Commander",
+      "mix_id": "1945105139"
+    },
+    "824775809": {
+      "name": "CE-64 Grenadier",
+      "mix_id": "1732669856"
+    },
+    "825115965": {
+      "name": "Courtly Bow",
+      "mix_id": "825115965"
+    },
+    "836157113": {
+      "name": "Rock Paper Scissors",
+      "mix_id": "836157113"
+    },
+    "843390517": {
+      "name": "Mantle of True Citizenship",
+      "mix_id": "843390517"
+    },
+    "854794995": {
+      "name": "Harbinger of True Equality",
+      "mix_id": "854794995"
+    },
+    "856924396": {
+      "name": "TR-62 Knight",
+      "mix_id": "2694550156"
+    },
+    "860720602": {
+      "name": "Blazing Samaritan",
+      "mix_id": "860720602"
+    },
+    "865246378": {
+      "name": "Fallen Hero’s Vengeance",
+      "mix_id": "865246378"
+    },
+    "876985512": {
+      "name": "Localization Confusion",
+      "mix_id": "876985512"
+    },
+    "897894480": {
+      "name": "Medal",
+      "mix_id": "897894480"
+    },
+    "904434511": {
+      "name": "TR-7 Ambassador of the Brand",
+      "mix_id": "1967836924"
+    },
+    "910516311": {
+      "name": "FS-05 Marksman",
+      "mix_id": "910516311"
+    },
+    "911872437": {
+      "name": "150 Super Credits",
+      "mix_id": "911872437"
+    },
+    "924530093": {
+      "name": "R-63CS Diligence Counter Sniper",
+      "mix_id": "924530093"
+    },
+    "925809350": {
+      "name": "PLAS-1 Scorcher",
+      "mix_id": "925809350"
+    },
+    "942049262": {
+      "name": "SMG-72 Pummeler",
+      "mix_id": "942049262"
+    },
+    "950673533": {
+      "name": "CM-14 Physician",
+      "mix_id": "3658884708"
+    },
+    "951081859": {
+      "name": "FS-34 Exterminator",
+      "mix_id": "1781176310"
+    },
+    "955771480": {
+      "name": "The Breach",
+      "mix_id": "955771480"
+    },
+    "965539214": {
+      "name": "Order of the Venerated Ballot",
+      "mix_id": "965539214"
+    },
+    "989999752": {
+      "name": "Safety Orange Exosuit Pattern",
+      "mix_id": "4059250722"
+    },
+    "999487482": {
+      "name": "ARC-12 Blitzer",
+      "mix_id": "999487482"
+    },
+    "1004735217": {
+      "name": "EX-03 Prototype 3",
+      "mix_id": "2327628884"
+    },
+    "1010744048": {
+      "name": "SA-32 Dynamo",
+      "mix_id": "3247235347"
+    },
+    "1067957260": {
+      "name": "Light of Eternal Liberty",
+      "mix_id": "1067957260"
+    },
+    "1084741268": {
+      "name": "B-01 Tactical",
+      "mix_id": "2694161121"
+    },
+    "1090563915": {
+      "name": "Tyrant Hunter",
+      "mix_id": "1090563915"
+    },
+    "1092689023": {
+      "name": "B-24 Enforcer",
+      "mix_id": "370492118"
+    },
+    "1110686504": {
+      "name": "Vitality Enhancement",
+      "mix_id": "1110686504"
+    },
+    "1146282869": {
+      "name": "FS-05 Marksman",
+      "mix_id": "1146282869"
+    },
+    "1160920394": {
+      "name": "AR-23A Liberator Carbine",
+      "mix_id": "1160920394"
+    },
+    "1171786296": {
+      "name": "B-01 Tactical",
+      "mix_id": "1475463359"
+    },
+    "1180159923": {
+      "name": "Foesmasher",
+      "mix_id": "1180159923"
+    },
+    "1182300424": {
+      "name": "SG-225 Breaker",
+      "mix_id": "1182300424"
+    },
+    "1200031688": {
+      "name": "Explosive Handshake",
+      "mix_id": "1200031688"
+    },
+    "1210216079": {
+      "name": "B-08 Light Gunner",
+      "mix_id": "123566382"
+    },
+    "1223759745": {
+      "name": "EX-16 Prototype 16",
+      "mix_id": "2855449476"
+    },
+    "1227146212": {
+      "name": "Distribute Ballots",
+      "mix_id": "1227146212"
+    },
+    "1232734620": {
+      "name": "Call the Helldivers",
+      "mix_id": "1232734620"
+    },
+    "1240391202": {
+      "name": "I-92 Fire Fighter",
+      "mix_id": "1240391202"
+    },
+    "1282140582": {
+      "name": "I-44 Salamander",
+      "mix_id": "1282140582"
+    },
+    "1318035279": {
+      "name": "SA-04 Combat Technician",
+      "mix_id": "4111545584"
+    },
+    "1321109120": {
+      "name": "SG-451 Cookout",
+      "mix_id": "1321109120"
+    },
+    "1332530540": {
+      "name": "B-01 Tactical",
+      "mix_id": "1332530540"
+    },
+    "1333768893": {
+      "name": "B-01 Tactical",
+      "mix_id": "3397143939"
+    },
+    "1335058381": {
+      "name": "CW-9 White Wolf",
+      "mix_id": "3017717209"
+    },
+    "1337976685": {
+      "name": "Cloak of Posterity's Gratitude",
+      "mix_id": "1337976685"
+    },
+    "1351560655": {
+      "name": "Squat",
+      "mix_id": "1351560655"
+    },
+    "1374036584": {
+      "name": "P-4 Senator",
+      "mix_id": "1374036584"
+    },
+    "1376017051": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "1376017051"
+    },
+    "1386151525": {
+      "name": "FS-05 Marksman",
+      "mix_id": "2380729224"
+    },
+    "1400802885": {
+      "name": "FS-61 Dreadnought",
+      "mix_id": "141528028"
+    },
+    "1404455928": {
+      "name": "Cresting Honor",
+      "mix_id": "1404455928"
+    },
+    "1419215247": {
+      "name": "Welcome Adoration",
+      "mix_id": "1419215247"
+    },
+    "1447229978": {
+      "name": "FS-11 Executioner",
+      "mix_id": "3777669305"
+    },
+    "1452909167": {
+      "name": "FS-23 Battle Master",
+      "mix_id": "513033465"
+    },
+    "1456717076": {
+      "name": "375 Super Credits",
+      "mix_id": "1456717076"
+    },
+    "1460633236": {
+      "name": "Stars and Suffrage",
+      "mix_id": "1460633236"
+    },
+    "1490803405": {
+      "name": "FS-05 Marksman",
+      "mix_id": "671123458"
+    },
+    "1494299745": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "3666591402"
+    },
+    "1508758952": {
+      "name": "Scout Handshake",
+      "mix_id": "1508758952"
+    },
+    "1511511766": {
+      "name": "CE-07 Demolition Specialist",
+      "mix_id": "2090263706"
+    },
+    "1521442150": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "161123434"
+    },
+    "1533004132": {
+      "name": "DP-11 Champion of the People",
+      "mix_id": "4016909011"
+    },
+    "1538571184": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "2441344260"
+    },
+    "1545242578": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "1545242578"
+    },
+    "1546684370": {
+      "name": "DP-40 Hero of the Federation",
+      "mix_id": "2257162260"
+    },
+    "1558906438": {
+      "name": "CM-06 Combat Medic",
+      "mix_id": "60490972"
+    },
+    "1605151673": {
+      "name": "SC-37 Legionnaire",
+      "mix_id": "4084902841"
+    },
+    "1609244204": {
+      "name": "Thoracic Collision Exultation Maneuver",
+      "mix_id": "1609244204"
+    },
+    "1625732159": {
+      "name": "CW-36 Winter Warrior",
+      "mix_id": "1776293941"
+    },
+    "1639126819": {
+      "name": "B-01 Tactical",
+      "mix_id": "2993413082"
+    },
+    "1664632640": {
+      "name": "PH-202 Twigsnapper",
+      "mix_id": "3731036712"
+    },
+    "1666296234": {
+      "name": "B-01 Tactical",
+      "mix_id": "641961692"
+    },
+    "1675214662": {
+      "name": "SA-12 Servo Assisted",
+      "mix_id": "2362677051"
+    },
+    "1676113140": {
+      "name": "AR-23P Liberator Penetrator",
+      "mix_id": "1676113140"
+    },
+    "1680230884": {
+      "name": "Big Whoop",
+      "mix_id": "1680230884"
+    },
+    "1707113970": {
+      "name": "CE-07 Demolition Specialist",
+      "mix_id": "2038008847"
+    },
+    "1740717999": {
+      "name": "CW-4 Arctic Ranger",
+      "mix_id": "3106805633"
+    },
+    "1745784928": {
+      "name": "Freedom's Tapestry",
+      "mix_id": "1745784928"
+    },
+    "1755983237": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "1755983237"
+    },
+    "1773333561": {
+      "name": "B-01 Tactical",
+      "mix_id": "1773333561"
+    },
+    "1790198010": {
+      "name": "Wings of Valor",
+      "mix_id": "1790198010"
+    },
+    "1794436168": {
+      "name": "LAS-16 Sickle",
+      "mix_id": "1794436168"
+    },
+    "1820995838": {
+      "name": "Shotgun Show",
+      "mix_id": "1820995838"
+    },
+    "1831924614": {
+      "name": "B-01 Tactical",
+      "mix_id": "527790324"
+    },
+    "1845984949": {
+      "name": "Tideturner",
+      "mix_id": "1845984949"
+    },
+    "1853027475": {
+      "name": "Light of Eternal Liberty",
+      "mix_id": "1853027475"
+    },
+    "1853367679": {
+      "name": "EX-00 Prototype X",
+      "mix_id": "3618831709"
+    },
+    "1858752103": {
+      "name": "K-2 Throwing Knife",
+      "mix_id": "1858752103"
+    },
+    "1861407750": {
+      "name": "Independence Bringer",
+      "mix_id": "1861407750"
+    },
+    "1877242796": {
+      "name": "PH-9 Predator",
+      "mix_id": "1924428455"
+    },
+    "1887719913": {
+      "name": "B-01 Tactical",
+      "mix_id": "2394592819"
+    },
+    "1908198785": {
+      "name": "Hellpod Space Optimization",
+      "mix_id": "1908198785"
+    },
+    "1920374015": {
+      "name": "AR-61 Tenderizer",
+      "mix_id": "1920374015"
+    },
+    "1934028230": {
+      "name": "TR-62 Knight",
+      "mix_id": "2899116161"
+    },
+    "1938200223": {
+      "name": "P-113 Verdict",
+      "mix_id": "1938200223"
+    },
+    "1942567317": {
+      "name": "CB-9 Exploding Crossbow",
+      "mix_id": "1942567317"
+    },
+    "1964594095": {
+      "name": "Clapping",
+      "mix_id": "1964594095"
+    },
+    "1975248972": {
+      "name": "Undergrowth Hellpod Pattern",
+      "mix_id": "3119538034"
+    },
+    "2006219485": {
+      "name": "FS-11 Executioner",
+      "mix_id": "2063654327"
+    },
+    "2007907056": {
+      "name": "Will of the People",
+      "mix_id": "2007907056"
+    },
+    "2033511819": {
+      "name": "FS-37 Ravager",
+      "mix_id": "1917896581"
+    },
+    "2037274048": {
+      "name": "FS-23 Battle Master",
+      "mix_id": "651522724"
+    },
+    "2040543168": {
+      "name": "Eagle's Fury",
+      "mix_id": "2040543168"
+    },
+    "2047279903": {
+      "name": "CM-10 Clinician",
+      "mix_id": "569318072"
+    },
+    "2070152922": {
+      "name": "FS-05 Marksman",
+      "mix_id": "3058335410"
+    },
+    "2076005753": {
+      "name": "DP-40 Hero of the Federation",
+      "mix_id": "3037986132"
+    },
+    "2086772989": {
+      "name": "Head Tap",
+      "mix_id": "2086772989"
+    },
+    "2088854385": {
+      "name": "SG-8 Punisher",
+      "mix_id": "2088854385"
+    },
+    "2098201552": {
+      "name": "Harbinger of True Equality",
+      "mix_id": "2098201552"
+    },
+    "2119654064": {
+      "name": "Eagle's Fury",
+      "mix_id": "2119654064"
+    },
+    "2121387072": {
+      "name": "JAR-5 Dominator",
+      "mix_id": "2121387072"
+    },
+    "2121537836": {
+      "name": "CW-36 Winter Warrior",
+      "mix_id": "190632838"
+    },
+    "2128569605": {
+      "name": "CE-27 Ground Breaker",
+      "mix_id": "1243352476"
+    },
+    "2137194125": {
+      "name": "CE-35 Trench Engineer",
+      "mix_id": "2952500571"
+    },
+    "2141363041": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "2141363041"
+    },
+    "2150790862": {
+      "name": "B-24 Enforcer",
+      "mix_id": "2839523111"
+    },
+    "2160784978": {
+      "name": "Deep Reflection",
+      "mix_id": "2160784978"
+    },
+    "2170995148": {
+      "name": "SC-15 Drone Master",
+      "mix_id": "613510753"
+    },
+    "2218652020": {
+      "name": "B-01 Tactical",
+      "mix_id": "2218652020"
+    },
+    "2231876405": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "2231876405"
+    },
+    "2246547985": {
+      "name": "SG-8S Slugger",
+      "mix_id": "2246547985"
+    },
+    "2255718673": {
+      "name": "CM-14 Physician",
+      "mix_id": "541028876"
+    },
+    "2257162260": {
+      "name": "DP-40 Hero of the Federation",
+      "mix_id": "1546684370"
+    },
+    "2264358800": {
+      "name": "SG-22 Bushwhacker",
+      "mix_id": "2264358800"
+    },
+    "2307301438": {
+      "name": "R-63 Diligence",
+      "mix_id": "2307301438"
+    },
+    "2321467216": {
+      "name": "Tideturner",
+      "mix_id": "2321467216"
+    },
+    "2325051543": {
+      "name": "TR-7 Ambassador of the Brand",
+      "mix_id": "495842462"
+    },
+    "2327628884": {
+      "name": "EX-03 Prototype 3",
+      "mix_id": "1004735217"
+    },
+    "2340232366": {
+      "name": "P-72 Crisper",
+      "mix_id": "2340232366"
+    },
+    "2342442877": {
+      "name": "B-24 Enforcer",
+      "mix_id": "2342442877"
+    },
+    "2346212818": {
+      "name": "FS-34 Exterminator",
+      "mix_id": "1959739079"
+    },
+    "2362677051": {
+      "name": "SA-12 Servo-Assisted",
+      "mix_id": "1675214662"
+    },
+    "2363964846": {
+      "name": "B-01 Tactical",
+      "mix_id": "4100314171"
+    },
+    "2380729224": {
+      "name": "FS-05 Marksman",
+      "mix_id": "1386151525"
+    },
+    "2396807401": {
+      "name": "SA-04 Combat Technician",
+      "mix_id": "3386027321"
+    },
+    "2441344260": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "1538571184"
+    },
+    "2483492566": {
+      "name": "TR-9 Cavalier of Democracy",
+      "mix_id": "2712908266"
+    },
+    "2501707184": {
+      "name": "LAS-7 Dagger",
+      "mix_id": "2501707184"
+    },
+    "2509257439": {
+      "name": "CM-17 Butcher",
+      "mix_id": "1720124590"
+    },
+    "2538783678": {
+      "name": "CW-9 White Wolf",
+      "mix_id": "1309115822"
+    },
+    "2546928266": {
+      "name": "CE-81 Juggernaut",
+      "mix_id": "4217833941"
+    },
+    "2547476111": {
+      "name": "CE-67 Titan",
+      "mix_id": "3265219660"
+    },
+    "2575791040": {
+      "name": "Undergrowth Shuttle Pattern",
+      "mix_id": "3520082317"
+    },
+    "2611571391": {
+      "name": "Presentable",
+      "mix_id": "2611571391"
+    },
+    "2640366401": {
+      "name": "BR-14 Adjudicator",
+      "mix_id": "2640366401"
+    },
+    "2646411735": {
+      "name": "Mark of the Crimson Fang",
+      "mix_id": "2646411735"
+    },
+    "2653547055": {
+      "name": "Bastion of Integrity",
+      "mix_id": "2653547055"
+    },
+    "2665206765": {
+      "name": "Hug",
+      "mix_id": "2665206765"
+    },
+    "2675118910": {
+      "name": "TR-117 Alpha Commander",
+      "mix_id": "3066485739"
+    },
+    "2709264466": {
+      "name": "Motivational Shocks",
+      "mix_id": "2709264466"
+    },
+    "2724145698": {
+      "name": "Fire Safety Officer",
+      "mix_id": "2724145698"
+    },
+    "2733962024": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "2733962024"
+    },
+    "2745690429": {
+      "name": "SA-25 Steel Trooper",
+      "mix_id": "197210556"
+    },
+    "2776452811": {
+      "name": "Muscle Enhancement",
+      "mix_id": "2776452811"
+    },
+    "2778260362": {
+      "name": "Botslayer",
+      "mix_id": "2778260362"
+    },
+    "2779185355": {
+      "name": "Unblemished Allegiance",
+      "mix_id": "2779185355"
+    },
+    "2786980659": {
+      "name": "Flex",
+      "mix_id": "2786980659"
+    },
+    "2788735945": {
+      "name": "PH-9 Predator",
+      "mix_id": "456121928"
+    },
+    "2792362215": {
+      "name": "CM-17 Butcher",
+      "mix_id": "107122853"
+    },
+    "2794703739": {
+      "name": "I-102 Draconaught",
+      "mix_id": "2794703739"
+    },
+    "2797735596": {
+      "name": "GP-31 Grenade Pistol",
+      "mix_id": "2797735596"
+    },
+    "2821209932": {
+      "name": "SMG-37 Defender",
+      "mix_id": "2821209932"
+    },
+    "2823164517": {
+      "name": "G-16 Impact",
+      "mix_id": "2823164517"
+    },
+    "2829569639": {
+      "name": "CW-4 Arctic Ranger",
+      "mix_id": "1672102597"
+    },
+    "2846232719": {
+      "name": "Agent of Oblivion",
+      "mix_id": "2846232719"
+    },
+    "2855449476": {
+      "name": "EX-16 Prototype 16",
+      "mix_id": "1223759745"
+    },
+    "2858087169": {
+      "name": "SA-12 Servo Assisted",
+      "mix_id": "4072133621"
+    },
+    "2871629098": {
+      "name": "Pinions of Everlasting Glory",
+      "mix_id": "2871629098"
+    },
+    "2877510587": {
+      "name": "G-3 Smoke",
+      "mix_id": "2877510587"
+    },
+    "2886393549": {
+      "name": "B-24 Enforcer",
+      "mix_id": "2886393549"
+    },
+    "2887941494": {
+      "name": "PLAS-101 Purifier",
+      "mix_id": "2887941494"
+    },
+    "2891794937": {
+      "name": "CE-27 Ground Breaker",
+      "mix_id": "4107448458"
+    },
+    "2948747084": {
+      "name": "DP-11 Champion of the People",
+      "mix_id": "3819612061"
+    },
+    "2951026614": {
+      "name": "CM-06 Combat Medic",
+      "mix_id": "304106730"
+    },
+    "2951759505": {
+      "name": "Mantle of True Citizenship",
+      "mix_id": "2951759505"
+    },
+    "2952500571": {
+      "name": "CE-35 Trench Engineer",
+      "mix_id": "2137194125"
+    },
+    "2978704486": {
+      "name": "CM-10 Clinician",
+      "mix_id": "1937229501"
+    },
+    "3009693857": {
+      "name": "Safety Orange Shuttle Pattern",
+      "mix_id": "3009693857"
+    },
+    "3015649355": {
+      "name": "I-09 Heatseeker",
+      "mix_id": "3015649355"
+    },
+    "3020061552": {
+      "name": "B-01 Tactical",
+      "mix_id": "38673775"
+    },
+    "3037986132": {
+      "name": "DP-40 Hero of the Federation",
+      "mix_id": "2076005753"
+    },
+    "3057185732": {
+      "name": "B-01 Tactical",
+      "mix_id": "3057185732"
+    },
+    "3064132714": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "3064132714"
+    },
+    "3068666625": {
+      "name": "SG-225IE Breaker Incendiary",
+      "mix_id": "3068666625"
+    },
+    "3102833400": {
+      "name": "Firebomb Hellpods",
+      "mix_id": "3102833400"
+    },
+    "3108744452": {
+      "name": "SA-32 Dynamo",
+      "mix_id": "4089246094"
+    },
+    "3151461126": {
+      "name": "Roll 'em",
+      "mix_id": "3151461126"
+    },
+    "3172884100": {
+      "name": "CM-21 Trench Paramedic",
+      "mix_id": "1803822149"
+    },
+    "3174960214": {
+      "name": "CW-22 Kodiak",
+      "mix_id": "2446816200"
+    },
+    "3182289738": {
+      "name": "EX-16 Prototype 16",
+      "mix_id": "556660324"
+    },
+    "3182845434": {
+      "name": "CW-22 Kodiak",
+      "mix_id": "1773940042"
+    },
+    "3202051201": {
+      "name": "CM-09 Bonesnapper",
+      "mix_id": "3260726132"
+    },
+    "3222355031": {
+      "name": "You're Next",
+      "mix_id": "3222355031"
+    },
+    "3233367200": {
+      "name": "CE-64 Grenadier",
+      "mix_id": "2086225563"
+    },
+    "3239075772": {
+      "name": "Martyris Rex",
+      "mix_id": "3239075772"
+    },
+    "3247235347": {
+      "name": "SA-32 Dynamo",
+      "mix_id": "1010744048"
+    },
+    "3259725045": {
+      "name": "Judgement Day",
+      "mix_id": "3259725045"
+    },
+    "3260726132": {
+      "name": "CM-09 Bonesnapper",
+      "mix_id": "3202051201"
+    },
+    "3295898003": {
+      "name": "G-6 Frag",
+      "mix_id": "3295898003"
+    },
+    "3316979892": {
+      "name": "I-09 Heatseeker",
+      "mix_id": "3316979892"
+    },
+    "3359335006": {
+      "name": "Drape of Glory",
+      "mix_id": "3359335006"
+    },
+    "3377389763": {
+      "name": "FS-05 Marksman",
+      "mix_id": "3970674111"
+    },
+    "3386027321": {
+      "name": "SA-04 Combat Technician",
+      "mix_id": "2396807401"
+    },
+    "3414381310": {
+      "name": "Dissident's Nightmare",
+      "mix_id": "3414381310"
+    },
+    "3504405746": {
+      "name": "Expert Extraction Pilot",
+      "mix_id": "3504405746"
+    },
+    "3508381787": {
+      "name": "B-27 Fortified Commando",
+      "mix_id": "1440169212"
+    },
+    "3517336259": {
+      "name": "EX-00 Prototype X",
+      "mix_id": "377236948"
+    },
+    "3519706084": {
+      "name": "Safety Orange Hellpod Pattern",
+      "mix_id": "1437749716"
+    },
+    "3536156897": {
+      "name": "B-27 Fortified Commando",
+      "mix_id": "729713319"
+    },
+    "3544585106": {
+      "name": "FS-55 Devastator",
+      "mix_id": "123640653"
+    },
+    "3562998132": {
+      "name": "Liberty's Herald",
+      "mix_id": "3562998132"
+    },
+    "3566084877": {
+      "name": "Judgment Day",
+      "mix_id": "3566084877"
+    },
+    "3576411155": {
+      "name": "CM-21 Trench Paramedic",
+      "mix_id": "1496416071"
+    },
+    "3576665453": {
+      "name": "Guns of Liberty",
+      "mix_id": "3576665453"
+    },
+    "3583338197": {
+      "name": "B-01 Tactical",
+      "mix_id": "2905408536"
+    },
+    "3598091569": {
+      "name": "Cloak of Posterity's Gratitude",
+      "mix_id": "3598091569"
+    },
+    "3605514351": {
+      "name": "EX-03 Prototype 3",
+      "mix_id": "618911418"
+    },
+    "3608481516": {
+      "name": "1 Requisition Credit",
+      "mix_id": "3608481516"
+    },
+    "3616764107": {
+      "name": "Justice for All",
+      "mix_id": "3616764107"
+    },
+    "3618831709": {
+      "name": "EX-00 Prototype X",
+      "mix_id": "1853367679"
+    },
+    "3642074737": {
+      "name": "FS-05 Marksman",
+      "mix_id": "3642074737"
+    },
+    "3658884708": {
+      "name": "CM-14 Physician",
+      "mix_id": "950673533"
+    },
+    "3664047629": {
+      "name": "FS-38 Eradicator",
+      "mix_id": "2451094788"
+    },
+    "3666591402": {
+      "name": "SC-34 Infiltrator",
+      "mix_id": "1494299745"
+    },
+    "3672418116": {
+      "name": "SA-25 Steel Trooper",
+      "mix_id": "58483197"
+    },
+    "3682449066": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "3682449066"
+    },
+    "3690580532": {
+      "name": "Light of Eternal Liberty",
+      "mix_id": "3690580532"
+    },
+    "3702613996": {
+      "name": "Big Stretch",
+      "mix_id": "3702613996"
+    },
+    "3707613985": {
+      "name": "Bastion of Integrity",
+      "mix_id": "3707613985"
+    },
+    "3728566742": {
+      "name": "Undergrowth Exosuit Pattern",
+      "mix_id": "2895427340"
+    },
+    "3728975654": {
+      "name": "PH-202 Twigsnapper",
+      "mix_id": "1470624541"
+    },
+    "3748104941": {
+      "name": "Loosen Up",
+      "mix_id": "3748104941"
+    },
+    "3748749890": {
+      "name": "G-10 Incendiary",
+      "mix_id": "3748749890"
+    },
+    "3750644442": {
+      "name": "B-01 Tactical",
+      "mix_id": "1742578540"
+    },
+    "3765579043": {
+      "name": "Purifying Eclipse",
+      "mix_id": "3765579043"
+    },
+    "3792160842": {
+      "name": "B-01 Tactical",
+      "mix_id": "3792160842"
+    },
+    "3814689025": {
+      "name": "SG-225SP Breaker Spray&Pray",
+      "mix_id": "3814689025"
+    },
+    "3819612061": {
+      "name": "DP-11 Champion of the People",
+      "mix_id": "2948747084"
+    },
+    "3826757243": {
+      "name": "FS-05 Marksman",
+      "mix_id": "3826757243"
+    },
+    "3866352840": {
+      "name": "LAS-5 Scythe",
+      "mix_id": "3866352840"
+    },
+    "3867039847": {
+      "name": "The Breach",
+      "mix_id": "3867039847"
+    },
+    "3869545997": {
+      "name": "G-12 Thermite Grenade",
+      "mix_id": "3869545997"
+    },
+    "3884524834": {
+      "name": "SC-30 Trailblazer Scout",
+      "mix_id": "492895376"
+    },
+    "3889850488": {
+      "name": "50 Super Credits",
+      "mix_id": "3889850488"
+    },
+    "3892781112": {
+      "name": "Order of the Venerated Ballot",
+      "mix_id": "3892781112"
+    },
+    "3897051683": {
+      "name": "Mark of the Crimson Fang",
+      "mix_id": "3897051683"
+    },
+    "3912131454": {
+      "name": "Experimental Infusion",
+      "mix_id": "3912131454"
+    },
+    "3925525294": {
+      "name": "Liberty's Herald",
+      "mix_id": "3925525294"
+    },
+    "3955657629": {
+      "name": "SG-8P Punisher Plasma",
+      "mix_id": "3955657629"
+    },
+    "3970674111": {
+      "name": "FS-05 Marksman",
+      "mix_id": "3377389763"
+    },
+    "3981773112": {
+      "name": "P-19 Redeemer",
+      "mix_id": "3981773112"
+    },
+    "3990548579": {
+      "name": "I-92 Fire Fighter",
+      "mix_id": "3990548579"
+    },
+    "3992382197": {
+      "name": "Common Sample",
+      "mix_id": "3992382197"
+    },
+    "2985106497": {
+      "name": "Rare Sample",
+      "mix_id": "2985106497"
+    },
+    "3996028128": {
+      "name": "CE-74 Breaker",
+      "mix_id": "2560101303"
+    },
+    "4000324077": {
+      "name": "B-01 Tactical",
+      "mix_id": "1483434009"
+    },
+    "4000666917": {
+      "name": "The Cape of Stars and Suffrage",
+      "mix_id": "4000666917"
+    },
+    "4002419096": {
+      "name": "Test of Conviction",
+      "mix_id": "4002419096"
+    },
+    "4004823774": {
+      "name": "TR-9 Cavalier of Democracy",
+      "mix_id": "1122513689"
+    },
+    "4016909011": {
+      "name": "DP-11 Champion of the People",
+      "mix_id": "1533004132"
+    },
+    "4053116626": {
+      "name": "Finger Guns",
+      "mix_id": "4053116626"
+    },
+    "4066886572": {
+      "name": "Increased Reinforcement Budget",
+      "mix_id": "4066886572"
+    },
+    "4072133621": {
+      "name": "SA-12 Servo-Assisted",
+      "mix_id": "2858087169"
+    },
+    "4081083564": {
+      "name": "CE-67 Titan",
+      "mix_id": "600482535"
+    },
+    "4089246094": {
+      "name": "SA-32 Dynamo",
+      "mix_id": "3108744452"
+    },
+    "4108040377": {
+      "name": "FLAM-66 Torcher",
+      "mix_id": "4108040377"
+    },
+    "4111053667": {
+      "name": "Agent of Oblivion",
+      "mix_id": "4111053667"
+    },
+    "4111545584": {
+      "name": "SA-04 Combat Technician",
+      "mix_id": "1318035279"
+    },
+    "4114132787": {
+      "name": "Unblemished Allegiance",
+      "mix_id": "4114132787"
+    },
+    "4118634958": {
+      "name": "SC-15 Drone Master",
+      "mix_id": "1541695550"
+    },
+    "4124916847": {
+      "name": "Unblemished Allegiance",
+      "mix_id": "4124916847"
+    },
+    "4136928865": {
+      "name": "UAV Recon Booster",
+      "mix_id": "4136928865"
+    },
+    "4174163718": {
+      "name": "Super Person",
+      "mix_id": "4174163718"
+    },
+    "4176085421": {
+      "name": "Blazing Samaritan",
+      "mix_id": "4176085421"
+    },
+    "4184451498": {
+      "name": "Mime Instrumentation",
+      "mix_id": "4184451498"
+    },
+    "4191752871": {
+      "name": "TR-40 Gold Eagle",
+      "mix_id": "3813318023"
+    },
+    "4216001108": {
+      "name": "CE-35 Trench Engineer",
+      "mix_id": "627197346"
+    },
+    "4219002488": {
+      "name": "100 Super Credits",
+      "mix_id": "4219002488"
+    },
+    "4230001140": {
+      "name": "CW-36 Winter Warrior",
+      "mix_id": "1033014387"
+    },
+    "4236565715": {
+      "name": "Cresting Honor",
+      "mix_id": "4236565715"
+    },
+    "4242416506": {
+      "name": "CE-81 Juggernaut",
+      "mix_id": "632014929"
+    },
+    "4249185760": {
+      "name": "DP-53 Savior of the Free",
+      "mix_id": "556862721"
+    },
+    "4257171265": {
+      "name": "B-01 Tactical",
+      "mix_id": "2067677478"
+    },
+    "4273318008": {
+      "name": "Flexible Reinforcement Budget",
+      "mix_id": "4273318008"
+    },
+    "4282790522": {
+      "name": "Dissident's Nightmare",
+      "mix_id": "4282790522"
+    },
+    "1255689962": {
+      "name": "G-4 Gas",
+      "mix_id": "1255689962"
+    },
+    "1150857575": {
+      "name": "Ew",
+      "mix_id": "1150857575"
+    },
+    "2545935501": {
+      "name": "Mustard Hellpod",
+      "mix_id": "2545935501"
+    },
+    "1399805769": {
+      "name": "AF-50 Noxious Ranger",
+      "mix_id": "1399805769"
+    },
+    "1431213118": {
+      "name": "AF-50 Noxious Ranger",
+      "mix_id": "1431213118"
+    },
+    "155105392": {
+      "name": "Standard of Safe Distance",
+      "mix_id": "155105392"
+    },
+    "342959649": {
+      "name": "Standard of Safe Distance",
+      "mix_id": "342959649"
+    },
+    "2209326359": {
+      "name": "TX-41 Sterilizer",
+      "mix_id": "2209326359"
+    },
+    "1342154759": {
+      "name": "Mustard Shuttle",
+      "mix_id": "1342154759"
+    },
+    "3460374366": {
+      "name": "Patient Zero's Remembrance",
+      "mix_id": "3460374366"
+    },
+    "4237429476": {
+      "name": "Patient Zero's Remembrance",
+      "mix_id": "4237429476"
+    },
+    "996716618": {
+      "name": "AF-02 Haz-Master",
+      "mix_id": "996716618"
+    },
+    "1368467090": {
+      "name": "AF-02 Haz-Master",
+      "mix_id": "1368467090"
+    },
+    "3775923387": {
+      "name": "AX/TX-13 'Guard Dog' Dog Breath",
+      "mix_id": "3775923387"
+    },
+    "2195045156": {
+      "name": "Expert Exterminator",
+      "mix_id": "2195045156"
+    },
+    "3835891472": {
+      "name": "Natural Gas Extraction",
+      "mix_id": "3835891472"
+    },
+    "1084288106": {
+      "name": "P-11 Stim Pistol",
+      "mix_id": "1084288106"
+    },
+    "3236079222": {
+      "name": "Mustard Exosuit",
+      "mix_id": "3236079222"
+    },
+    "3241211079": {
+      "name": "Inconspicuous Black Exosuit",
+      "mix_id": "2090138711"
+    },
+    "122941246": {
+      "name": "SG-20 Halt",
+      "mix_id": "122941246"
+    },
+    "2239116615": {
+      "name": "Dead Sprint",
+      "mix_id": "2239116615"
+    },
+    "2579792615": {
+      "name": "Inconspicuous Black Hellpod",
+      "mix_id": "2179039938"
+    },
+    "725205791": {
+      "name": "SMG-32 Reprimand",
+      "mix_id": "725205791"
+    },
+    "2484094371": {
+      "name": "Inconspicuous Black Shuttle",
+      "mix_id": "1255476115"
+    },
+    "601062191": {
+      "name": "Pride of the Whistleblower",
+      "mix_id": "601062191"
+    },
+    "3008695584": {
+      "name": "UF-50 Bloodhound",
+      "mix_id": "1927188023"
+    },
+    "238751935": {
+      "name": "UF-50 Bloodhound",
+      "mix_id": "4286615047"
+    },
+    "1126585234": {
+      "name": "Pride of the Whistleblower",
+      "mix_id": "1126585234"
+    },
+    "151318266": {
+      "name": "Proof of Faultless Virtue",
+      "mix_id": "151318266"
+    },
+    "1301492156": {
+      "name": "Free of Thought",
+      "mix_id": "1301492156"
+    },
+    "3530620108": {
+      "name": "UF-16 Inspector",
+      "mix_id": "3285635529"
+    },
+    "3059832618": {
+      "name": "UF-16 Inspector",
+      "mix_id": "4168334185"
+    },
+    "3965478926": {
+      "name": "Proof of Faultless Virtue",
+      "mix_id": "3965478926"
+    },
+    "1902682578": {
+      "name": "PLAS-15 Loyalist",
+      "mix_id": "1902682578"
+    },
+    "4693889": {
+      "name": "At Ease",
+      "mix_id": "4693889"
+    },
+    "622973953": {
+      "name": "UF-84 Doubt Killer",
+      "mix_id": "940858144"
+    },
+    "91360070": {
+      "name": "UF-84 Doubt Killer",
+      "mix_id": "3849573872"
+    },
+    "66704491": {
+      "name": "Cover of Darkness",
+      "mix_id": "66704491"
+    },
+    "4161086429": {
+      "name": "R-2124 Constitution",
+      "mix_id": "4161086429"
+    },
+    "1481290619": {
+      "name": "DP-00 Tactical",
+      "mix_id": "703523490"
+    },
+    "1058794522": {
+      "name": "DP-00 Tactical",
+      "mix_id": "2943433394"
+    },
+    "4033534167": {
+      "name": "PH-56 Jaguar",
+      "mix_id": "1830434737"
+    },
+    "600891740": {
+      "name": "PH-56 Jaguar",
+      "mix_id": "217192825"
+    },
+    "3739746472": {
+      "name": "CE-101 Guerilla Gorilla",
+      "mix_id": "420381699"
+    },
+    "2310126051": {
+      "name": "CE-101 Guerilla Gorilla",
+      "mix_id": "1128708923"
+    },
+    "1": {
+      "name": "SR-24 Street Scout",
+      "mix_id": "1"
+    },
+    "23": {
+      "name": "SR-24 Street Scout",
+      "mix_id": "23"
+    },
+    "3": {
+      "name": "Greatcloak of Rebar Resolve",
+      "mix_id": "3"
+    },
+    "4": {
+      "name": "Rebar Resolve",
+      "mix_id": "4"
+    },
+    "6": {
+      "name": "CQC-19 Stun Lance",
+      "mix_id": "6"
+    },
+    "7": {
+      "name": "Directional Shield",
+      "mix_id": "7"
+    },
+    "8": {
+      "name": "Concrete Jungle Hellpod Pattern",
+      "mix_id": "8"
+    },
+    "9": {
+      "name": "Armed Resupply Pods",
+      "mix_id": "9"
+    },
+    "10": {
+      "name": "Flame Sentry",
+      "mix_id": "10"
+    },
+    "11": {
+      "name": "Concrete Jungle Shuttle Pattern",
+      "mix_id": "11"
+    },
+    "12": {
+      "name": "SR-18 Roadblock",
+      "mix_id": "12"
+    },
+    "13": {
+      "name": "SR-18 Roadblock",
+      "mix_id": "13"
+    },
+    "14": {
+      "name": "Holder of the Yellow Line",
+      "mix_id": "14"
+    },
+    "16": {
+      "name": "Holder of the Yellow Line",
+      "mix_id": "16"
+    },
+    "17": {
+      "name": "Concrete Jungle Vehicle Pattern",
+      "mix_id": "17"
+    },
+    "19": {
+      "name": "This is Democracy",
+      "mix_id": "19"
+    },
+    "20": {
+      "name": "Super Pedestrian",
+      "mix_id": "20"
+    },
+    "21": {
+      "name": "Anti-Tank Emplacement",
+      "mix_id": "21"
+    },
+    "22": {
+      "name": "Concrete Jungle Exosuit Pattern",
+      "mix_id": "22"
+    }
+  }
+}
