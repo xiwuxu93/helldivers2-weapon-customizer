@@ -69,7 +69,7 @@ export default function HomePage() {
   const handleFilterChange = (key: keyof WeaponFilters, value: string) => {
     setFilters(prev => ({
       ...prev,
-      [key]: value === 'all' ? undefined : value
+      [key]: value === 'all' ? 'all' : value
     }))
   }
 

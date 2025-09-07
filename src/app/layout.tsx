@@ -4,9 +4,6 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import GoogleAnalytics from '@/components/analytics/google-analytics'
-import GoogleTagManager, { GTMNoScript } from '@/components/analytics/google-tag-manager'
-import GoogleAdsense from '@/components/ads/google-adsense'
 import { StructuredData } from '@/components/seo/structured-data'
 import { NavigationStructuredData } from '@/components/seo/navigation-structured-data'
 
@@ -68,9 +65,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'ca-pub-4855228928819714',
-  },
   alternates: {
     canonical: 'https://helldivers2-weapon-customizer.com',
   },
@@ -85,9 +79,6 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ]
   },
-  other: {
-    'google-adsense-account': 'ca-pub-4855228928819714'
-  }
 }
 
 export default function RootLayout({
@@ -99,9 +90,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <NavigationStructuredData />
-        <GoogleAnalytics />
-        <GoogleTagManager />
-        <GoogleAdsense />
         <StructuredData type="website" data={{}} />
         <StructuredData type="application" data={{}} />
         <StructuredData type="faq" data={{
@@ -126,7 +114,6 @@ export default function RootLayout({
         }} />
       </head>
       <body className={inter.className}>
-        <GTMNoScript />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
