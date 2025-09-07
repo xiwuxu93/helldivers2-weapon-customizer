@@ -1,6 +1,6 @@
-# Frontend Tools Hub
+# Helldivers 2 Weapon Customizer
 
-> A modern, privacy-first collection of frontend tools built with Next.js 14. Fast, reliable, and secure - all processing happens locally in your browser.
+> The ultimate Helldivers 2 weapon customization tool. Build perfect loadouts, compare weapon stats, and dominate the battlefield with data-driven weapon builds.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -9,50 +9,31 @@
 
 ## ✨ Features
 
-- 🚀 **Modern Tech Stack** - Next.js 14 + React 18 + TypeScript
-- 🎨 **Beautiful Design** - Responsive design with Tailwind CSS
-- 🌓 **Dark Mode** - Seamless light/dark theme switching
-- 📱 **Mobile Friendly** - Perfect on all device sizes
-- 🔧 **Component Library** - Highly reusable component system
-- 🛡️ **Type Safe** - Complete TypeScript type definitions
-- 🎯 **SEO Optimized** - Built-in SEO best practices
-- ⚡ **High Performance** - SSG/SSR support and code splitting
-- 🔒 **Privacy First** - All processing happens locally
-- 🔄 **Easily Extensible** - Modular architecture for easy customization
+- 🎯 **Complete Weapon Database** - All primary, secondary, and support weapons
+- 🔧 **Advanced Customization** - Full attachment system with compatibility checking
+- 📊 **Detailed Statistics** - Damage, accuracy, range, and more weapon stats
+- 🎨 **Beautiful Interface** - Modern, responsive design with dark/light modes
+- 📱 **Mobile Optimized** - Perfect experience on all devices
+- ⚡ **Lightning Fast** - Built with Next.js 14 for maximum performance
+- 🔍 **Smart Filtering** - Find weapons by category, warbond, tier, and more
+- 💾 **Save & Share** - Save favorite builds and share with your squad
 
-## 🎯 Use Cases
+## 🎮 Weapon Categories
 
-Perfect for building:
-- Text processing utilities
-- Image editing tools
-- Data conversion tools
-- Color utilities
-- Encoding/decoding tools
-- Hash generators
-- Code formatters
-- And any other frontend-only tools
+Comprehensive support for:
+- **Primary Weapons** - Assault rifles, SMGs, shotguns, and more
+- **Secondary Weapons** - Pistols, machine pistols, and sidearms
+- **Support Weapons** - Heavy weapons and special equipment
+- **All Warbonds** - Free weapons plus all premium Warbond content
 
 ## 📦 Tech Stack
 
-### Core Framework
-- **Next.js 14** - Full-stack React framework
-- **React 18** - UI library with concurrent features
-- **TypeScript** - Type-safe JavaScript
-
-### Styling & UI
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Lucide React** - Beautiful icon library
-- **next-themes** - Theme switching
-
-### State Management
+- **Next.js 14** - Modern React framework with App Router
+- **React 18** - Latest React with concurrent features  
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
 - **Zustand** - Lightweight state management
-- **React Hook Form** - Form handling
-
-### Tools & Configuration
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **class-variance-authority** - Component variant management
 
 ## 🚀 Quick Start
 
@@ -65,8 +46,8 @@ Perfect for building:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/frontend-tools-hub.git
-cd frontend-tools-hub
+git clone https://github.com/your-username/helldivers2-weapon-customizer.git
+cd helldivers2-weapon-customizer
 
 # Install dependencies
 npm install
@@ -90,130 +71,41 @@ npm start
 ## 📁 Project Structure
 
 ```
-frontend-tools-hub/
+helldivers2-weapon-customizer/
 ├── src/
-│   ├── app/                    # Next.js App Router pages
+│   ├── app/                    # Next.js App Router
 │   │   ├── globals.css        # Global styles
-│   │   ├── layout.tsx         # Root layout
-│   │   ├── page.tsx           # Home page
-│   │   └── tools/             # Tools page
-│   ├── components/            # Components directory
+│   │   ├── layout.tsx         # Root layout with SEO
+│   │   └── page.tsx           # Main weapon customizer
+│   ├── components/            # React components
 │   │   ├── ui/                # Base UI components
-│   │   ├── tools/             # Tool-specific components
+│   │   ├── weapons/           # Weapon-specific components
 │   │   ├── layout/            # Layout components
-│   │   └── providers/         # Provider components
+│   │   └── providers/         # Context providers
 │   ├── lib/                   # Utility functions
-│   │   ├── utils.ts           # Common utilities
-│   │   └── frontend-tools.ts  # Tool implementations
-│   ├── types/                 # TypeScript type definitions
-│   └── hooks/                 # Custom React hooks
-├── public/                    # Static assets
-├── next.config.js            # Next.js configuration
-├── tailwind.config.js        # Tailwind configuration
-├── tsconfig.json             # TypeScript configuration
-└── package.json              # Project dependencies
+│   │   └── helldivers-data.ts # Weapon data management
+│   └── types/                 # TypeScript definitions
+├── public/
+│   └── helldivers2/           # Game data and assets
+└── package.json
 ```
 
-## 🛠️ Available Tools
+## 🎯 Core Features
 
-### Text Tools
-- **Text Statistics** - Word count, character count, reading time
-- **Case Converter** - Upper, lower, title, camel, pascal, snake, kebab case
-- **Text Cleaner** - Remove extra whitespace and normalize formatting
-- **URL Extractor** - Extract all URLs from text
-- **Email Extractor** - Extract all email addresses from text
+### Weapon Database
+- Complete weapon stats and information
+- All primary, secondary, and support weapons
+- Regular updates with game patches
 
-### Image Tools
-- **Image Resizer** - Resize images while maintaining aspect ratio
-- **Format Converter** - Convert between JPEG, PNG, and WebP
-- **Filter Application** - Apply grayscale, sepia, blur, brightness, contrast filters
-- **Batch Processing** - Process multiple images at once
+### Customization System  
+- Attachment compatibility checking
+- Real-time stat calculations
+- Visual weapon previews
 
-### Data Tools
-- **CSV ↔ JSON** - Convert between CSV and JSON formats
-- **JSON Formatter** - Format and beautify JSON
-- **JSON Minifier** - Minify JSON for production
-- **JSON Validator** - Validate JSON syntax
-
-### Encoding Tools
-- **URL Encoding** - Encode/decode URLs
-- **Base64 Conversion** - Encode/decode Base64
-- **HTML Entities** - Encode/decode HTML entities
-- **Hash Generator** - Generate SHA-256 hashes
-- **Random String** - Generate secure random strings
-- **UUID Generator** - Generate UUID v4
-
-### Color Tools
-- **Color Converter** - Convert between HEX, RGB, HSL
-- **Palette Generator** - Generate color palettes
-- **Color Picker** - Interactive color selection
-
-## 🎨 Customization
-
-### Changing Colors
-
-Update the color scheme in `tailwind.config.js`:
-
-```javascript
-primary: {
-  50: '#your-color-50',
-  500: '#your-primary-color',
-  // ... other shades
-}
-```
-
-### Adding New Tools
-
-1. Create a new tool component in `src/components/tools/`
-2. Add tool logic to `src/lib/frontend-tools.ts`
-3. Register the tool in `src/components/frontend-tools-hub.tsx`
-
-### Example New Tool
-
-```tsx
-// src/components/tools/my-tool.tsx
-export function MyTool() {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
-
-  const processInput = () => {
-    // Your tool logic here
-    setOutput(processedResult)
-  }
-
-  return (
-    // Your tool UI here
-  )
-}
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env.local` file:
-
-```env
-# Site configuration
-NEXT_PUBLIC_SITE_NAME=Frontend Tools Hub
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-
-# Analytics (optional)
-NEXT_PUBLIC_GA_ID=your_google_analytics_id
-```
-
-### SEO Configuration
-
-Update metadata in `src/app/layout.tsx`:
-
-```tsx
-export const metadata: Metadata = {
-  title: 'Your Tools Hub',
-  description: 'Your description',
-  keywords: ['tools', 'utilities', 'frontend'],
-  // ... other metadata
-}
-```
+### Advanced Filtering
+- Filter by category, warbond, tier
+- Search by weapon name
+- Quick filter shortcuts
 
 ## 🚀 Deployment
 
@@ -221,93 +113,55 @@ export const metadata: Metadata = {
 
 1. Push your code to GitHub
 2. Import your repository on [Vercel](https://vercel.com)
-3. Configure environment variables
+3. Configure environment variables if needed
 4. Deploy with one click
 
-### Other Platforms
+### Other Options
 
-- **Netlify** - Supports static export
-- **Docker** - Dockerfile included
-- **Traditional Servers** - PM2 deployment supported
+- **Netlify** - Great for static export
+- **Traditional Servers** - Works with any Node.js hosting
 
-### Static Export
+## 📈 Performance & SEO
 
-```bash
-# Generate static site
-npm run build
+### Built-in SEO
+- Comprehensive meta tags and Open Graph
+- Structured data for search engines
+- Optimized for Helldivers 2 weapon searches
+- Mobile-first responsive design
 
-# Export static files to out/ directory
-npm run export
-```
-
-## 📈 Performance Features
-
-### Code Splitting
-- Page-level automatic code splitting
+### Performance Features
+- Next.js 14 App Router for speed
 - Component lazy loading
-- Dynamic imports
+- Optimized weapon data loading
+- Progressive Web App ready
 
-### Image Optimization
-- Next.js Image component
-- WebP format support
-- Responsive images
+## 🎮 Game Data
 
-### SEO Optimization
-- Automatic sitemap generation
-- robots.txt configuration
-- Structured data
-- Open Graph tags
+The weapon database includes:
+- **70+ Primary Weapons** across all categories
+- **25+ Secondary Weapons** including sidearms
+- **15+ Support Weapons** and heavy equipment
+- **50+ Attachments** with compatibility system
+- **All Warbonds** including free and premium content
 
-## 🔮 Future Plans - AI Integration
-
-This template is designed with future AI tool integration in mind:
-
-- **Modular Architecture** - Easy to add AI processing endpoints
-- **Component Abstraction** - UI components work with both frontend and AI tools
-- **Type Safety** - Ready for AI service integrations
-- **Error Handling** - Robust error handling for API calls
-
-### Planned AI Tools
-- 🤖 AI Image Enhancement
-- 📝 Smart Text Generation
-- 🌐 Language Translation
-- 🎨 Creative AI Tools
-
-## 🛡️ Privacy & Security
-
-- **Local Processing** - All current tools run entirely in your browser
-- **No Data Collection** - Your data never leaves your device
-- **Open Source** - Transparent and auditable code
-- **HTTPS Only** - Secure connections enforced
+Data is regularly updated to match game patches and balance changes.
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-tool`)
-3. Commit your changes (`git commit -m 'Add amazing tool'`)
-4. Push to the branch (`git push origin feature/amazing-tool`)
-5. Open a Pull Request
+2. Create a feature branch (`git checkout -b feature/new-weapon-stats`)
+3. Make your changes
+4. Test the build: `npm run build`
+5. Submit a pull request
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## 🎯 For Helldivers
 
-- [Next.js](https://nextjs.org/) - Amazing React framework
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Lucide](https://lucide.dev/) - Beautiful icon library
-- [Vercel](https://vercel.com/) - Excellent deployment platform
+*For Super Earth! Use this tool to build the perfect loadout and bring managed democracy to the galaxy.*
 
 ---
 
-If this template helps you build amazing tools, please give it a ⭐️!
-
-Have questions or suggestions? Feel free to [create an issue](../../issues) or reach out to us.
-
-## 🔗 Links
-
-- 📖 [Documentation](./USAGE.md)
-- 🚀 [Deployment Guide](./DEPLOYMENT.md)
-- 📋 [Changelog](./CHANGELOG.md)
-- 💬 [Discussions](../../discussions)
+If this tool helps you dominate the battlefield, please give it a ⭐️!

@@ -10,13 +10,8 @@ import {
   Sun, 
   Moon, 
   Menu, 
-  X, 
-  ChevronDown,
-  Image as ImageIcon,
-  HelpCircle,
-  Info,
-  Shield,
-  FileText
+  X,
+  Shield
 } from "lucide-react"
 
 export function Header() {
@@ -29,21 +24,7 @@ export function Header() {
   }, [])
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Batch Converter", href: "/batch" },
-    { name: "Examples", href: "/examples" },
-    { name: "How to Use", href: "/how-to-use" },
-    { name: "Blog", href: "/blog" },
-    {
-      name: "More",
-      href: "#",
-      children: [
-        { name: "FAQ", href: "/faq", icon: HelpCircle, description: "Common questions answered" },
-        { name: "About Us", href: "/about", icon: Info, description: "Our story and mission" },
-        { name: "Privacy Policy", href: "/privacy", icon: Shield, description: "How we protect your data" },
-        { name: "Terms of Service", href: "/terms", icon: FileText, description: "Usage terms and conditions" }
-      ]
-    }
+    { name: "Home", href: "/" }
   ]
 
   const toggleTheme = () => {
@@ -51,76 +32,45 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo和品牌名 */}
-        <div className="flex items-center space-x-2">
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <Image
-              src="/logo.png"
-              alt="BW Converter Logo"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain"
-            />
-            <div className="flex items-baseline space-x-1">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">BW</span>
-              <span className="text-xl font-light text-gray-600 dark:text-gray-400">Converter</span>
+    <header className="sticky top-0 z-50 w-full border-b-2 border-helldiver-blue-400/30 bg-helldiver-steel-50/95 dark:bg-helldiver-steel-900/95 backdrop-blur supports-[backdrop-filter]:bg-helldiver-steel-50/80 command-panel">
+      <div className="container flex h-20 items-center justify-between">
+        {/* Super Earth Command Logo */}
+        <div className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-4 hover:opacity-90 transition-opacity group">
+            <div className="relative">
+              <Shield className="h-10 w-10 text-helldiver-blue-500 group-hover:text-helldiver-blue-600 transition-colors" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-helldiver-yellow-400 rounded-full animate-pulse"></div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-display font-black text-super-earth">
+                HD2 ARSENAL
+              </span>
+              <span className="text-xs font-military text-helldiver-steel-600 dark:text-helldiver-steel-400 -mt-1 uppercase tracking-wider">
+                SUPER EARTH COMMAND
+              </span>
             </div>
           </Link>
         </div>
 
-        {/* 桌面端导航 */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navigation.map((item) => (
-            <div key={item.name} className="relative group">
-              {item.children ? (
-                <div className="relative">
-                  <button className="flex items-center space-x-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                    <span>{item.name}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                  
-                  {/* 下拉菜单 */}
-                  <div className="absolute top-full left-0 mt-1 w-64 py-2 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    {item.children.map((child) => {
-                      const ChildIcon = child.icon
-                      return (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="flex items-start px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors group/item"
-                        >
-                          {ChildIcon && <ChildIcon className="w-4 h-4 mr-3 mt-0.5 text-muted-foreground group-hover/item:text-foreground" />}
-                          <div>
-                            <div className="font-medium">{child.name}</div>
-                            {child.description && (
-                              <div className="text-xs text-muted-foreground mt-0.5">{child.description}</div>
-                            )}
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.name}
-                </Link>
-              )}
-            </div>
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {item.name}
+            </Link>
           ))}
         </nav>
 
-        {/* 右侧操作按钮 */}
-        <div className="flex items-center space-x-2">
-          {/* 主题切换 */}
+        {/* Command Controls */}
+        <div className="flex items-center space-x-4">
+          {/* Theme Command Switch */}
           {mounted && (
             <Button
-              variant="ghost"
+              className="btn-outline border-helldiver-yellow-400 text-helldiver-yellow-600 hover:bg-helldiver-yellow-50 dark:hover:bg-helldiver-yellow-900/20"
               size="icon"
               onClick={toggleTheme}
               aria-label="Toggle theme"
@@ -134,11 +84,10 @@ export function Header() {
           )}
 
 
-          {/* 移动端菜单按钮 */}
+          {/* Mobile Command Menu */}
           <Button
-            variant="ghost"
+            className="md:hidden btn-outline border-helldiver-blue-400 text-helldiver-blue-600"
             size="icon"
-            className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -151,44 +100,19 @@ export function Header() {
         </div>
       </div>
 
-      {/* 移动端菜单 */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-border">
           <div className="container py-4 space-y-4">
             {navigation.map((item) => (
-              <div key={item.name}>
-                {item.children ? (
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-foreground">
-                      {item.name}
-                    </div>
-                    <div className="ml-4 space-y-2">
-                      {item.children.map((child) => {
-                        const ChildIcon = child.icon
-                        return (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {ChildIcon && <ChildIcon className="w-4 h-4 mr-2" />}
-                            {child.name}
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
         </div>

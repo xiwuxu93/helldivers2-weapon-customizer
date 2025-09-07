@@ -199,8 +199,8 @@ export function WeaponCustomizer({ weapon, data, isOpen, onClose }: WeaponCustom
                   <StatComparison
                     icon={Target}
                     label="Recoil"
-                    original={weapon.stats.recoil}
-                    modified={modifiedStats.recoil}
+                    original={weapon.stats.recoil || 0}
+                    modified={modifiedStats.recoil || 0}
                   />
                 )}
               </CardContent>

@@ -1,0 +1,39 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Super Earth Shield Background -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc"/>
+      <stop offset="50%" style="stop-color:#0052a3"/>
+      <stop offset="100%" style="stop-color:#003d7a"/>
+    </linearGradient>
+    <linearGradient id="yellowAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ffcc00"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield outline -->
+  <path d="M32 4 L50 16 L50 38 A18 18 0 0 1 32 56 A18 18 0 0 1 14 38 L14 16 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#ffd700" 
+        stroke-width="2"/>
+  
+  <!-- Inner design - weapon symbol -->
+  <g transform="translate(32,32)">
+    <!-- Weapon barrel -->
+    <rect x="-12" y="-2" width="16" height="4" fill="#ffd700" rx="1"/>
+    <!-- Weapon grip -->
+    <rect x="-8" y="2" width="4" height="8" fill="#ffd700" rx="1"/>
+    <!-- Weapon stock -->
+    <rect x="-4" y="0" width="8" height="3" fill="#ffd700" rx="1"/>
+    <!-- Sight -->
+    <circle cx="4" cy="-1" r="2" fill="none" stroke="#ffd700" stroke-width="1"/>
+    <!-- Muzzle flash -->
+    <path d="M4 -1 L8 -3 L10 -1 L8 1 Z" fill="#ff4444" opacity="0.8"/>
+  </g>
+  
+  <!-- Super Earth text arc (simplified) -->
+  <text x="32" y="52" text-anchor="middle" font-family="monospace" font-size="8" font-weight="bold" fill="#ffd700">
+    HD2
+  </text>
+</svg>

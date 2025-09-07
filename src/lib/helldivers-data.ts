@@ -180,17 +180,17 @@ export function calculateWeaponStatsWithAttachments(
             // Percentage modification
             const percentage = parseFloat(effect.replace(/[^-\d.]/g, '')) / 100
             if (effect.startsWith('+')) {
-              modifiedStats[statKey] = Math.round(currentValue * (1 + percentage))
+              (modifiedStats as any)[statKey] = Math.round(currentValue * (1 + percentage))
             } else if (effect.startsWith('-')) {
-              modifiedStats[statKey] = Math.round(currentValue * (1 - Math.abs(percentage)))
+              (modifiedStats as any)[statKey] = Math.round(currentValue * (1 - Math.abs(percentage)))
             }
           } else if (effect.includes('s')) {
             // Time modification (seconds)
             const seconds = parseFloat(effect.replace(/[^-\d.]/g, ''))
             if (effect.startsWith('+')) {
-              modifiedStats[statKey] = currentValue + seconds
+              (modifiedStats as any)[statKey] = currentValue + seconds
             } else if (effect.startsWith('-')) {
-              modifiedStats[statKey] = Math.max(0.1, currentValue - seconds)
+              (modifiedStats as any)[statKey] = Math.max(0.1, currentValue - seconds)
             }
           }
         }

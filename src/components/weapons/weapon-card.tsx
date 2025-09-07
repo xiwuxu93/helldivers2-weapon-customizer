@@ -59,25 +59,29 @@ export function WeaponCard({ weapon, onCustomize, onCompare, compact = false }: 
   )
 
   return (
-    <Card className="w-full hover:shadow-lg transition-shadow duration-200">
+    <Card className="w-full card-hover command-panel">
       <CardHeader className={compact ? 'pb-3' : 'pb-4'}>
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
-              <CardTitle className={compact ? 'text-lg' : 'text-xl'}>{weapon.name}</CardTitle>
-              <Badge className={tierColors[tier]} variant="secondary">
-                {tier} Tier
+              <CardTitle className={`${compact ? 'text-lg' : 'text-xl'} font-military font-bold text-helldiver-steel-800 dark:text-helldiver-steel-200 uppercase tracking-wide`}>
+                {weapon.name}
+              </CardTitle>
+              <Badge className={`${tierColors[tier]} font-military uppercase font-bold`} variant="secondary">
+                {tier}-TIER
               </Badge>
             </div>
             <div className="flex flex-wrap gap-2 mb-2">
-              <Badge variant="outline">{weapon.category}</Badge>
+              <Badge variant="outline" className="font-military uppercase text-xs border-helldiver-steel-400 text-helldiver-steel-600 dark:text-helldiver-steel-300">
+                {weapon.category}
+              </Badge>
               {weapon.warbond && (
-                <Badge variant="outline" className="text-blue-600">
+                <Badge variant="outline" className="font-military uppercase text-xs border-helldiver-yellow-400 text-helldiver-yellow-600 bg-helldiver-yellow-50 dark:bg-helldiver-yellow-900/20">
                   {weapon.warbond}
                 </Badge>
               )}
               <Badge 
-                className={penetrationColors[weapon.stats.armor_penetration as keyof typeof penetrationColors] || 'bg-gray-500 text-white'}
+                className={`${penetrationColors[weapon.stats.armor_penetration as keyof typeof penetrationColors] || 'bg-gray-500 text-white'} font-military uppercase text-xs font-bold`}
                 variant="secondary"
               >
                 {weapon.stats.armor_penetration}
@@ -195,26 +199,25 @@ export function WeaponCard({ weapon, onCustomize, onCompare, compact = false }: 
           </>
         )}
 
-        {/* Action Buttons */}
-        <div className="flex gap-2 pt-2">
+        {/* Tactical Action Buttons */}
+        <div className="flex gap-3 pt-4">
           {onCustomize && (
             <Button 
               onClick={() => onCustomize(weapon)}
-              className="flex-1"
-              variant="default"
+              className="flex-1 btn-primary"
               size={compact ? 'sm' : 'default'}
             >
               <Settings className="w-4 h-4 mr-2" />
-              Customize
+              CONFIGURE
             </Button>
           )}
           {onCompare && (
             <Button 
               onClick={() => onCompare(weapon)}
-              variant="outline"
+              className="btn-outline"
               size={compact ? 'sm' : 'default'}
             >
-              Compare
+              ANALYZE
             </Button>
           )}
         </div>

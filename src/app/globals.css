@@ -2,51 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Helldivers 2 style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 /* Global styles reset and base settings */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Helldivers 2 Light Theme - Super Earth Colors */
+    --background: 210 25% 98%;
+    --foreground: 210 20% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 20% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
+    --popover-foreground: 210 20% 15%;
+    --primary: 210 100% 40%;  /* Super Earth Blue */
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary: 48 100% 50%;  /* Super Earth Yellow */
+    --secondary-foreground: 45 20% 15%;
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
+    --accent: 48 100% 50%;  /* Super Earth Yellow */
+    --accent-foreground: 45 20% 15%;
+    --destructive: 0 85% 58%;  /* Alert Red */
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --ring: 210 100% 40%;  /* Super Earth Blue */
+    --radius: 0.25rem;  /* Sharper corners for military feel */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Helldivers 2 Dark Theme - Space/Military Theme */
+    --background: 210 50% 8%;  /* Dark military blue-gray */
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 210 40% 12%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 210 40% 10%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --primary: 210 100% 60%;  /* Brighter blue for dark theme */
+    --primary-foreground: 210 50% 8%;
+    --secondary: 48 100% 60%;  /* Super Earth Yellow */
+    --secondary-foreground: 210 50% 8%;
+    --muted: 210 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --accent: 48 100% 60%;  /* Super Earth Yellow */
+    --accent-foreground: 210 50% 8%;
+    --destructive: 0 85% 65%;  /* Alert Red */
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    --ring: 210 100% 60%;
   }
 
   * {
@@ -93,39 +98,78 @@
 
 /* Component styles layer */
 @layer components {
-  /* Glass effect */
+  /* Helldivers 2 Military HUD Glass effect */
   .glass {
-    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50;
+    @apply bg-helldiver-blue-50/90 dark:bg-helldiver-steel-900/90 backdrop-blur-md border border-helldiver-blue-200/30 dark:border-helldiver-blue-400/20;
   }
 
-  /* Card styles */
+  /* Helldivers 2 Military Card styles */
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm;
+    @apply bg-white dark:bg-helldiver-steel-800 rounded border-2 border-helldiver-blue-200 dark:border-helldiver-blue-600/30 shadow-lg;
+    box-shadow: 
+      0 0 0 1px rgba(0, 102, 204, 0.1),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .card-hover {
-    @apply card transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+    @apply card transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 hover:border-helldiver-blue-400/50;
   }
 
-  /* Button base styles */
+  /* Military Command Panel Style */
+  .command-panel {
+    @apply bg-gradient-to-br from-helldiver-blue-50 to-helldiver-steel-100 dark:from-helldiver-steel-900 dark:to-helldiver-steel-800;
+    @apply border-2 border-helldiver-blue-300 dark:border-helldiver-blue-600/40;
+    @apply shadow-xl;
+    position: relative;
+  }
+  
+  .command-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, #0066cc, #ffd700);
+    border-radius: 0;
+  }
+
+  /* Helldivers 2 Military Button styles */
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center rounded font-military font-semibold transition-all duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-helldiver-yellow-400 focus-visible:ring-offset-2;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+    @apply border-2 border-transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+    @apply btn bg-helldiver-blue-500 text-white border-helldiver-blue-600;
+    @apply hover:bg-helldiver-blue-600 hover:border-helldiver-blue-700;
+    @apply active:bg-helldiver-blue-700 active:scale-95;
+    box-shadow: 0 2px 4px rgba(0, 102, 204, 0.3);
   }
 
   .btn-secondary {
-    @apply btn bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700;
+    @apply btn bg-helldiver-yellow-400 text-helldiver-steel-900 border-helldiver-yellow-500;
+    @apply hover:bg-helldiver-yellow-500 hover:border-helldiver-yellow-600;
+    @apply active:bg-helldiver-yellow-600 active:scale-95;
+    box-shadow: 0 2px 4px rgba(255, 204, 0, 0.3);
   }
 
   .btn-outline {
-    @apply btn border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800;
+    @apply btn border-helldiver-blue-400 bg-transparent text-helldiver-blue-600 dark:text-helldiver-blue-300;
+    @apply hover:bg-helldiver-blue-50 dark:hover:bg-helldiver-blue-900/20;
+    @apply active:scale-95;
   }
 
-  .btn-ghost {
-    @apply btn bg-transparent text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800;
+  .btn-danger {
+    @apply btn bg-helldiver-red-500 text-white border-helldiver-red-600;
+    @apply hover:bg-helldiver-red-600 hover:border-helldiver-red-700;
+    @apply active:bg-helldiver-red-700 active:scale-95;
+    box-shadow: 0 2px 4px rgba(255, 68, 68, 0.3);
   }
 
   /* Input styles */
@@ -200,9 +244,67 @@
 
 /* Utility styles layer */
 @layer utilities {
-  /* Text gradient */
+  /* Helldivers 2 Text gradients */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-helldiver-blue-500 to-helldiver-blue-700 bg-clip-text text-transparent;
+  }
+  
+  .text-super-earth {
+    @apply bg-gradient-to-r from-helldiver-blue-500 via-helldiver-yellow-400 to-helldiver-blue-500 bg-clip-text text-transparent font-display font-bold;
+  }
+  
+  .text-military {
+    @apply font-military font-semibold text-helldiver-steel-700 dark:text-helldiver-steel-300;
+  }
+
+  /* Military HUD Effects */
+  .hud-border {
+    position: relative;
+    border: 2px solid #0066cc;
+  }
+  
+  .hud-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffd700, transparent, #ffd700);
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  /* Scan line effect */
+  .scan-lines {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-lines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 102, 204, 0.03) 2px,
+      rgba(0, 102, 204, 0.03) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Glitch effect for headers */
+  .glitch {
+    position: relative;
+    font-family: 'Orbitron', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   /* Shadow variants */

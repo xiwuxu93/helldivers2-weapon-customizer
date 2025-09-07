@@ -24,17 +24,17 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          50: '#eff6ff',
-          100: '#dbeafe', 
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50: '#e6f3ff',
+          100: '#b3d9ff', 
+          200: '#80bfff',
+          300: '#4da5ff',
+          400: '#1a8bff',
+          500: '#0066cc',  // Super Earth Blue
+          600: '#0052a3',
+          700: '#003d7a',
+          800: '#002952',
+          900: '#001429',
+          950: '#000714',
         },
         // 功能色彩
         success: {
@@ -51,30 +51,30 @@ module.exports = {
           950: '#022c22',
         },
         warning: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-          950: '#451a03',
+          50: '#fffdf0',
+          100: '#fffae0',
+          200: '#fff2b3',
+          300: '#ffe980',
+          400: '#ffd700',  // Super Earth Gold/Yellow
+          500: '#ffcc00',
+          600: '#e6b800',
+          700: '#cc9900',
+          800: '#996600',
+          900: '#664400',
+          950: '#332200',
         },
         error: {
           50: '#fef2f2',
           100: '#fee2e2',
           200: '#fecaca',
           300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-          950: '#450a0a',
+          400: '#ff6b6b',
+          500: '#ff4444',  // Super Earth Red (alert/danger)
+          600: '#e63946',
+          700: '#cc2936',
+          800: '#b91c26',
+          900: '#990f17',
+          950: '#4d080b',
         },
         // 灰度系统 - 支持深色模式
         gray: {
@@ -114,10 +114,63 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Helldivers 2 游戏配色
+        helldiver: {
+          blue: {
+            50: '#e6f3ff',
+            100: '#cce6ff',
+            200: '#99ccff', 
+            300: '#66b3ff',
+            400: '#3399ff',
+            500: '#0066cc',  // Super Earth Blue
+            600: '#0052a3',
+            700: '#003d7a',
+            800: '#002952',
+            900: '#001429',
+          },
+          yellow: {
+            50: '#fffdf0',
+            100: '#fffae0',
+            200: '#fff5cc',
+            300: '#ffeb99',
+            400: '#ffd700',  // Super Earth Gold
+            500: '#ffcc00',
+            600: '#e6b800',
+            700: '#cc9900',
+            800: '#b38600',
+            900: '#996600',
+          },
+          red: {
+            50: '#fff0f0',
+            100: '#ffe0e0',
+            200: '#ffcccc',
+            300: '#ff9999',
+            400: '#ff6666',
+            500: '#ff4444',  // Alert Red
+            600: '#e63946',
+            700: '#cc2936',
+            800: '#b91c26',
+            900: '#990f17',
+          },
+          steel: {
+            50: '#f8f9fa',
+            100: '#e9ecef',
+            200: '#dee2e6',
+            300: '#ced4da',
+            400: '#adb5bd',
+            500: '#6c757d',  // Steel Gray
+            600: '#495057',
+            700: '#343a40',
+            800: '#212529',
+            900: '#1a1d20',
+          }
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'Monaco', 'monospace'],
+        military: ['Rajdhani', 'Orbitron', 'system-ui', 'sans-serif'], // 军事科幻风格字体
+        display: ['Exo 2', 'Orbitron', 'system-ui', 'sans-serif'], // 标题字体
       },
       fontSize: {
         'xs': '0.75rem',     // 12px

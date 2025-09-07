@@ -125,59 +125,72 @@ export default function HomePage() {
     )
   }
 
-  const uniqueWarbonds = data ? [...new Set([
+  const uniqueWarbonds = data ? Array.from(new Set([
     ...data.weapons.primary.map(w => w.warbond),
     ...data.weapons.secondary.map(w => w.warbond),
     ...data.weapons.support.map(w => w.warbond)
-  ].filter(Boolean))] : []
+  ].filter(Boolean))) : []
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scan-lines">
       <div className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
-        <div className="text-center space-y-6 mb-12">
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-transparent">
-              Helldivers 2 Weapon Customizer
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Build the perfect loadout with our comprehensive weapon customization tool. 
-              Compare stats, optimize attachments, and dominate the battlefield with data-driven builds.
+        {/* Hero Section - Military Command Style */}
+        <div className="text-center space-y-6 mb-12 command-panel p-8 rounded-lg">
+          <div className="space-y-4">
+            <div className="inline-block">
+              <h1 className="text-4xl md:text-6xl font-display font-black text-super-earth">
+                HELLDIVERS 2
+              </h1>
+              <h2 className="text-2xl md:text-4xl font-military font-bold text-helldiver-blue-600 dark:text-helldiver-blue-400 mt-2">
+                WEAPON ARSENAL COMMAND
+              </h2>
+            </div>
+            <div className="flex justify-center items-center gap-4 my-4">
+              <div className="h-1 w-16 bg-helldiver-yellow-400"></div>
+              <Shield className="w-8 h-8 text-helldiver-blue-500" />
+              <div className="h-1 w-16 bg-helldiver-yellow-400"></div>
+            </div>
+            <p className="text-lg text-military max-w-4xl mx-auto leading-relaxed">
+              DEPLOY WITH SUPERIOR FIREPOWER - CONFIGURE YOUR LOADOUT FOR MAXIMUM TACTICAL ADVANTAGE
+              <br />
+              <span className="text-helldiver-yellow-600 dark:text-helldiver-yellow-400 font-semibold">
+                FOR SUPER EARTH! FOR MANAGED DEMOCRACY!
+              </span>
             </p>
           </div>
           
-          {/* Quick Stats */}
+          {/* Arsenal Statistics - Military HUD Style */}
           {data && (
-            <div className="flex justify-center gap-8 flex-wrap">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{data.weapons.primary.length}</div>
-                <div className="text-sm text-muted-foreground">Primary Weapons</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+              <div className="hud-border bg-helldiver-blue-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
+                <div className="text-3xl font-display font-black text-helldiver-blue-600">{data.weapons.primary.length}</div>
+                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">PRIMARY</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{data.weapons.secondary.length}</div>
-                <div className="text-sm text-muted-foreground">Secondary Weapons</div>
+              <div className="hud-border bg-helldiver-yellow-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
+                <div className="text-3xl font-display font-black text-helldiver-yellow-600">{data.weapons.secondary.length}</div>
+                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">SECONDARY</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">{data.weapons.support.length}</div>
-                <div className="text-sm text-muted-foreground">Support Weapons</div>
+              <div className="hud-border bg-helldiver-red-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
+                <div className="text-3xl font-display font-black text-helldiver-red-500">{data.weapons.support.length}</div>
+                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">SUPPORT</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">{data.attachments.length}</div>
-                <div className="text-sm text-muted-foreground">Attachments</div>
+              <div className="hud-border bg-helldiver-steel-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
+                <div className="text-3xl font-display font-black text-helldiver-steel-600">{data.attachments.length}</div>
+                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">ATTACHMENTS</div>
               </div>
             </div>
           )}
         </div>
 
-        {/* Filters Section */}
-        <Card className="mb-8">
+        {/* Tactical Filter Command Panel */}
+        <Card className="mb-8 command-panel">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Filter className="w-5 h-5" />
-              Filter Weapons
+            <CardTitle className="flex items-center gap-3 font-military text-xl uppercase tracking-wide text-helldiver-blue-700 dark:text-helldiver-blue-300">
+              <Filter className="w-6 h-6 text-helldiver-yellow-500" />
+              TACTICAL WEAPON FILTER
             </CardTitle>
-            <CardDescription>
-              Find the perfect weapon for your playstyle and mission requirements
+            <CardDescription className="font-military text-helldiver-steel-600 dark:text-helldiver-steel-300">
+              SELECT OPTIMAL ARMAMENTS FOR MISSION PARAMETERS
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -236,27 +249,27 @@ export default function HomePage() {
               </Select>
             </div>
             
-            {/* Results Count */}
-            <div className="mt-4 flex items-center justify-between">
-              <div className="text-sm text-muted-foreground">
-                {filteredWeapons.length} weapon{filteredWeapons.length !== 1 ? 's' : ''} found
+            {/* Tactical Status Display */}
+            <div className="mt-6 flex items-center justify-between bg-helldiver-steel-50 dark:bg-helldiver-steel-800/50 p-4 rounded border border-helldiver-blue-200 dark:border-helldiver-blue-600/30">
+              <div className="font-military text-sm text-helldiver-steel-700 dark:text-helldiver-steel-300 uppercase tracking-wide">
+                <span className="text-helldiver-blue-600 dark:text-helldiver-blue-400 font-bold">{filteredWeapons.length}</span> WEAPONS AVAILABLE FOR DEPLOYMENT
               </div>
               
-              {/* Quick Filter Badges */}
-              <div className="flex gap-2">
+              {/* Quick Action Commands */}
+              <div className="flex gap-3">
                 <Badge 
                   variant={filters.tier === 'S' ? 'default' : 'outline'} 
-                  className="cursor-pointer"
+                  className="cursor-pointer font-military uppercase bg-helldiver-red-500 hover:bg-helldiver-red-600 text-white border-helldiver-red-600"
                   onClick={() => handleFilterChange('tier', filters.tier === 'S' ? 'all' : 'S')}
                 >
-                  S Tier Only
+                  ELITE TIER
                 </Badge>
                 <Badge 
                   variant={filters.category === 'primary' ? 'default' : 'outline'} 
-                  className="cursor-pointer"
+                  className="cursor-pointer font-military uppercase bg-helldiver-blue-500 hover:bg-helldiver-blue-600 text-white border-helldiver-blue-600"
                   onClick={() => handleFilterChange('category', filters.category === 'primary' ? 'all' : 'primary')}
                 >
-                  Primary Only
+                  PRIMARY ONLY
                 </Badge>
               </div>
             </div>
