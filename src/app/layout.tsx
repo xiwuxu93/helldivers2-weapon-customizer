@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   creator: 'HD2WeaponCustomizer.com',
   publisher: 'HD2WeaponCustomizer.com',
   metadataBase: new URL('https://helldivers2-weapon-customization.com'),
-  category: 'Technology',
-  classification: 'Image Processing Tool',
+  category: 'Games',
+  classification: 'Gaming Tool',
   openGraph: {
     type: 'website',
     locale: 'en_US',
