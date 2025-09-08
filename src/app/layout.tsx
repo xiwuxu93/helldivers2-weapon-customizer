@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'HD2WeaponCustomizer.com' }],
   creator: 'HD2WeaponCustomizer.com',
   publisher: 'HD2WeaponCustomizer.com',
-  metadataBase: new URL('https://helldivers2-weapon-customizer.com'),
+  metadataBase: new URL('https://helldivers2-weapon-customization.com'),
   category: 'Technology',
   classification: 'Image Processing Tool',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://helldivers2-weapon-customizer.com',
+    url: 'https://helldivers2-weapon-customization.com',
     title: 'Helldivers 2 Weapon Customizer | Ultimate Loadout Builder',
     description: 'Build the perfect Helldivers 2 loadout with our comprehensive weapon customization tool. Compare stats, optimize attachments, and dominate the battlefield.',
     siteName: 'HD2 Weapon Customizer - Helldivers 2 Loadout Builder',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://helldivers2-weapon-customizer.com',
+    canonical: 'https://helldivers2-weapon-customization.com',
   },
   manifest: '/manifest.json',
   icons: {
