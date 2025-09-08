@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { StructuredData } from '@/components/seo/structured-data'
 import { NavigationStructuredData } from '@/components/seo/navigation-structured-data'
+import { GoogleAnalytics } from '@/components/analytics/google-analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -89,6 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <GoogleAnalytics />
         <NavigationStructuredData />
         <StructuredData type="website" data={{}} />
         <StructuredData type="application" data={{}} />

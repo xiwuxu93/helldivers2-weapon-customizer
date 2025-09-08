@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { WeaponCard } from '@/components/weapons/weapon-card'
 import { WeaponCustomizer } from '@/components/weapons/weapon-customizer'
 import { loadHelldiversData, HelldiversData, WeaponData, filterWeapons, WeaponFilters, getCompatibleAttachments } from '@/lib/helldivers-data'
+import { trackFilterUsage, trackWeaponView } from '@/components/analytics/google-analytics'
 import { Search, Filter, Zap, Target, Shield, Settings, TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
@@ -71,11 +72,17 @@ export default function HomePage() {
       ...prev,
       [key]: value === 'all' ? 'all' : value
     }))
+    
+    // Track filter usage
+    trackFilterUsage(key, value)
   }
 
   const handleCustomizeWeapon = (weapon: WeaponData) => {
     setSelectedWeapon(weapon)
     console.log('Customize weapon:', weapon.name)
+    
+    // Track weapon customization
+    trackWeaponView(weapon.name, weapon.category)
   }
 
   const handleCompareWeapon = (weapon: WeaponData) => {

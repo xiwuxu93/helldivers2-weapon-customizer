@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { WeaponData, WeaponAttachment, getCompatibleAttachments, calculateWeaponStatsWithAttachments, HelldiversData } from '@/lib/helldivers-data'
+import { trackWeaponCustomization } from '@/components/analytics/google-analytics'
 import { Settings, Zap, Target, Clock, Check, X } from 'lucide-react'
 
 interface WeaponCustomizerProps {
@@ -36,11 +37,16 @@ export function WeaponCustomizer({ weapon, data, isOpen, onClose }: WeaponCustom
   const toggleAttachment = (attachment: WeaponAttachment) => {
     setSelectedAttachments(prev => {
       const exists = prev.find(a => a.id === attachment.id)
-      if (exists) {
-        return prev.filter(a => a.id !== attachment.id)
-      } else {
-        return [...prev, attachment]
+      const newAttachments = exists 
+        ? prev.filter(a => a.id !== attachment.id)
+        : [...prev, attachment]
+      
+      // Track weapon customization with updated attachments
+      if (weapon) {
+        trackWeaponCustomization(weapon.name, newAttachments.map(a => a.name))
       }
+      
+      return newAttachments
     })
   }
 
