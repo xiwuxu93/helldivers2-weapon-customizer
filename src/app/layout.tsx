@@ -12,16 +12,20 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Helldivers 2 Weapon Customizer | Ultimate Loadout Builder',
-    template: '%s | HD2 Weapon Customizer'
+    default: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder & Stats',
+    template: '%s | Helldivers 2 Weapon Customization'
   },
-  description: 'Build the perfect Helldivers 2 loadout with our comprehensive weapon customization tool. Compare stats, optimize attachments, and dominate the battlefield with data-driven weapon builds.',
+  description: 'Master Helldivers 2 weapon customization with our comprehensive tool. Build optimal loadouts, compare weapon stats, customize attachments, and dominate the battlefield for Super Earth.',
   keywords: [
     'helldivers 2 weapon customization',
+    'helldivers 2 weapon customizer',
     'helldivers 2 loadout builder',
     'helldivers 2 weapon stats',
     'helldivers 2 best weapons',
-    'helldivers 2 attachments'
+    'helldivers 2 attachments',
+    'helldivers 2 weapons guide',
+    'super earth weapons',
+    'helldivers 2 builds'
   ],
   authors: [{ name: 'HD2WeaponCustomizer.com' }],
   creator: 'HD2WeaponCustomizer.com',
@@ -33,9 +37,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://helldivers2-weapon-customization.com',
-    title: 'Helldivers 2 Weapon Customizer | Ultimate Loadout Builder',
-    description: 'Build the perfect Helldivers 2 loadout with our comprehensive weapon customization tool. Compare stats, optimize attachments, and dominate the battlefield.',
-    siteName: 'HD2 Weapon Customizer - Helldivers 2 Loadout Builder',
+    title: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder & Stats',
+    description: 'Master Helldivers 2 weapon customization with our comprehensive tool. Build optimal loadouts, compare weapon stats, customize attachments, and dominate the battlefield for Super Earth.',
+    siteName: 'Helldivers 2 Weapon Customization - Ultimate Loadout Builder',
     images: [
       {
         url: '/helldivers2-weapon-customizer.png',
@@ -48,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Helldivers 2 Weapon Customizer | Ultimate Loadout Builder',
-    description: 'Build the perfect Helldivers 2 loadout with our comprehensive weapon customization tool. Compare stats, optimize attachments, and dominate the battlefield.',
+    title: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder',
+    description: 'Master Helldivers 2 weapon customization. Build optimal loadouts, compare weapon stats, and dominate for Super Earth! 🎯🔫',
     images: ['/helldivers2-weapon-customizer.png'],
     creator: '@HD2WeaponTool'
   },
