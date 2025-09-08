@@ -10,8 +10,7 @@ import {
   Sun, 
   Moon, 
   Menu, 
-  X,
-  Shield
+  X
 } from "lucide-react"
 
 export function Header() {
@@ -38,8 +37,13 @@ export function Header() {
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center space-x-4 hover:opacity-90 transition-opacity group">
             <div className="relative">
-              <Shield className="h-10 w-10 text-helldiver-blue-500 group-hover:text-helldiver-blue-600 transition-colors" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-helldiver-yellow-400 rounded-full animate-pulse"></div>
+              <Image 
+                src="/logo.png" 
+                alt="HD2 Arsenal Logo" 
+                width={40} 
+                height={40} 
+                className="h-10 w-10 object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-display font-black text-super-earth">

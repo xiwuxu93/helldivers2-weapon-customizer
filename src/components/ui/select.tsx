@@ -21,16 +21,27 @@ const SelectContext = React.createContext<{
   onValueChange?: (value: string) => void
   isOpen: boolean
   setIsOpen: (open: boolean) => void
+  selectedLabel?: string
+  setSelectedLabel: (label: string) => void
 }>({
   isOpen: false,
-  setIsOpen: () => {}
+  setIsOpen: () => {},
+  setSelectedLabel: () => {}
 })
 
 const Select: React.FC<SelectProps> = ({ value, onValueChange, children, disabled }) => {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [selectedLabel, setSelectedLabel] = React.useState<string>('')
+
+  // Reset selectedLabel when value changes externally
+  React.useEffect(() => {
+    if (!value) {
+      setSelectedLabel('')
+    }
+  }, [value])
 
   return (
-    <SelectContext.Provider value={{ value, onValueChange, isOpen, setIsOpen }}>
+    <SelectContext.Provider value={{ value, onValueChange, isOpen, setIsOpen, selectedLabel, setSelectedLabel }}>
       <div className="relative">
         {children}
       </div>
@@ -65,13 +76,14 @@ const SelectTrigger = React.forwardRef<
 SelectTrigger.displayName = "SelectTrigger"
 
 const SelectValue: React.FC<{ placeholder?: string }> = ({ placeholder }) => {
-  const { value } = React.useContext(SelectContext)
+  const { value, selectedLabel } = React.useContext(SelectContext)
   
   if (!value) {
     return <span className="text-muted-foreground">{placeholder || "Please select..."}</span>
   }
   
-  return null // The actual selected item will render its content
+  // Display the selected item's label (which is set by SelectItem when clicked)
+  return <span>{selectedLabel || value}</span>
 }
 
 const SelectContent = React.forwardRef<
@@ -107,7 +119,7 @@ const SelectItem = React.forwardRef<
   HTMLDivElement,
   SelectItemProps & React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, value, ...props }, ref) => {
-  const { value: selectedValue, onValueChange, setIsOpen } = React.useContext(SelectContext)
+  const { value: selectedValue, onValueChange, setIsOpen, setSelectedLabel } = React.useContext(SelectContext)
   const isSelected = selectedValue === value
   
   return (
@@ -120,6 +132,7 @@ const SelectItem = React.forwardRef<
       )}
       onClick={() => {
         onValueChange?.(value)
+        setSelectedLabel(typeof children === 'string' ? children : value)
         setIsOpen(false)
       }}
       {...props}
