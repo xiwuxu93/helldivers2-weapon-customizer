@@ -3,405 +3,284 @@
 import { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import { WeaponCard } from '@/components/weapons/weapon-card'
-import { WeaponCustomizer } from '@/components/weapons/weapon-customizer'
-import { loadHelldiversData, HelldiversData, WeaponData, filterWeapons, WeaponFilters, getCompatibleAttachments } from '@/lib/helldivers-data'
-import { trackFilterUsage, trackWeaponView } from '@/components/analytics/google-analytics'
-import { Search, Filter, Zap, Target, Shield, Settings, TrendingUp } from 'lucide-react'
+import { WeaponListClient } from '@/components/weapons/weapon-list-client'
+import { WeaponData } from '@/lib/helldivers-data'
+import { Zap, Target, Shield, Settings, TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
-  const [data, setData] = useState<HelldiversData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [filteredWeapons, setFilteredWeapons] = useState<WeaponData[]>([])
-  const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(null)
-  
-  // Filter states
-  const [filters, setFilters] = useState<WeaponFilters>({
-    category: 'all',
-    warbond: 'all',
-    tier: 'all',
-    searchQuery: ''
-  })
+  const [data, setData] = useState({ weapons: { primary: [], secondary: [], support: [] }, attachments: [] })
+  const [allWeapons, setAllWeapons] = useState<WeaponData[]>([])
 
-  // Load data on component mount
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const helldiversData = await loadHelldiversData()
-        setData(helldiversData)
-        
-        console.log('Data loaded successfully:', {
-          primaryWeapons: helldiversData.weapons.primary.length,
-          secondaryWeapons: helldiversData.weapons.secondary.length,
-          supportWeapons: helldiversData.weapons.support.length,
-          attachments: helldiversData.attachments.length
-        })
-        
-        // Initialize with all weapons
-        const allWeapons = [
-          ...helldiversData.weapons.primary,
-          ...helldiversData.weapons.secondary,
-          ...helldiversData.weapons.support
+    // Load data on client side
+    fetch('/helldivers2/data/helldivers2_comprehensive_database.json')
+      .then(response => response.json())
+      .then(data => {
+        setData(data)
+        const weapons = [
+          ...data.weapons.primary,
+          ...data.weapons.secondary,
+          ...data.weapons.support
         ]
-        setFilteredWeapons(allWeapons)
-      } catch (err) {
-        setError('Failed to load Helldivers 2 data. Please try again later.')
-        console.error('Data loading error:', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchData()
+        setAllWeapons(weapons)
+      })
+      .catch(error => {
+        console.error('Error loading data:', error)
+      })
   }, [])
 
-  // Update filtered weapons when filters change
-  useEffect(() => {
-    if (!data) return
-    
-    const filtered = filterWeapons(data, filters)
-    setFilteredWeapons(filtered)
-  }, [data, filters])
-
-  const handleFilterChange = (key: keyof WeaponFilters, value: string) => {
-    setFilters(prev => ({
-      ...prev,
-      [key]: value === 'all' ? 'all' : value
-    }))
-    
-    // Track filter usage
-    trackFilterUsage(key, value)
+  const scrollToWeaponCustomizer = () => {
+    const element = document.getElementById('weapon-customizer-section')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
-
-  const handleCustomizeWeapon = (weapon: WeaponData) => {
-    setSelectedWeapon(weapon)
-    console.log('Customize weapon:', weapon.name)
-    
-    // Track weapon customization
-    trackWeaponView(weapon.name, weapon.category)
-  }
-
-  const handleCompareWeapon = (weapon: WeaponData) => {
-    console.log('Compare weapon:', weapon.name)
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-8">
-          <div className="space-y-8">
-            <div className="text-center space-y-4">
-              <div className="h-12 bg-gray-200 animate-pulse rounded w-3/4 mx-auto"></div>
-              <div className="h-6 bg-gray-200 animate-pulse rounded w-2/3 mx-auto"></div>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <div className="h-10 w-64 bg-gray-200 animate-pulse rounded"></div>
-              <div className="h-10 w-40 bg-gray-200 animate-pulse rounded"></div>
-              <div className="h-10 w-40 bg-gray-200 animate-pulse rounded"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="h-96 bg-gray-200 animate-pulse rounded"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card className="max-w-md mx-auto">
-          <CardHeader>
-            <CardTitle className="text-red-600">Error Loading Data</CardTitle>
-            <CardDescription>{error}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button onClick={() => window.location.reload()} className="w-full">
-              Retry
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    )
-  }
-
-  const uniqueWarbonds = data ? Array.from(new Set([
-    ...data.weapons.primary.map(w => w.warbond),
-    ...data.weapons.secondary.map(w => w.warbond),
-    ...data.weapons.support.map(w => w.warbond)
-  ].filter(Boolean))) : []
 
   return (
-    <div className="min-h-screen bg-background scan-lines">
+    <div className="min-h-screen bg-gradient-to-br from-helldiver-steel-50 to-helldiver-blue-50 dark:from-helldiver-steel-950 dark:to-helldiver-blue-950">
       <div className="container mx-auto px-4 py-8">
-        {/* Hero Section - Military Command Style */}
-        <div className="text-center space-y-6 mb-12 command-panel p-8 rounded-lg">
-          <div className="space-y-4">
-            <div className="inline-block">
-              <h1 className="text-4xl md:text-6xl font-display font-black text-super-earth">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <div className="relative">
+              <Shield className="w-16 h-16 text-helldiver-blue-500 mr-4" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-helldiver-yellow-400 rounded-full animate-pulse flex items-center justify-center">
+                <span className="text-xs font-bold text-helldiver-steel-900">HD2</span>
+              </div>
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-6xl font-display font-black text-super-earth mb-2">
                 HELLDIVERS 2
               </h1>
-              <h2 className="text-2xl md:text-4xl font-military font-bold text-helldiver-blue-600 dark:text-helldiver-blue-400 mt-2">
-                WEAPON ARSENAL COMMAND
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-helldiver-blue-600 dark:text-helldiver-blue-400">
+                WEAPON CUSTOMIZATION PLATFORM
               </h2>
             </div>
-            <div className="flex justify-center items-center gap-4 my-4">
-              <div className="h-1 w-16 bg-helldiver-yellow-400"></div>
-              <Shield className="w-8 h-8 text-helldiver-blue-500" />
-              <div className="h-1 w-16 bg-helldiver-yellow-400"></div>
-            </div>
-            <p className="text-lg text-military max-w-4xl mx-auto leading-relaxed">
-              DEPLOY WITH SUPERIOR FIREPOWER - CONFIGURE YOUR LOADOUT FOR MAXIMUM TACTICAL ADVANTAGE
-              <br />
-              <span className="text-helldiver-yellow-600 dark:text-helldiver-yellow-400 font-semibold">
-                FOR SUPER EARTH! FOR MANAGED DEMOCRACY!
-              </span>
-            </p>
           </div>
           
-          {/* Arsenal Statistics - Military HUD Style */}
-          {data && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-              <div className="hud-border bg-helldiver-blue-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
-                <div className="text-3xl font-display font-black text-helldiver-blue-600">{data.weapons.primary.length}</div>
-                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">PRIMARY</div>
-              </div>
-              <div className="hud-border bg-helldiver-yellow-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
-                <div className="text-3xl font-display font-black text-helldiver-yellow-600">{data.weapons.secondary.length}</div>
-                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">SECONDARY</div>
-              </div>
-              <div className="hud-border bg-helldiver-red-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
-                <div className="text-3xl font-display font-black text-helldiver-red-500">{data.weapons.support.length}</div>
-                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">SUPPORT</div>
-              </div>
-              <div className="hud-border bg-helldiver-steel-50/50 dark:bg-helldiver-steel-800/50 p-4 rounded text-center">
-                <div className="text-3xl font-display font-black text-helldiver-steel-600">{data.attachments.length}</div>
-                <div className="text-sm font-military text-helldiver-steel-600 dark:text-helldiver-steel-300 uppercase tracking-wider">ATTACHMENTS</div>
-              </div>
-            </div>
-          )}
+          <p className="text-lg text-helldiver-steel-600 dark:text-helldiver-steel-400 max-w-3xl mx-auto mb-8 font-military">
+            Master the art of warfare with our comprehensive weapon customization tool. 
+            Build optimal loadouts, compare weapon statistics, and dominate the battlefield for Super Earth.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <Badge variant="outline" className="bg-helldiver-yellow-100 dark:bg-helldiver-yellow-900/20 border-helldiver-yellow-400 text-helldiver-yellow-700 dark:text-helldiver-yellow-300">
+              <Zap className="w-4 h-4 mr-1" />
+              Real-time Stats
+            </Badge>
+            <Badge variant="outline" className="bg-helldiver-green-100 dark:bg-helldiver-green-900/20 border-helldiver-green-400 text-helldiver-green-700 dark:text-helldiver-green-300">
+              <Target className="w-4 h-4 mr-1" />
+              Attachment Optimization
+            </Badge>
+            <Badge variant="outline" className="bg-helldiver-blue-100 dark:bg-helldiver-blue-900/20 border-helldiver-blue-400 text-helldiver-blue-700 dark:text-helldiver-blue-300">
+              <Settings className="w-4 h-4 mr-1" />
+              Loadout Builder
+            </Badge>
+          </div>
         </div>
 
-        {/* Tactical Filter Command Panel */}
-        <Card className="mb-8 command-panel">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 font-military text-xl uppercase tracking-wide text-helldiver-blue-700 dark:text-helldiver-blue-300">
-              <Filter className="w-6 h-6 text-helldiver-yellow-500" />
-              TACTICAL WEAPON FILTER
-            </CardTitle>
-            <CardDescription className="font-military text-helldiver-steel-600 dark:text-helldiver-steel-300">
-              SELECT OPTIMAL ARMAMENTS FOR MISSION PARAMETERS
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-4">
-              {/* Search */}
-              <div className="flex-1 min-w-64">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                  <Input
-                    placeholder="Search weapons..."
-                    value={filters.searchQuery || ''}
-                    onChange={(e) => handleFilterChange('searchQuery', e.target.value)}
-                    className="pl-10"
-                  />
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-gradient-to-br from-helldiver-blue-500 to-helldiver-blue-600 text-white border-0 rounded-lg">
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-helldiver-blue-100 text-sm font-medium">Total Weapons</p>
+                  <p className="text-3xl font-display font-black">{allWeapons.length}</p>
+                </div>
+                <Target className="w-8 h-8 text-helldiver-blue-200" />
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-helldiver-green-500 to-helldiver-green-600 text-white border-0 rounded-lg">
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-helldiver-green-100 text-sm font-medium">S-Tier Weapons</p>
+                  <p className="text-3xl font-display font-black">
+                    {allWeapons.filter(weapon => weapon.stats.damage >= 300).length}
+                  </p>
+                </div>
+                <TrendingUp className="w-8 h-8 text-helldiver-green-200" />
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-helldiver-yellow-500 to-helldiver-yellow-600 text-white border-0 rounded-lg">
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-helldiver-yellow-100 text-sm font-medium">Free Weapons</p>
+                  <p className="text-3xl font-display font-black">
+                    {allWeapons.filter(weapon => weapon.warbond === 'Free').length}
+                  </p>
+                </div>
+                <Shield className="w-8 h-8 text-helldiver-yellow-200" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Client-side weapon list */}
+        <div id="weapon-customizer-section">
+          <WeaponListClient data={data} initialWeapons={allWeapons} />
+        </div>
+
+        {/* SEO Content Sections for Popular Searches */}
+        <div className="mt-16 space-y-12">
+          {/* Weapon Stats Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-display">Helldivers 2 Weapon Customization Stats</CardTitle>
+              <CardDescription>
+                Comprehensive weapon statistics and performance metrics for optimal loadout building
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-helldiver-blue-50 dark:bg-helldiver-blue-950/20 p-4 rounded-lg">
+                  <h3 className="font-semibold text-helldiver-blue-700 dark:text-helldiver-blue-300">Damage Stats</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Real-time damage calculations, DPS analysis, and armor penetration data for all weapons</p>
+                </div>
+                <div className="bg-helldiver-green-50 dark:bg-helldiver-green-950/20 p-4 rounded-lg">
+                  <h3 className="font-semibold text-helldiver-green-700 dark:text-helldiver-green-300">Ergonomics</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Weapon handling, recoil patterns, and ergonomic ratings for enhanced battlefield performance</p>
+                </div>
+                <div className="bg-helldiver-yellow-50 dark:bg-helldiver-yellow-950/20 p-4 rounded-lg">
+                  <h3 className="font-semibold text-helldiver-yellow-700 dark:text-helldiver-yellow-300">Fire Rate</h3>
+                  <p className="text-sm text-muted-foreground mt-1">RPM statistics, burst fire modes, and sustained fire capabilities</p>
+                </div>
+                <div className="bg-helldiver-red-50 dark:bg-helldiver-red-950/20 p-4 rounded-lg">
+                  <h3 className="font-semibold text-helldiver-red-700 dark:text-helldiver-red-300">Capacity</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Magazine sizes, reload times, and ammunition efficiency metrics</p>
                 </div>
               </div>
-              
-              {/* Category Filter */}
-              <Select value={filters.category || 'all'} onValueChange={(value) => handleFilterChange('category', value)}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  <SelectItem value="primary">Primary</SelectItem>
-                  <SelectItem value="secondary">Secondary</SelectItem>
-                  <SelectItem value="support">Support</SelectItem>
-                </SelectContent>
-              </Select>
-              
-              {/* Warbond Filter */}
-              <Select value={filters.warbond || 'all'} onValueChange={(value) => handleFilterChange('warbond', value)}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Warbond" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Warbonds</SelectItem>
-                  {uniqueWarbonds.map(warbond => (
-                    <SelectItem key={warbond} value={warbond!}>{warbond}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              
-              {/* Tier Filter */}
-              <Select value={filters.tier || 'all'} onValueChange={(value) => handleFilterChange('tier', value)}>
-                <SelectTrigger className="w-32">
-                  <SelectValue placeholder="Tier" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Tiers</SelectItem>
-                  <SelectItem value="S">S Tier</SelectItem>
-                  <SelectItem value="A">A Tier</SelectItem>
-                  <SelectItem value="B">B Tier</SelectItem>
-                  <SelectItem value="C">C Tier</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            
-            {/* Tactical Status Display */}
-            <div className="mt-6 flex items-center justify-between bg-helldiver-steel-50 dark:bg-helldiver-steel-800/50 p-4 rounded border border-helldiver-blue-200 dark:border-helldiver-blue-600/30">
-              <div className="font-military text-sm text-helldiver-steel-700 dark:text-helldiver-steel-300 uppercase tracking-wide">
-                <span className="text-helldiver-blue-600 dark:text-helldiver-blue-400 font-bold">{filteredWeapons.length}</span> WEAPONS AVAILABLE FOR DEPLOYMENT
-              </div>
-              
-              {/* Quick Action Commands */}
-              <div className="flex gap-3">
-                <Badge 
-                  variant={filters.tier === 'S' ? 'default' : 'outline'} 
-                  className="cursor-pointer font-military uppercase bg-helldiver-red-500 hover:bg-helldiver-red-600 text-white border-helldiver-red-600"
-                  onClick={() => handleFilterChange('tier', filters.tier === 'S' ? 'all' : 'S')}
-                >
-                  ELITE TIER
-                </Badge>
-                <Badge 
-                  variant={filters.category === 'primary' ? 'default' : 'outline'} 
-                  className="cursor-pointer font-military uppercase bg-helldiver-blue-500 hover:bg-helldiver-blue-600 text-white border-helldiver-blue-600"
-                  onClick={() => handleFilterChange('category', filters.category === 'primary' ? 'all' : 'primary')}
-                >
-                  PRIMARY ONLY
-                </Badge>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Weapons Grid */}
-        {filteredWeapons.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredWeapons.map((weapon) => (
-              <WeaponCard
-                key={weapon.id}
-                weapon={weapon}
-                onCustomize={handleCustomizeWeapon}
-                onCompare={handleCompareWeapon}
-              />
-            ))}
-          </div>
-        ) : (
-          <Card>
-            <CardContent className="text-center py-12">
-              <Target className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">No Weapons Found</h3>
-              <p className="text-muted-foreground mb-4">
-                Try adjusting your filters or search criteria
-              </p>
-              <Button 
-                onClick={() => setFilters({ category: 'all', warbond: 'all', tier: 'all', searchQuery: '' })}
-                variant="outline"
-              >
-                Clear All Filters
-              </Button>
             </CardContent>
           </Card>
-        )}
 
-        {/* Featured Weapons Section */}
-        {data && (
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Featured Weapons</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* S-Tier Weapons */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-red-500" />
-                    S-Tier Meta
-                  </CardTitle>
-                  <CardDescription>The most powerful weapons in the game</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {[...data.weapons.primary, ...data.weapons.support]
-                      .filter(weapon => weapon.stats.damage >= 300)
-                      .slice(0, 3)
-                      .map(weapon => (
-                        <div key={weapon.id} className="flex items-center justify-between p-2 rounded bg-muted">
-                          <span className="font-medium">{weapon.name}</span>
-                          <Badge className="bg-red-500 text-white">S</Badge>
-                        </div>
-                      ))}
+          {/* Tier List Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-display">Helldivers 2 Weapon Customization Tier List</CardTitle>
+              <CardDescription>
+                Official weapon rankings based on performance, versatility, and community feedback
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 dark:from-yellow-500/20 dark:to-yellow-600/20 rounded-lg border border-yellow-500/20 dark:border-yellow-500/30">
+                  <Badge className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold px-3 py-1">S TIER</Badge>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Elite Performance Weapons</h3>
+                    <p className="text-sm text-muted-foreground">Top-tier weapons with exceptional damage, versatility, and customization options</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-500/10 to-green-600/10 dark:from-green-500/20 dark:to-green-600/20 rounded-lg border border-green-500/20 dark:border-green-500/30">
+                  <Badge className="bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-1">A TIER</Badge>
+                  <div>
+                    <h3 className="font-semibold text-foreground">High Performance Weapons</h3>
+                    <p className="text-sm text-muted-foreground">Excellent weapons suitable for most mission types and playstyles</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-500/10 to-blue-600/10 dark:from-blue-500/20 dark:to-blue-600/20 rounded-lg border border-blue-500/20 dark:border-blue-500/30">
+                  <Badge className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-3 py-1">B TIER</Badge>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Balanced Weapons</h3>
+                    <p className="text-sm text-muted-foreground">Solid choices with specific strengths and use cases</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-              {/* Most Customizable */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Settings className="w-5 h-5 text-blue-500" />
-                    Most Customizable
-                  </CardTitle>
-                  <CardDescription>Weapons with the most attachment options</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {data.weapons.primary
-                      .sort((a, b) => (b.customization?.available_attachments?.length || 0) - (a.customization?.available_attachments?.length || 0))
-                      .slice(0, 3)
-                      .map(weapon => (
-                        <div key={weapon.id} className="flex items-center justify-between p-2 rounded bg-muted">
-                          <span className="font-medium">{weapon.name}</span>
-                          <Badge variant="outline">{weapon.customization?.available_attachments?.length || 0} slots</Badge>
-                        </div>
-                      ))}
+          {/* Troubleshooting Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-display">Troubleshooting Guide</CardTitle>
+              <CardDescription>
+                Common issues and solutions for Helldivers 2 weapon customization
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-3 text-red-600 dark:text-red-400">Common Issues</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800/30">
+                      <h4 className="font-medium text-red-800 dark:text-red-200">Customization Not Showing Up</h4>
+                      <p className="text-sm text-red-600 dark:text-red-300 mt-1">Weapon customization menu missing or not loading properly</p>
+                    </div>
+                    <div className="p-3 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800/30">
+                      <h4 className="font-medium text-red-800 dark:text-red-200">Game Crashes During Customization</h4>
+                      <p className="text-sm text-red-600 dark:text-red-300 mt-1">Application crashes when accessing weapon modification screen</p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Solutions</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800/30">
+                      <h4 className="font-medium text-green-800 dark:text-green-200">Verify Game Files</h4>
+                      <p className="text-sm text-green-600 dark:text-green-300 mt-1">Use Steam/platform verification to fix corrupted files</p>
+                    </div>
+                    <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800/30">
+                      <h4 className="font-medium text-green-800 dark:text-green-200">Update Graphics Drivers</h4>
+                      <p className="text-sm text-green-600 dark:text-green-300 mt-1">Ensure latest GPU drivers for optimal performance</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-              {/* Beginner Friendly */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-green-500" />
-                    Beginner Friendly
-                  </CardTitle>
-                  <CardDescription>Easy to use weapons for new Helldivers</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {data.weapons.primary
-                      .filter(weapon => weapon.warbond === 'Free')
-                      .slice(0, 3)
-                      .map(weapon => (
-                        <div key={weapon.id} className="flex items-center justify-between p-2 rounded bg-muted">
-                          <span className="font-medium">{weapon.name}</span>
-                          <Badge variant="outline" className="text-green-600">Free</Badge>
-                        </div>
-                      ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+          {/* Unlock Guide Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-display">Weapon Customization Unlock Guide</CardTitle>
+              <CardDescription>
+                Complete guide to unlocking all weapon customization options and levels
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-gradient-to-br from-helldiver-blue-500/10 to-helldiver-blue-600/10 dark:from-helldiver-blue-500/20 dark:to-helldiver-blue-600/20 rounded-lg border border-helldiver-blue-200 dark:border-helldiver-blue-800/30">
+                  <h3 className="font-semibold mb-2 text-helldiver-blue-800 dark:text-helldiver-blue-200">Level Requirements</h3>
+                  <p className="text-sm text-helldiver-blue-600 dark:text-helldiver-blue-300">Weapon customization unlocks at specific player and weapon levels</p>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-helldiver-green-500/10 to-helldiver-green-600/10 dark:from-helldiver-green-500/20 dark:to-helldiver-green-600/20 rounded-lg border border-helldiver-green-200 dark:border-helldiver-green-800/30">
+                  <h3 className="font-semibold mb-2 text-helldiver-green-800 dark:text-helldiver-green-200">Warbond Progression</h3>
+                  <p className="text-sm text-helldiver-green-600 dark:text-helldiver-green-300">Premium attachments available through Warbond advancement</p>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-helldiver-yellow-500/10 to-helldiver-yellow-600/10 dark:from-helldiver-yellow-500/20 dark:to-helldiver-yellow-600/20 rounded-lg border border-helldiver-yellow-200 dark:border-helldiver-yellow-800/30">
+                  <h3 className="font-semibold mb-2 text-helldiver-yellow-800 dark:text-helldiver-yellow-200">Mission Rewards</h3>
+                  <p className="text-sm text-helldiver-yellow-600 dark:text-helldiver-yellow-300">Special customizations earned through mission completion</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-12 bg-gradient-to-r from-helldiver-blue-500 to-helldiver-green-500 text-white border-0 rounded-lg">
+          <div className="p-8 text-center">
+            <h3 className="text-2xl font-display font-bold mb-4">
+              Ready to Serve Super Earth?
+            </h3>
+            <p className="text-helldiver-blue-100 mb-6 max-w-2xl mx-auto">
+              Join millions of Helldivers in the fight for democracy. Customize your arsenal, 
+              optimize your loadouts, and show the galaxy what managed democracy can achieve.
+            </p>
+            <Button 
+              size="lg" 
+              onClick={scrollToWeaponCustomizer}
+              className="bg-helldiver-yellow-400 hover:bg-helldiver-yellow-500 text-helldiver-steel-900 font-bold"
+            >
+              Start Building Your Loadout
+            </Button>
           </div>
-        )}
-
-        {/* Weapon Customizer Dialog */}
-        {selectedWeapon && data && (
-          <WeaponCustomizer
-            weapon={selectedWeapon}
-            data={data}
-            isOpen={selectedWeapon !== null}
-            onClose={() => setSelectedWeapon(null)}
-          />
-        )}
+        </div>
       </div>
     </div>
   )

@@ -104,7 +104,7 @@
   }
 
   /* Helldivers 2 Military Card styles */
-  .card {
+  .card-military {
     @apply bg-white dark:bg-helldiver-steel-800 rounded border-2 border-helldiver-blue-200 dark:border-helldiver-blue-600/30 shadow-lg;
     box-shadow: 
       0 0 0 1px rgba(0, 102, 204, 0.1),
@@ -113,7 +113,7 @@
   }
 
   .card-hover {
-    @apply card transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 hover:border-helldiver-blue-400/50;
+    @apply card-military transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 hover:border-helldiver-blue-400/50;
   }
 
   /* Military Command Panel Style */

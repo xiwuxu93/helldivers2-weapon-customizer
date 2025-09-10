@@ -89,7 +89,7 @@ export interface HelldiversData {
 let cachedData: HelldiversData | null = null
 
 /**
- * Load Helldivers 2 data from the JSON file
+ * Load Helldivers 2 data from the JSON file (client-side only)
  */
 export async function loadHelldiversData(): Promise<HelldiversData> {
   if (cachedData) {

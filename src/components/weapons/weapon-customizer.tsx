@@ -9,7 +9,7 @@ import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { WeaponData, WeaponAttachment, getCompatibleAttachments, calculateWeaponStatsWithAttachments, HelldiversData } from '@/lib/helldivers-data'
 import { trackWeaponCustomization } from '@/components/analytics/google-analytics'
-import { Settings, Zap, Target, Clock, Check, X } from 'lucide-react'
+import { Settings, Zap, Target, Clock, Check, X, Save } from 'lucide-react'
 
 interface WeaponCustomizerProps {
   weapon: WeaponData | null
@@ -21,20 +21,83 @@ interface WeaponCustomizerProps {
 export function WeaponCustomizer({ weapon, data, isOpen, onClose }: WeaponCustomizerProps) {
   const [selectedAttachments, setSelectedAttachments] = useState<WeaponAttachment[]>([])
   const [compatibleAttachments, setCompatibleAttachments] = useState<WeaponAttachment[]>([])
+  const [isSaving, setIsSaving] = useState(false)
+  const [saveSuccess, setSaveSuccess] = useState(false)
 
   useEffect(() => {
     if (weapon) {
       const compatible = getCompatibleAttachments(data, weapon.id)
       setCompatibleAttachments(compatible)
-      setSelectedAttachments([])
+      setSaveSuccess(false) // Reset success state when weapon changes
+      
+      // Try to load saved configuration for this weapon
+      try {
+        const savedLoadouts = JSON.parse(localStorage.getItem('helldivers-loadouts') || '[]')
+        const lastSavedLoadout = savedLoadouts
+          .filter((loadout: any) => loadout.weaponId === weapon.id)
+          .sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0]
+        
+        if (lastSavedLoadout && lastSavedLoadout.attachments) {
+          // Restore the last saved attachments configuration
+          setSelectedAttachments(lastSavedLoadout.attachments)
+        } else {
+          // No saved configuration, start fresh
+          setSelectedAttachments([])
+        }
+      } catch (error) {
+        console.error('Error loading saved configuration:', error)
+        setSelectedAttachments([])
+      }
     }
   }, [weapon, data])
+
+  const saveLoadout = () => {
+    if (!weapon) return
+    
+    setIsSaving(true)
+    
+    const loadout = {
+      id: Date.now(), // Simple ID based on timestamp
+      weaponId: weapon.id,
+      weaponName: weapon.name,
+      attachments: selectedAttachments,
+      createdAt: new Date().toISOString(),
+      stats: calculateWeaponStatsWithAttachments(weapon, selectedAttachments)
+    }
+
+    try {
+      // Get existing loadouts from localStorage
+      const existingLoadouts = JSON.parse(localStorage.getItem('helldivers-loadouts') || '[]')
+      
+      // Add new loadout
+      existingLoadouts.push(loadout)
+      
+      // Save back to localStorage
+      localStorage.setItem('helldivers-loadouts', JSON.stringify(existingLoadouts))
+      
+      // Show success feedback
+      setSaveSuccess(true)
+      console.log('Loadout saved successfully!')
+      
+      // Track successful save
+      trackWeaponCustomization(weapon.name, selectedAttachments.map(a => a.name))
+      
+      // Hide success message after 3 seconds
+      setTimeout(() => setSaveSuccess(false), 3000)
+      
+    } catch (error) {
+      console.error('Error saving loadout:', error)
+    } finally {
+      setIsSaving(false)
+    }
+  }
 
   if (!weapon) return null
 
   const modifiedStats = calculateWeaponStatsWithAttachments(weapon, selectedAttachments)
 
   const toggleAttachment = (attachment: WeaponAttachment) => {
+    setSaveSuccess(false) // Reset success state when attachments change
     setSelectedAttachments(prev => {
       const exists = prev.find(a => a.id === attachment.id)
       const newAttachments = exists 
@@ -247,11 +310,16 @@ export function WeaponCustomizer({ weapon, data, isOpen, onClose }: WeaponCustom
 
             {/* Action Buttons */}
             <div className="flex gap-2">
-              <Button className="flex-1" onClick={() => {
-                // TODO: Save loadout functionality
-                console.log('Saving loadout with attachments:', selectedAttachments.map(a => a.name))
-              }}>
-                Save Loadout
+              <Button 
+                className="flex-1" 
+                onClick={saveLoadout}
+                disabled={isSaving || selectedAttachments.length === 0}
+                variant={saveSuccess ? 'default' : 'default'}
+              >
+                {isSaving && <Settings className="w-4 h-4 mr-2 animate-spin" />}
+                {saveSuccess && <Check className="w-4 h-4 mr-2 text-green-500" />}
+                {!isSaving && !saveSuccess && <Save className="w-4 h-4 mr-2" />}
+                {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Loadout'}
               </Button>
               <Button variant="outline" onClick={() => setSelectedAttachments([])}>
                 Clear All

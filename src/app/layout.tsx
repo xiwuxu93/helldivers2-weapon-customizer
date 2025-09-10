@@ -12,24 +12,19 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder & Stats',
+    default: 'Helldivers 2 Weapon Customization | Stats & Tools',
     template: '%s | Helldivers 2 Weapon Customization'
   },
-  description: 'Master Helldivers 2 weapon customization with our comprehensive tool. Build optimal loadouts, compare weapon stats, customize attachments, and dominate the battlefield for Super Earth.',
+  description: 'Helldivers 2 weapon customization tool: stats, tier lists, unlock guide. Fix crashes & build optimal loadouts for Super Earth democracy.',
   keywords: [
     'helldivers 2 weapon customization',
-    'helldivers 2 weapon customizer',
-    'helldivers 2 loadout builder',
-    'helldivers 2 weapon stats',
-    'helldivers 2 best weapons',
-    'helldivers 2 attachments',
-    'helldivers 2 weapons guide',
-    'super earth weapons',
-    'helldivers 2 builds'
+    'helldivers 2 weapons stats',
+    'helldivers 2 tier list',
+    'weapon unlock guide'
   ],
-  authors: [{ name: 'HD2WeaponCustomizer.com' }],
-  creator: 'HD2WeaponCustomizer.com',
-  publisher: 'HD2WeaponCustomizer.com',
+  authors: [{ name: 'helldivers2-weapon-customization.com' }],
+  creator: 'helldivers2-weapon-customization.com',
+  publisher: 'helldivers2-weapon-customization.com',
   metadataBase: new URL('https://helldivers2-weapon-customization.com'),
   category: 'Games',
   classification: 'Gaming Tool',
@@ -37,8 +32,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://helldivers2-weapon-customization.com',
-    title: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder & Stats',
-    description: 'Master Helldivers 2 weapon customization with our comprehensive tool. Build optimal loadouts, compare weapon stats, customize attachments, and dominate the battlefield for Super Earth.',
+    title: 'Helldivers 2 Weapon Customization | Stats & Tools',
+    description: 'Helldivers 2 weapon customization tool: stats, tier lists, unlock guide. Fix crashes & build optimal loadouts for Super Earth democracy.',
     siteName: 'Helldivers 2 Weapon Customization - Ultimate Loadout Builder',
     images: [
       {
@@ -52,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Helldivers 2 Weapon Customization | Ultimate Loadout Builder',
-    description: 'Master Helldivers 2 weapon customization. Build optimal loadouts, compare weapon stats, and dominate for Super Earth! 🎯🔫',
+    title: 'Helldivers 2 Weapon Customization | Stats',
+    description: 'Helldivers 2 weapon customization: stats, tier lists, unlock guides & crash fixes. Build optimal loadouts! 🎯🔫',
     images: ['/helldivers2-weapon-customizer.png'],
     creator: '@HD2WeaponTool'
   },
@@ -101,20 +96,28 @@ export default function RootLayout({
         <StructuredData type="faq" data={{
           questions: [
             {
-              question: "How does Helldivers 2 weapon customization work?",
-              answer: "Helldivers 2 weapon customization allows players to modify their primary weapons with attachments like sights, grips, and magazines. Our tool helps you compare different configurations and optimize your loadout for specific missions and playstyles."
+              question: "Why is Helldivers 2 weapon customization not showing up?",
+              answer: "If weapon customization isn't showing up, try verifying your game files through Steam, updating graphics drivers, or restarting the game. Make sure you've reached the required level to unlock weapon customization features."
             },
             {
-              question: "Is this Helldivers 2 weapon customizer free to use?",
-              answer: "Yes! Our Helldivers 2 weapon customizer is completely free to use. There are no hidden costs or registration requirements. Build and compare unlimited weapon loadouts."
+              question: "How do I fix Helldivers 2 weapon customization crashes?",
+              answer: "To fix crashes during weapon customization: 1) Verify game files integrity, 2) Update graphics drivers, 3) Lower graphics settings, 4) Close unnecessary background applications, 5) Run the game as administrator."
             },
             {
-              question: "What weapons does the customizer support?",
-              answer: "Our customizer supports all primary, secondary, and support weapons in Helldivers 2, including weapons from all Warbonds. We regularly update the database with new weapons and balance changes."
+              question: "What are the best Helldivers 2 weapon customization stats to focus on?",
+              answer: "Focus on damage per second (DPS), armor penetration, recoil control, and ergonomics. High-tier weapons typically excel in damage (300+) and have good ergonomic ratings for better handling during combat."
             },
             {
-              question: "Can I save and share my weapon builds?",
-              answer: "Yes! You can save your favorite weapon configurations and share them with other Helldivers. Our tool generates shareable links for your custom loadouts, making it easy to collaborate with your squad."
+              question: "How do I unlock all Helldivers 2 weapon customization levels?",
+              answer: "Weapon customization unlocks through player progression, Warbond advancement, and mission completion. Reach higher player levels, purchase Warbond tiers, and complete specific missions to unlock advanced customization options."
+            },
+            {
+              question: "What is the Helldivers 2 weapon customization tier list ranking?",
+              answer: "S-Tier weapons (300+ damage) include top performers for maximum effectiveness. A-Tier weapons (200-299 damage) offer excellent versatility. B-Tier weapons (100-199 damage) are solid choices for specific situations."
+            },
+            {
+              question: "Does Helldivers 2 weapon customization work on PC?",
+              answer: "Yes, Helldivers 2 weapon customization is fully supported on PC. Our web-based tool works on all platforms and provides the same comprehensive customization features regardless of your gaming platform."
             }
           ]
         }} />
