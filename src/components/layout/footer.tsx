@@ -65,6 +65,43 @@ export function Footer() {
 
           </div>
 
+          {/* Friendship Links */}
+          <div className="mt-6 pt-6 border-t border-border">
+            <div className="text-center">
+              <h4 className="text-sm font-semibold text-foreground mb-4">友情链接</h4>
+              <div className="flex justify-center">
+                <a
+                    href="https://dang.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="https://cdn.prod.website-files.com/63d8afd87da01fb58ea3fbcb/6487e2868c6c8f93b4828827_dang-badge.png"
+                      alt="Dang.ai"
+                      width="150"
+                      height="54"
+                      className="transition-opacity hover:opacity-80"
+                    />
+                  </a>
+                  <a
+                    href="https://kontext-ai.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors px-3 py-2 border border-border rounded-md hover:border-foreground"
+                  >
+                    Kontext AI
+                  </a>
+                  <a href="https://imglab.dev/item/helldivers2-weapon-customization.com-kyxf" target="_blank" rel="noopener noreferrer">
+  <img src="https://imglab.dev/svg/badge.svg" alt="Listed on imglab" height="54"  />
+</a>
+               <a href="https://fwfw.app/item/helldivers2-weapon-customization." target="_blank"><img src="https://fwfw.app/badge-white.svg" width="250" height="54" alt="Featured on FWFW" /></a>
+                <a target="_blank" href="https://acidtools.com">
+                  <img src="https://acidtools.com/assets/images/badge.png" alt="Acid Tools" height="54" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Game Disclaimer */}
           <div className="mt-6 pt-6 border-t border-border">
             <div className="text-center text-xs text-muted-foreground">
