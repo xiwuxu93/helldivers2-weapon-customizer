@@ -94,7 +94,7 @@ export function Footer() {
                   <a href="https://imglab.dev/item/helldivers2-weapon-customization.com-kyxf" target="_blank" rel="noopener noreferrer">
   <img src="https://imglab.dev/svg/badge.svg" alt="Listed on imglab" height="54"  />
 </a>
-               <a href="https://fwfw.app/item/helldivers2-weapon-customization." target="_blank"><img src="https://fwfw.app/badge-white.svg" width="250" height="54" alt="Featured on FWFW" /></a>
+               <a href="https://fwfw.app/item/hd2-weapon-customization" target="_blank"><img src="https://fwfw.app/badge-white.svg" width="250" height="54" alt="Featured on FWFW" /></a>
                 <a target="_blank" href="https://acidtools.com">
                   <img src="https://acidtools.com/assets/images/badge.png" alt="Acid Tools" height="54" />
                 </a>
