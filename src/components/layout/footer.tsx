@@ -68,7 +68,7 @@ export function Footer() {
           {/* Friendship Links */}
           <div className="mt-6 pt-6 border-t border-border">
             <div className="text-center">
-              <h4 className="text-sm font-semibold text-foreground mb-4">友情链接</h4>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Friendly Links</h4>
               <div className="flex justify-center">
                 <a
                     href="https://dang.ai/"
