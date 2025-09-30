@@ -12,15 +12,17 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Helldivers 2 Weapon Customization | Stats & Tools',
+    default: 'Helldivers 2 Weapon Customizer | Galactic War Guide',
     template: '%s | Helldivers 2 Weapon Customization'
   },
-  description: 'Helldivers 2 weapon customization tool: stats, tier lists, unlock guide. Fix crashes & build optimal loadouts for Super Earth democracy.',
+  description: 'Helldivers 2 weapon customizer with live stats, faction weaknesses, stratagem synergies, mission tactics, and Warbond unlock paths to win the Galactic War.',
   keywords: [
     'helldivers 2 weapon customization',
-    'helldivers 2 weapons stats',
-    'helldivers 2 tier list',
-    'weapon unlock guide'
+    'helldivers 2 weapon stats',
+    'helldivers 2 stratagems',
+    'helldivers 2 enemy weaknesses',
+    'helldivers 2 mission guide',
+    'helldivers 2 warbond unlocks'
   ],
   authors: [{ name: 'helldivers2-weapon-customization.com' }],
   creator: 'helldivers2-weapon-customization.com',
@@ -32,9 +34,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://helldivers2-weapon-customization.com',
-    title: 'Helldivers 2 Weapon Customization | Stats & Tools',
-    description: 'Helldivers 2 weapon customization tool: stats, tier lists, unlock guide. Fix crashes & build optimal loadouts for Super Earth democracy.',
-    siteName: 'Helldivers 2 Weapon Customization - Ultimate Loadout Builder',
+    title: 'Helldivers 2 Weapon Customizer | Galactic War Guide',
+    description: 'Optimize Helldivers 2 loadouts with live weapon stats, Terminid and Automaton weaknesses, stratagem combos, and Warbond unlocks.',
+    siteName: 'Helldivers 2 Weapon Customization - Galactic War Loadout Builder',
     images: [
       {
         url: '/helldivers2-weapon-customizer.png',
@@ -47,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Helldivers 2 Weapon Customization | Stats',
-    description: 'Helldivers 2 weapon customization: stats, tier lists, unlock guides & crash fixes. Build optimal loadouts! 🎯🔫',
+    title: 'Helldivers 2 Weapon Customizer | Loadout Guide',
+    description: 'Helldivers 2 weapon customization: live stats, faction weaknesses, stratagem synergies, and mission tactics for every Helldiver squad. 🎯🔫',
     images: ['/helldivers2-weapon-customizer.png'],
     creator: '@HD2WeaponTool'
   },
@@ -96,28 +98,28 @@ export default function RootLayout({
         <StructuredData type="faq" data={{
           questions: [
             {
-              question: "Why is Helldivers 2 weapon customization not showing up?",
-              answer: "If weapon customization isn't showing up, try verifying your game files through Steam, updating graphics drivers, or restarting the game. Make sure you've reached the required level to unlock weapon customization features."
+              question: "How do I counter Terminid swarms in Helldivers 2?",
+              answer: "Equip area-of-effect flames or explosives, keep a railgun or recoilless rifle for Chargers, and drop napalm or static field stratagems before the bugs surround the squad."
             },
             {
-              question: "How do I fix Helldivers 2 weapon customization crashes?",
-              answer: "To fix crashes during weapon customization: 1) Verify game files integrity, 2) Update graphics drivers, 3) Lower graphics settings, 4) Close unnecessary background applications, 5) Run the game as administrator."
+              question: "What stratagem combo works best against Automaton armor?",
+              answer: "Pair recoilless rifles or railguns with Eagle 500kg bombs or Orbital Railcannon strikes, and use smoke or shield relays to cross the Automaton firing lines safely."
             },
             {
-              question: "What are the best Helldivers 2 weapon customization stats to focus on?",
-              answer: "Focus on damage per second (DPS), armor penetration, recoil control, and ergonomics. High-tier weapons typically excel in damage (300+) and have good ergonomic ratings for better handling during combat."
+              question: "How often does the Helldivers 2 Galactic War map change?",
+              answer: "Major Orders usually rotate every few days, shifting sector priorities, reward modifiers, and the enemies you will encounter on your next deployment."
             },
             {
-              question: "How do I unlock all Helldivers 2 weapon customization levels?",
-              answer: "Weapon customization unlocks through player progression, Warbond advancement, and mission completion. Reach higher player levels, purchase Warbond tiers, and complete specific missions to unlock advanced customization options."
+              question: "How do I unlock new weapon mods and attachments?",
+              answer: "Level up your account for base attachments, spend medals on seasonal Warbonds for premium gear, and complete Major Order or event missions for exclusive cosmetics."
             },
             {
-              question: "What is the Helldivers 2 weapon customization tier list ranking?",
-              answer: "S-Tier weapons (300+ damage) include top performers for maximum effectiveness. A-Tier weapons (200-299 damage) offer excellent versatility. B-Tier weapons (100-199 damage) are solid choices for specific situations."
+              question: "How can I stop Helldivers 2 customization crashes?",
+              answer: "Verify game files, install the latest GPU drivers, disable overlays or overclocks, and resync Steam Cloud or PSN saves after editing loadouts."
             },
             {
-              question: "Does Helldivers 2 weapon customization work on PC?",
-              answer: "Yes, Helldivers 2 weapon customization is fully supported on PC. Our web-based tool works on all platforms and provides the same comprehensive customization features regardless of your gaming platform."
+              question: "Which boosters help during high-intensity alerts?",
+              answer: "Common picks include Hellfire for Terminid burn damage, Vitality Serum for survivability, and Flexible Reinforcement to refresh reinforcements when dropships are limited."
             }
           ]
         }} />

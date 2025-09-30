@@ -217,7 +217,7 @@ export function WeaponCard({ weapon, onCustomize, onCompare, compact = false }: 
               className="btn-outline"
               size={compact ? 'sm' : 'default'}
             >
-              ANALYZE
+              VIEW DETAILS
             </Button>
           )}
         </div>

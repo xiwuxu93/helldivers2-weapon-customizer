@@ -23,7 +23,12 @@ export function Header() {
   }, [])
 
   const navigation = [
-    { name: "Home", href: "/" }
+    { name: "Overview", href: "/#overview" },
+    { name: "Weapons", href: "/#weapon-customizer-section" },
+    { name: "Factions", href: "/#enemy-factions" },
+    { name: "Missions", href: "/#mission-planning" },
+    { name: "Stratagems", href: "/#stratagem-playbook" },
+    { name: "FAQ", href: "/#faq" }
   ]
 
   const toggleTheme = () => {

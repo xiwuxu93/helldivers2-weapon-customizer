@@ -11,6 +11,7 @@ import { WeaponCustomizer } from '@/components/weapons/weapon-customizer'
 import { WeaponData, WeaponFilters } from '@/lib/helldivers-data'
 import { trackFilterUsage, trackWeaponView } from '@/components/analytics/google-analytics'
 import { Search, Filter, Zap, Target, Shield, Settings, TrendingUp } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 // Client-side filtering function
 function filterWeaponsClient(weapons: WeaponData[], filters: WeaponFilters): WeaponData[] {
@@ -71,6 +72,7 @@ interface WeaponListClientProps {
 export function WeaponListClient({ data, initialWeapons }: WeaponListClientProps) {
   const [filteredWeapons, setFilteredWeapons] = useState<WeaponData[]>(initialWeapons)
   const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(null)
+  const router = useRouter()
   
   // Filter states
   const [filters, setFilters] = useState<WeaponFilters>({
@@ -101,15 +103,12 @@ export function WeaponListClient({ data, initialWeapons }: WeaponListClientProps
 
   const handleCustomizeWeapon = (weapon: WeaponData) => {
     setSelectedWeapon(weapon)
-    console.log('Customize weapon:', weapon.name)
-    
-    // Track weapon customization
     trackWeaponView(weapon.name, weapon.category)
   }
 
   const handleCompareWeapon = (weapon: WeaponData) => {
-    console.log('Compare weapon:', weapon.name)
-    // TODO: Implement weapon comparison functionality
+    trackWeaponView(weapon.name, weapon.category)
+    router.push(`/weapons/${weapon.id}`)
   }
 
   // Extract unique values for filters
