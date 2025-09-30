@@ -18,7 +18,7 @@ type HelldiversDataset = {
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://helldivers2-weapon-customization.com'
   const currentDate = new Date().toISOString()
-  const dataset = helldiversDatabase as HelldiversDataset
+  const dataset = helldiversDatabase as unknown as HelldiversDataset
   const fallbackDataTimestamp = dataset.meta?.last_updated ?? currentDate
 
   const resolveLastModified = (relativePath: string): string => {

@@ -12,7 +12,7 @@ type WeaponRouteParams = {
   weaponId: string
 }
 
-const data = helldiversDatabase as {
+const data = helldiversDatabase as unknown as {
   weapons?: {
     primary?: WeaponData[]
     secondary?: WeaponData[]
