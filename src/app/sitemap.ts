@@ -31,8 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   const rootPageModified = resolveLastModified('src/app/page.tsx')
-  const changelogPageModified = resolveLastModified('src/app/changelog/page.tsx')
-  const contactPageModified = resolveLastModified('src/app/contact/page.tsx')
   const weaponPageModified = resolveLastModified('src/app/weapons/[weaponId]/page.tsx')
 
   const allWeapons: WeaponData[] = [
@@ -47,18 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: rootPageModified,
       changeFrequency: 'weekly',
       priority: 1.0
-    },
-    {
-      url: `${baseUrl}/changelog`,
-      lastModified: changelogPageModified,
-      changeFrequency: 'monthly',
-      priority: 0.5
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: contactPageModified,
-      changeFrequency: 'monthly',
-      priority: 0.4
     }
   ]
 

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'Helldivers 2 Weapon Customization - Galactic War Loadout Builder',
     images: [
       {
-        url: '/helldivers2-weapon-customizer.png',
+        url: 'https://helldivers2-weapon-customization.com/logo.png',
         width: 1200,
         height: 630,
         alt: 'Helldivers 2 Weapon Customizer Tool',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Helldivers 2 Weapon Customizer | Loadout Guide',
     description: 'Helldivers 2 weapon customization: live stats, faction weaknesses, stratagem synergies, and mission tactics for every Helldiver squad. 🎯🔫',
-    images: ['/helldivers2-weapon-customizer.png'],
+    images: ['https://helldivers2-weapon-customization.com/logo.png'],
     creator: '@HD2WeaponTool'
   },
   robots: {

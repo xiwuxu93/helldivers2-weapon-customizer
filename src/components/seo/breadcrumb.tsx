@@ -14,6 +14,8 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
+  const baseUrl = 'https://helldivers2-weapon-customization.com'
+
   // 始终包含首页作为第一项
   const breadcrumbItems = [
     { name: 'Home', url: '/' },
@@ -31,7 +33,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
       ...(item.url && {
         item: {
           '@type': 'WebPage',
-          '@id': `https://bwconverter.com${item.url}`
+          '@id': `${baseUrl}${item.url}`
         }
       })
     }))
@@ -43,7 +45,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData, null, 2)
+          __html: JSON.stringify(breadcrumbStructuredData)
         }}
       />
       
@@ -78,43 +80,10 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
 
 // 预定义的面包屑路径
 export const breadcrumbPaths = {
-  '/batch': [
-    { name: 'Batch Converter' }
-  ],
-  '/examples': [
-    { name: 'Examples' }
-  ],
-  '/newborn-black-and-white-images': [
-    { name: 'Photography', url: '/examples' },
-    { name: 'Newborn Black and White Images' }
-  ],
-  '/black-and-white-newborn-images': [
-    { name: 'Photography', url: '/examples' },
-    { name: 'Black and White Newborn Images' }
-  ],
-  '/image-black-and-white-converter': [
-    { name: 'Tools', url: '/tools' },
-    { name: 'Image Black and White Converter' }
-  ],
-  '/how-to-use': [
-    { name: 'How to Use' }
-  ],
-  '/blog': [
-    { name: 'Blog' }
+  '/weapons': [
+    { name: 'Weapons Library' }
   ],
   '/faq': [
-    { name: 'Support', url: '/about' },
     { name: 'FAQ' }
-  ],
-  '/about': [
-    { name: 'About Us' }
-  ],
-  '/privacy': [
-    { name: 'Legal' },
-    { name: 'Privacy Policy' }
-  ],
-  '/terms': [
-    { name: 'Legal' },
-    { name: 'Terms of Service' }
   ]
 } as const

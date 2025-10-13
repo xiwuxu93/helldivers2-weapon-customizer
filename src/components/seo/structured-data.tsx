@@ -13,26 +13,30 @@ export function StructuredData({ type, data }: StructuredDataProps) {
       structuredData = {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'BWConverter - Free Black and White Image Converter',
-        alternateName: 'Black and White Image Converter Online',
-        description: 'Professional free black and white image converter with advanced filters and instant preview.',
-        url: 'https://bwconverter.com',
-        keywords: 'black and white image, black and white image converter, convert image to black and white, monochrome image',
+        name: 'Helldivers 2 Weapon Customizer',
+        alternateName: 'Helldivers 2 Loadout Builder',
+        description: 'Plan Helldivers 2 loadouts with real-time weapon stats, faction counters, stratagem combos, and warbond unlock paths.',
+        url: 'https://helldivers2-weapon-customization.com',
+        keywords: [
+          'helldivers 2 weapon customization',
+          'helldivers 2 loadout builder',
+          'helldivers 2 weapon stats'
+        ].join(', '),
         inLanguage: 'en-US',
         potentialAction: {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: 'https://bwconverter.com/?q={search_term_string}'
+            urlTemplate: 'https://helldivers2-weapon-customization.com/?q={search_term_string}'
           }
         } as any,
         publisher: {
           '@type': 'Organization',
-          name: 'BWConverter - Black and White Image Converter',
-          url: 'https://bwconverter.com',
+          name: 'Helldivers 2 Weapon Customizer',
+          url: 'https://helldivers2-weapon-customization.com',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://bwconverter.com/logo.png'
+            url: 'https://helldivers2-weapon-customization.com/logo.png'
           }
         }
       } satisfies WithContext<WebSite>
@@ -42,12 +46,12 @@ export function StructuredData({ type, data }: StructuredDataProps) {
       structuredData = {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'BWConverter - Free Black and White Image Converter Online',
-        alternateName: 'Black and White Photo Converter',
-        description: 'Professional free online tool to convert color images to beautiful black and white photos. Advanced black and white image processing with instant preview.',
-        url: 'https://bwconverter.com',
-        applicationCategory: 'MultimediaApplication',
-        applicationSubCategory: 'Photo Editor',
+        name: 'Helldivers 2 Weapon Customizer',
+        alternateName: 'Helldivers 2 Loadout Planner',
+        description: 'Interactive Helldivers 2 tool to compare weapons, attachments, stratagems, and create optimized squad loadouts.',
+        url: 'https://helldivers2-weapon-customization.com',
+        applicationCategory: 'GameApplication',
+        applicationSubCategory: 'Utility',
         operatingSystem: 'Any',
         offers: {
           '@type': 'Offer',
@@ -56,20 +60,17 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           availability: 'https://schema.org/InStock'
         },
         featureList: [
-          'Convert images to black and white instantly',
-          'Professional black and white presets (Vintage, Dramatic, Film Noir)',
-          'Advanced black and white editing controls (Contrast, Brightness, Sepia, Grain)',
-          'Batch black and white image processing',
-          'Multiple export formats for black and white images (PNG, JPEG, WebP)',
-          'Real-time black and white preview',
-          'No watermarks on black and white images',
-          'Free black and white image conversion'
+          'Compare Helldivers 2 weapon damage, recoil, fire rate, and armor penetration',
+          'Preview attachments and customization options',
+          'Track stratagem synergies for Terminid and Automaton encounters',
+          'Filter weapons by warbond, armor penetration, and tier ranking',
+          'Live database updates from the Galactic War intel feeds'
         ],
-        screenshot: 'https://bwconverter.com/website1.png',
-        image: 'https://bwconverter.com/black-and-white-image.png',
+        screenshot: 'https://helldivers2-weapon-customization.com/logo.png',
+        image: 'https://helldivers2-weapon-customization.com/logo.png',
         author: {
           '@type': 'Organization',
-          name: 'BWConverter - Black and White Image Converter'
+          name: 'Helldivers 2 Weapon Customizer'
         },
         aggregateRating: {
           '@type': 'AggregateRating',
@@ -129,10 +130,10 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'BWConverter',
+          name: 'Helldivers 2 Weapon Customizer',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://bwconverter.com/logo.png'
+            url: 'https://helldivers2-weapon-customization.com/logo.png'
           }
         },
         datePublished: data.publishedDate,
