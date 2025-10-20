@@ -51,7 +51,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: WeaponRouteParams }): Metadata {
   const weapon = getWeaponById(params.weaponId)
-
+  console.log('getWeaponById', weapon?.id)
   if (!weapon) {
     return {
       title: 'Weapon Not Found | Helldivers 2 Arsenal'

@@ -21,7 +21,7 @@ const nextConfig = {
     unoptimized: false
   },
   // Enable SSR mode
-  trailingSlash: true,
+  // trailingSlash: true,
   skipTrailingSlashRedirect: true
 }
 
